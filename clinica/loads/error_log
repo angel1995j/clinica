@@ -1,0 +1,50 @@
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "estatus" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 103
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "monto" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 105
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "estatus" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 103
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "monto" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 105
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "estatus" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 103
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "monto" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 105
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "estatus" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 103
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "monto" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 105
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "estatus" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 103
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "monto" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 105
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "estatus" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 103
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "monto" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 105
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "estatus" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 103
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "monto" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 105
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "estatus" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 103
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "monto" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 105
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "estatus" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 103
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "monto" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 105
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "estatus" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 103
+[03-Jan-2024 22:12:23 UTC] PHP Warning:  Undefined array key "monto" in /home/hoysicom/public_html/clinica/loads/consumos-tiendita.php on line 105
+[05-Jan-2024 22:16:16 UTC] PHP Warning:  Attempt to read property "num_rows" on bool in /home/hoysicom/public_html/clinica/loads/empleados.php on line 55
+[06-Jan-2024 00:04:39 UTC] PHP Warning:  Undefined array key "id_empleado" in /home/hoysicom/public_html/clinica/loads/compras.php on line 83
+[06-Jan-2024 00:04:58 UTC] PHP Warning:  Undefined array key "id_empleado" in /home/hoysicom/public_html/clinica/loads/compras.php on line 85
+[08-Jan-2024 23:14:55 UTC] PHP Warning:  Attempt to read property "num_rows" on bool in /home/hoysicom/public_html/clinica/loads/vendedores.php on line 52
+[08-Jan-2024 23:14:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/hoysicom/public_html/clinica/loads/vendedores.php:63
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/loads/vendedores.php on line 63
+[08-Jan-2024 23:15:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/hoysicom/public_html/clinica/loads/vendedores.php:63
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/loads/vendedores.php on line 63
+[08-Jan-2024 23:16:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home/hoysicom/public_html/clinica/loads/vendedores.php:63
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/loads/vendedores.php on line 63
+[08-Jan-2024 23:24:05 UTC] PHP Warning:  Undefined array key "telefono" in /home/hoysicom/public_html/clinica/loads/vendedores.php on line 79
+[08-Jan-2024 23:25:53 UTC] PHP Warning:  Undefined array key "telefono" in /home/hoysicom/public_html/clinica/loads/vendedores.php on line 79
+[08-Jan-2024 23:26:14 UTC] PHP Warning:  Undefined array key "telefono" in /home/hoysicom/public_html/clinica/loads/vendedores.php on line 79
+[08-Jan-2024 23:26:16 UTC] PHP Warning:  Undefined array key "telefono" in /home/hoysicom/public_html/clinica/loads/vendedores.php on line 79
+[09-Jan-2024 18:37:27 UTC] PHP Warning:  Undefined array key "usuario" in /home/hoysicom/public_html/clinica/loads/usuarios.php on line 81
+[09-Jan-2024 18:37:57 UTC] PHP Warning:  Undefined array key "usuario" in /home/hoysicom/public_html/clinica/loads/usuarios.php on line 81
+[09-Jan-2024 18:38:24 UTC] PHP Warning:  Undefined array key "usuario" in /home/hoysicom/public_html/clinica/loads/usuarios.php on line 81
+[09-Jan-2024 18:38:24 UTC] PHP Warning:  Undefined array key "usuario" in /home/hoysicom/public_html/clinica/loads/usuarios.php on line 81
+[09-Jan-2024 18:38:24 UTC] PHP Warning:  Undefined array key "usuario" in /home/hoysicom/public_html/clinica/loads/usuarios.php on line 81
+[09-Jan-2024 18:38:24 UTC] PHP Warning:  Undefined array key "usuario" in /home/hoysicom/public_html/clinica/loads/usuarios.php on line 81
+[10-Jan-2024 00:00:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/hoysicom/public_html/clinica/loads/obtener_datos_grafica_ventas.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/loads/obtener_datos_grafica_ventas.php on line 13

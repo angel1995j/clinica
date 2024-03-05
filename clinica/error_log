@@ -1,0 +1,301 @@
+[23-Jan-2024 04:57:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_vendedor.php:22
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_vendedor.php(191): obtenerUltimasComisiones()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_vendedor.php on line 22
+[23-Jan-2024 04:58:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_vendedor.php:22
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_vendedor.php(191): obtenerUltimasComisiones()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_vendedor.php on line 22
+[23-Jan-2024 04:59:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_vendedor.php:22
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_vendedor.php(191): obtenerUltimasComisiones()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_vendedor.php on line 22
+[23-Jan-2024 04:59:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_vendedor.php:28
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_vendedor.php(197): obtenerUltimasComisiones()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_vendedor.php on line 28
+[23-Jan-2024 05:00:30 UTC] PHP Warning:  file_get_contents(): https:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/tecolot1/public_html/clinica/index_vendedor.php on line 55
+[23-Jan-2024 05:00:30 UTC] PHP Warning:  file_get_contents(https://frasedeldia.azurewebsites.net/api/phrase): failed to open stream: no suitable wrapper could be found in /home/tecolot1/public_html/clinica/index_vendedor.php on line 55
+[23-Jan-2024 05:00:30 UTC] PHP Notice:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/index_vendedor.php on line 57
+[23-Jan-2024 05:00:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_vendedor.php:24
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_vendedor.php(193): obtenerUltimasComisiones(Object(mysqli), 20, '15')
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_vendedor.php on line 24
+[23-Jan-2024 05:04:01 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:04:01 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:04:35 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:04:35 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:04:50 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:04:50 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:05:35 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:05:35 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:06:01 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:06:01 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:06:19 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:06:19 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:08:01 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:08:01 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:08:19 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:08:19 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:08:43 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:08:43 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:08:54 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:08:54 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:09:45 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:09:45 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:10:15 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:10:15 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:10:42 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:10:42 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:14:08 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[23-Jan-2024 05:14:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[23-Jan-2024 05:15:46 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:15:46 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:15:48 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:15:48 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:15:48 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:15:48 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:16:11 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:16:11 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:22:00 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[23-Jan-2024 05:22:00 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[23-Jan-2024 05:22:24 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:22:24 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[23-Jan-2024 05:23:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_apoyo.php:16
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_apoyo.php(126): obtenerUltimosIngresos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_apoyo.php on line 16
+[24-Jan-2024 16:46:52 UTC] PHP Warning:  Array to string conversion in /home/tecolot1/public_html/clinica/index_recepcion.php on line 282
+[24-Jan-2024 16:47:08 UTC] PHP Warning:  Array to string conversion in /home/tecolot1/public_html/clinica/index_recepcion.php on line 282
+[24-Jan-2024 16:47:13 UTC] PHP Warning:  Array to string conversion in /home/tecolot1/public_html/clinica/index_recepcion.php on line 282
+[24-Jan-2024 19:24:18 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:25:49 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:26:01 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:26:02 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:26:14 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:26:32 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:26:53 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:27:06 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:27:11 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:31:41 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:32:57 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:33:28 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:43:17 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:43:34 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:45:12 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:45:13 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:45:14 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:50:31 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:50:33 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes-archivadas.php on line 5
+[24-Jan-2024 19:52:19 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes-archivadas.php on line 5
+[24-Jan-2024 19:52:23 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes-archivadas.php on line 5
+[24-Jan-2024 19:52:27 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 19:53:41 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jan-2024 20:12:58 UTC] PHP Warning:  Undefined variable $id_usuario_logueado in /home/tecolot1/public_html/clinica/index_tiendita.php on line 32
+[24-Jan-2024 20:14:42 UTC] PHP Warning:  Undefined variable $id_usuario_logueado in /home/tecolot1/public_html/clinica/index_tiendita.php on line 32
+[24-Jan-2024 20:14:48 UTC] PHP Warning:  Undefined variable $id_usuario_logueado in /home/tecolot1/public_html/clinica/index_tiendita.php on line 32
+[24-Jan-2024 20:15:28 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/index_tiendita.php on line 5
+[24-Jan-2024 20:15:34 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/index_tiendita.php on line 5
+[24-Jan-2024 20:18:39 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/index_tiendita.php on line 5
+[27-Jan-2024 16:13:33 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[27-Jan-2024 16:14:27 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[27-Jan-2024 16:14:27 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[12-Feb-2024 22:44:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/detalle-pago.php on line 89
+[12-Feb-2024 23:05:19 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/index_tiendita.php on line 5
+[12-Feb-2024 23:05:31 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/index_tiendita.php on line 5
+[12-Feb-2024 23:06:08 UTC] PHP Warning:  Undefined array key "vai_nom" in /home/tecolot1/public_html/clinica/checkout.php on line 11
+[12-Feb-2024 23:06:08 UTC] PHP Warning:  Undefined array key "vai_cod" in /home/tecolot1/public_html/clinica/checkout.php on line 12
+[12-Feb-2024 23:06:08 UTC] PHP Warning:  Undefined array key "txtcantidad" in /home/tecolot1/public_html/clinica/checkout.php on line 13
+[12-Feb-2024 23:06:08 UTC] PHP Warning:  Undefined array key "vai_pre" in /home/tecolot1/public_html/clinica/checkout.php on line 14
+[12-Feb-2024 23:06:08 UTC] PHP Warning:  Undefined array key "item_price" in /home/tecolot1/public_html/clinica/checkout.php on line 15
+[12-Feb-2024 23:06:08 UTC] PHP Warning:  Undefined array key "totcantidad" in /home/tecolot1/public_html/clinica/checkout.php on line 16
+[12-Feb-2024 23:06:08 UTC] PHP Warning:  Undefined array key "totprecio" in /home/tecolot1/public_html/clinica/checkout.php on line 17
+[12-Feb-2024 23:25:36 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/index_tiendita.php on line 5
+[12-Feb-2024 23:25:41 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/index_tiendita.php on line 5
+[12-Feb-2024 23:26:37 UTC] PHP Warning:  Undefined array key "item_price" in /home/tecolot1/public_html/clinica/checkout.php on line 15
+[12-Feb-2024 23:26:37 UTC] PHP Warning:  Undefined array key "totcantidad" in /home/tecolot1/public_html/clinica/checkout.php on line 16
+[12-Feb-2024 23:27:30 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/index_tiendita.php on line 5
+[12-Feb-2024 23:28:13 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/index_tiendita.php on line 5
+[12-Feb-2024 23:28:36 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[12-Feb-2024 23:37:46 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/detalle-pago.php on line 89
+[13-Feb-2024 15:16:43 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/detalle-pago.php on line 89
+[13-Feb-2024 15:20:54 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/detalle-pago.php on line 89
+[15-Feb-2024 18:28:45 UTC] PHP Warning:  Undefined array key "item_price" in /home/tecolot1/public_html/clinica/checkout.php on line 15
+[15-Feb-2024 18:28:45 UTC] PHP Warning:  Undefined array key "totcantidad" in /home/tecolot1/public_html/clinica/checkout.php on line 16
+[15-Feb-2024 18:39:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/tecolot1/public_html/clinica/editar-empleado.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/tecolot1/public_html/clinica/editar-empleado.php on line 20
+[15-Feb-2024 18:45:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/tecolot1/public_html/clinica/editar-empleado.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/tecolot1/public_html/clinica/editar-empleado.php on line 20
+[15-Feb-2024 18:45:20 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/tecolot1/public_html/clinica/editar-empleado.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/tecolot1/public_html/clinica/editar-empleado.php on line 20
+[15-Feb-2024 18:47:49 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/detalle-pago.php on line 89
+[15-Feb-2024 19:00:10 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[15-Feb-2024 19:00:10 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[15-Feb-2024 19:00:40 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[16-Feb-2024 18:50:15 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 18:50:15 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 18:50:33 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 18:50:33 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 18:56:08 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 18:56:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 19:01:26 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 19:01:26 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 19:01:42 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 19:01:42 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 19:01:46 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 19:01:46 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 19:01:59 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 19:01:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 19:02:11 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 19:02:11 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 19:02:54 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 19:02:54 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:25:50 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:25:50 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:26:08 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:26:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:26:17 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:26:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:26:23 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:26:23 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:27:11 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:27:11 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:27:41 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:27:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[16-Feb-2024 21:30:24 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 21:30:24 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 21:33:20 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 21:33:20 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 21:35:52 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 21:35:52 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 21:41:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[16-Feb-2024 21:41:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[16-Feb-2024 21:42:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[16-Feb-2024 21:42:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[16-Feb-2024 21:43:59 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 21:43:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 21:44:11 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 21:44:11 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 21:44:19 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 21:44:19 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 21:45:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[16-Feb-2024 21:46:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[16-Feb-2024 21:46:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[16-Feb-2024 22:59:19 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[16-Feb-2024 22:59:19 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[17-Feb-2024 15:52:54 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[17-Feb-2024 15:52:54 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[17-Feb-2024 16:00:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[17-Feb-2024 16:00:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[17-Feb-2024 16:00:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[17-Feb-2024 16:00:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[17-Feb-2024 16:01:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[17-Feb-2024 16:02:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[17-Feb-2024 16:25:20 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[17-Feb-2024 16:25:20 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[17-Feb-2024 16:31:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[17-Feb-2024 16:32:28 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/index_tiendita.php on line 5
+[17-Feb-2024 16:34:34 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[17-Feb-2024 16:34:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[17-Feb-2024 19:01:00 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[17-Feb-2024 19:01:28 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[17-Feb-2024 19:17:00 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[17-Feb-2024 19:17:14 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[17-Feb-2024 19:18:10 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[17-Feb-2024 19:37:45 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[17-Feb-2024 19:37:45 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[17-Feb-2024 19:38:24 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[17-Feb-2024 19:38:24 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[17-Feb-2024 19:38:34 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[17-Feb-2024 19:38:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[17-Feb-2024 19:44:03 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[17-Feb-2024 19:44:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[19-Feb-2024 21:21:47 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[19-Feb-2024 21:21:47 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[19-Feb-2024 21:22:18 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[19-Feb-2024 21:22:59 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[20-Feb-2024 18:20:45 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[22-Feb-2024 22:39:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_result::fetch_all() in /home/tecolot1/public_html/clinica/index_recepcion.php:51
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/index_recepcion.php(127): obtenerUltimosPagos()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/index_recepcion.php on line 51
+[23-Feb-2024 19:53:54 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[27-Feb-2024 00:44:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/perfil-familiar.php on line 305
+[27-Feb-2024 00:45:12 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/perfil-familiar.php on line 305
+[27-Feb-2024 16:55:15 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[27-Feb-2024 16:55:15 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[27-Feb-2024 16:55:28 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[27-Feb-2024 16:55:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25

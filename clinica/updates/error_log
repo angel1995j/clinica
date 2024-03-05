@@ -1,0 +1,73 @@
+[18-Nov-2023 21:25:58 UTC] PHP Warning:  Undefined array key "comprobante" in /home/hoysicom/public_html/clinica/updates/pago.php on line 21
+[18-Nov-2023 21:25:58 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/updates/pago.php on line 21
+[18-Nov-2023 21:25:58 UTC] PHP Warning:  Undefined array key "comprobante" in /home/hoysicom/public_html/clinica/updates/pago.php on line 23
+[18-Nov-2023 21:25:58 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/updates/pago.php on line 23
+[18-Nov-2023 21:27:55 UTC] PHP Warning:  Undefined array key "comprobante" in /home/hoysicom/public_html/clinica/updates/pago.php on line 21
+[18-Nov-2023 21:27:55 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/updates/pago.php on line 21
+[18-Nov-2023 21:27:55 UTC] PHP Warning:  Undefined array key "comprobante" in /home/hoysicom/public_html/clinica/updates/pago.php on line 23
+[18-Nov-2023 21:27:55 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/updates/pago.php on line 23
+[20-Nov-2023 00:16:54 UTC] PHP Warning:  Undefined array key "id_pago" in /home/hoysicom/public_html/clinica/updates/archivar-pago.php on line 7
+[20-Nov-2023 00:16:54 UTC] PHP Warning:  Undefined array key "archivado" in /home/hoysicom/public_html/clinica/updates/archivar-pago.php on line 8
+[20-Nov-2023 00:17:43 UTC] PHP Warning:  Undefined array key "id_pago" in /home/hoysicom/public_html/clinica/updates/archivar-pago.php on line 7
+[20-Nov-2023 00:17:43 UTC] PHP Warning:  Undefined array key "archivado" in /home/hoysicom/public_html/clinica/updates/archivar-pago.php on line 8
+[20-Nov-2023 00:18:10 UTC] PHP Warning:  Undefined array key "archivado" in /home/hoysicom/public_html/clinica/updates/archivar-pago.php on line 8
+[22-Nov-2023 18:22:16 UTC] PHP Warning:  Undefined array key "id_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 8
+[22-Nov-2023 18:22:16 UTC] PHP Warning:  Undefined array key "tipo_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 15
+[22-Nov-2023 18:22:16 UTC] PHP Warning:  Undefined variable $id_pago in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 26
+[22-Nov-2023 18:23:26 UTC] PHP Warning:  Undefined array key "id_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 8
+[22-Nov-2023 18:23:26 UTC] PHP Warning:  Undefined array key "tipo_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 15
+[22-Nov-2023 18:23:29 UTC] PHP Warning:  Undefined array key "id_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 8
+[22-Nov-2023 18:23:29 UTC] PHP Warning:  Undefined array key "tipo_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 15
+[22-Nov-2023 18:24:23 UTC] PHP Warning:  Undefined array key "id_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 8
+[22-Nov-2023 18:24:23 UTC] PHP Warning:  Undefined array key "tipo_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 15
+[22-Nov-2023 18:26:57 UTC] PHP Warning:  Undefined array key "id_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 8
+[22-Nov-2023 18:26:57 UTC] PHP Warning:  Undefined array key "tipo_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 15
+[22-Nov-2023 18:27:15 UTC] PHP Warning:  Undefined array key "id_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 8
+[22-Nov-2023 18:27:15 UTC] PHP Warning:  Undefined array key "tipo_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 15
+[22-Nov-2023 18:27:40 UTC] PHP Warning:  Undefined array key "id_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 8
+[22-Nov-2023 18:27:40 UTC] PHP Warning:  Undefined array key "tipo_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 15
+[22-Nov-2023 18:29:51 UTC] PHP Warning:  Undefined array key "id_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 8
+[22-Nov-2023 18:29:51 UTC] PHP Warning:  Undefined array key "tipo_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 15
+[22-Nov-2023 18:30:24 UTC] PHP Warning:  Undefined array key "id_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 8
+[22-Nov-2023 18:30:43 UTC] PHP Warning:  Undefined array key "id_producto" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 8
+[23-Nov-2023 03:59:07 UTC] PHP Warning:  Undefined array key "imagen" in /home/hoysicom/public_html/clinica/updates/producto-tiendita.php on line 14
+[30-Nov-2023 03:52:03 UTC] PHP Warning:  Undefined array key "id_pago" in /home/hoysicom/public_html/clinica/updates/archivar-pago.php on line 7
+[30-Nov-2023 03:52:03 UTC] PHP Warning:  Undefined array key "id_pago" in /home/hoysicom/public_html/clinica/updates/archivar-pago.php on line 7
+[02-Jan-2024 17:36:12 UTC] PHP Warning:  require(footer.php): Failed to open stream: No such file or directory in /home/hoysicom/public_html/clinica/updates/historia_clinica.php on line 91
+[02-Jan-2024 17:36:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'footer.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/hoysicom/public_html/clinica/updates/historia_clinica.php:91
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/updates/historia_clinica.php on line 91
+[02-Jan-2024 18:09:00 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/hoysicom/public_html/clinica/header.php:12) in /home/hoysicom/public_html/clinica/updates/historia_clinica.php on line 43
+[07-Jan-2024 01:48:49 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/hoysicom/public_html/clinica/updates/contacto.php:46
+Stack trace:
+#0 /home/hoysicom/public_html/clinica/updates/contacto.php(46): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/hoysicom/public_html/clinica/updates/contacto.php on line 46
+[07-Jan-2024 01:52:46 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of variables must match the number of parameters in the prepared statement in /home/hoysicom/public_html/clinica/updates/contacto.php:46
+Stack trace:
+#0 /home/hoysicom/public_html/clinica/updates/contacto.php(46): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/hoysicom/public_html/clinica/updates/contacto.php on line 46
+[07-Jan-2024 01:53:00 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/hoysicom/public_html/clinica/updates/contacto.php:46
+Stack trace:
+#0 /home/hoysicom/public_html/clinica/updates/contacto.php(46): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/hoysicom/public_html/clinica/updates/contacto.php on line 46
+[07-Jan-2024 01:56:59 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of variables must match the number of parameters in the prepared statement in /home/hoysicom/public_html/clinica/updates/contacto.php:46
+Stack trace:
+#0 /home/hoysicom/public_html/clinica/updates/contacto.php(46): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/hoysicom/public_html/clinica/updates/contacto.php on line 46
+[07-Jan-2024 01:57:22 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of variables must match the number of parameters in the prepared statement in /home/hoysicom/public_html/clinica/updates/contacto.php:46
+Stack trace:
+#0 /home/hoysicom/public_html/clinica/updates/contacto.php(46): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/hoysicom/public_html/clinica/updates/contacto.php on line 46
+[09-Jan-2024 15:47:55 UTC] PHP Warning:  require(header.php): Failed to open stream: No such file or directory in /home/hoysicom/public_html/clinica/updates/comision.php on line 2
+[09-Jan-2024 15:47:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'header.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/hoysicom/public_html/clinica/updates/comision.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/updates/comision.php on line 2
+[24-Jan-2024 19:43:35 UTC] PHP Warning:  Undefined array key "id_solicitud" in /home/tecolot1/public_html/clinica/updates/archivar-solicitud.php on line 6
+[25-Feb-2024 23:57:57 UTC] PHP Warning:  Undefined array key "id_empleado" in /home/tecolot1/public_html/clinica/updates/activar-pacientes.php on line 6

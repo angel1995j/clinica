@@ -1,0 +1,133 @@
+[03-Nov-2023 20:39:04 UTC] PHP Warning:  require(global.php): Failed to open stream: No such file or directory in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 26
+[03-Nov-2023 20:39:04 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'global.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 26
+[03-Nov-2023 20:39:17 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 35
+[03-Nov-2023 20:40:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 35
+[03-Nov-2023 21:38:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 35
+[03-Nov-2023 21:39:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php:35
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 35
+[03-Nov-2023 21:42:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 36
+[03-Nov-2023 21:54:02 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 36
+[03-Nov-2023 21:54:51 UTC] PHP Warning:  Undefined variable $resultado_credenciales in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 34
+[03-Nov-2023 21:54:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 34
+[03-Nov-2023 21:54:59 UTC] PHP Warning:  Undefined array key "matricula" in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 66
+[03-Nov-2023 21:54:59 UTC] PHP Warning:  Undefined variable $credencial in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 70
+[03-Nov-2023 21:54:59 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 70
+[08-Nov-2023 04:44:19 UTC] PHP Parse error:  syntax error, unexpected identifier "nombre" in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 51
+[08-Nov-2023 04:44:37 UTC] PHP Parse error:  syntax error, unexpected identifier "nombre" in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 51
+[08-Nov-2023 04:44:38 UTC] PHP Parse error:  syntax error, unexpected identifier "nombre" in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 51
+[13-Nov-2023 04:05:09 UTC] PHP Warning:  Undefined array key "monto" in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 119
+[18-Nov-2023 16:40:29 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
+[13-Feb-2024 23:42:26 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
+[13-Feb-2024 23:42:26 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
+[15-Feb-2024 17:15:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
+[15-Feb-2024 17:15:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
+[16-Feb-2024 18:42:46 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:42:46 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:42:46 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:42:46 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:42:46 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:45:21 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:45:21 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:45:21 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:45:21 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:45:21 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:45:59 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:45:59 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:45:59 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:45:59 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:45:59 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:46:11 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:46:11 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:46:11 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:46:11 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:46:11 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:49:28 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:49:28 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:49:28 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:49:28 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:49:28 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:53:55 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:53:55 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:53:55 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:53:55 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:53:55 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:54:24 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:54:24 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:54:24 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:54:24 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:54:24 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:55:05 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:55:05 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:55:05 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:55:05 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:55:05 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:55:54 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:55:54 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:55:54 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:55:54 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:55:54 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:24 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:24 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:24 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:24 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:24 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:38 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:38 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:38 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:38 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:38 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:53 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:53 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:53 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:53 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:56:53 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:57:05 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:57:05 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:57:05 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:57:05 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 18:57:05 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 22:20:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
+[16-Feb-2024 22:20:55 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
+[16-Feb-2024 22:21:07 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 22:21:07 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 22:21:07 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 22:21:07 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[16-Feb-2024 22:21:07 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[22-Feb-2024 22:42:32 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[22-Feb-2024 22:42:32 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[22-Feb-2024 22:42:32 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[22-Feb-2024 22:42:32 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[22-Feb-2024 22:42:32 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[22-Feb-2024 22:43:10 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[22-Feb-2024 22:43:10 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[22-Feb-2024 22:43:10 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[22-Feb-2024 22:43:10 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[22-Feb-2024 22:43:10 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[24-Feb-2024 20:38:24 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[24-Feb-2024 20:38:24 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[24-Feb-2024 20:38:24 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[24-Feb-2024 20:38:24 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[24-Feb-2024 20:38:24 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
