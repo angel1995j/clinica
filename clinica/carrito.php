@@ -9,9 +9,17 @@ $id_paciente = isset($_GET["id_paciente"]) ? intval($_GET["id_paciente"]) : 0;
 // Definir una variable JavaScript para almacenar el valor de $id_paciente
 echo '<script>var idPaciente = ' . json_encode($id_paciente) . ';</script>';
 
+// Obtener el próximo crédito con fecha de fin más cercana en el futuro
+$fecha_actual = date('Y-m-d');
+$sqlCreditosSimilares = "SELECT * FROM credito WHERE id_paciente = $id_paciente AND operacion = 'Generación de límite de crédito' AND fecha_fin > '$fecha_actual' ORDER BY fecha_fin ASC LIMIT 1";
+$resultadoCreditosSimilares = $link->query($sqlCreditosSimilares);
+$credito_proximo = $resultadoCreditosSimilares->fetch_assoc();
+
 if (!isset($_SESSION["items_carrito"])) {
     $_SESSION["items_carrito"] = array();
 }
+
+
 
 if (!empty($_POST["accion"])) {
     switch ($_POST["accion"]) {
@@ -68,6 +76,8 @@ if (!empty($_POST["accion"])) {
             break;
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -135,20 +145,43 @@ if (!empty($_POST["accion"])) {
             });
         }
     </script>
+
+
 </head>
 <body>
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-12 mt-5">
-            <div class="mt-5"><h2 class="text-center mb-4">Productos de la tiendita</h2></div>
+        <div class="col-md-12 mt-3">
+            <div><h2 class="text-center mb-4">Selecciona productos de la tiendita</h2></div>
+
+            <!-- Mostrar información de crédito del paciente -->
+            <h4 class="mt-5 text-center">
+                <?php
+                if (!empty($credito_proximo) && isset($credito_proximo['saldo'])) {
+                    if ($credito_proximo['saldo'] > 0) {
+                        echo "Este usuario cuenta con saldo a favor de: $" . $credito_proximo['saldo'];
+                    } elseif ($credito_proximo['saldo'] < 0) {
+                        echo "Este usuario tiene un límite de: $" . abs($credito_proximo['saldo']);
+                    } else {
+                        echo "Este usuario no tiene saldo ni deuda.";
+                    }
+                    echo "<br>Su saldo vence el " . date('d-m-Y', strtotime($credito_proximo['fecha_fin'])) . ".";
+                } else {
+                    echo "No se pudo obtener información de crédito para este usuario.";
+                }
+
+                $saldo_de_paciente = $credito_proximo['saldo'];
+                ?>
+            </h4><br><br>
+
             <div class="row">
                 <?php
-                $productos_array = $link->query("SELECT * FROM productos WHERE tipo_producto = 'tiendita' ORDER BY id_producto ASC");
+                $productos_array = $link->query("SELECT * FROM productos WHERE tipo_producto = 'tiendita' AND stock > 1 ORDER BY id_producto ASC");
                 if ($productos_array) {
                     while ($k = $productos_array->fetch_assoc()) {
                         ?>
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-3 mb-4">
                             <div class="card">
                                 <img src="assets/images/products/<?php echo $k["imagen"]; ?>" class="card-img-top" alt="<?php echo $k["titulo"]; ?>" style="height: 150px; object-fit: cover;">
                                 <div class="card-body">
@@ -225,15 +258,19 @@ if (!empty($_POST["accion"])) {
                     </tbody>
                 </table>
 
-                <form method="GET" action="checkout.php">
+                <?php
+                // Calcular el umbral permitido
+                $umbral = 10;
+                // Verificar si el saldo es suficiente (o si falta menos de $umbral)
+                $saldo_suficiente = ($totprecio <= ($saldo_de_paciente + $umbral));
+                ?>
+
+                <form method="GET" action="checkout.php" id="checkoutForm">
                     <?php if ($id_paciente != 0): ?>
                         <input type="hidden" name="id_paciente" value="<?php echo $id_paciente; ?>">
                     <?php endif; ?>
 
-                    <?php
-                    foreach ($_SESSION["items_carrito"] as $item):
-                        $item_price = $item["txtcantidad"] * $item["vai_pre"];
-                        ?>
+                    <?php foreach ($_SESSION["items_carrito"] as $item): ?>
                         <input type="hidden" name="vai_nom[]" value="<?php echo $item["vai_nom"]; ?>">
                         <input type="hidden" name="vai_cod[]" value="<?php echo $item["vai_cod"]; ?>">
                         <input type="hidden" name="txtcantidad[]" value="<?php echo $item["txtcantidad"]; ?>">
@@ -241,8 +278,18 @@ if (!empty($_POST["accion"])) {
                         <input type="hidden" name="totprecio" value="<?php echo number_format($totprecio, 2); ?>">
                     <?php endforeach; ?>
 
-                    <button type="submit" class="btn btn-success">Pagar</button>
+                    <!-- Agregar la condición para deshabilitar el botón si no hay saldo suficiente -->
+                    <button type="submit" class="btn btn-success" <?php if (!$saldo_suficiente) echo "disabled"; ?>>
+                        <?php
+                        if (!$saldo_suficiente) {
+                            echo "Saldo insuficiente - No se puede pagar";
+                        } else {
+                            echo "Pagar";
+                        }
+                        ?>
+                    </button>
                 </form>
+
             <?php
             } else {
             ?>
@@ -255,5 +302,7 @@ if (!empty($_POST["accion"])) {
 </div>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>

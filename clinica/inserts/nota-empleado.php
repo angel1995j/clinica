@@ -12,15 +12,20 @@ $monto = isset($_POST['monto']) ? floatval($_POST['monto']) : 0.0;
 $fecha = isset($_POST['fecha']) ? $_POST['fecha'] : '';
 $motivo = isset($_POST['motivo']) ? $_POST['motivo'] : '';
 
+// Valor por defecto para estatus
+$estatus = 'pendiente';
+
 // Validaciones adicionales si es necesario
 
 // Inserta la nota en la base de datos
-$sql_insert = "INSERT INTO pagos_empleado (id_empleado, tipo_operacion, monto, fecha, motivo) VALUES (?, ?, ?, ?, ?)";
+$sql_insert = "INSERT INTO pagos_empleado (id_empleado, tipo_operacion, monto, fecha, motivo, estatus) VALUES (?, ?, ?, ?, ?, ?)";
 if ($stmt = $link->prepare($sql_insert)) {
-    $stmt->bind_param("isdss", $id_empleado, $tipo_operacion, $monto, $fecha, $motivo);
+    $stmt->bind_param("isdsss", $id_empleado, $tipo_operacion, $monto, $fecha, $motivo, $estatus);
     
     if ($stmt->execute()) {
-        echo "Nota creada exitosamente.";
+        // Nota creada exitosamente, redirige a la página quincena-empleado.php?id_empleado=$id_empleado
+        header("Location: ../quincena-empleado.php?id_empleado=$id_empleado");
+        exit; // Asegura que el script se detenga después de la redirección
     } else {
         echo "Error al crear la nota: " . $stmt->error;
     }

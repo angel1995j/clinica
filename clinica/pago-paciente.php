@@ -50,43 +50,50 @@ $paciente = $resultado->fetch_assoc();
                 <h1 class="mb-4 mt-3">Completa el esquema de pagos del paciente: <?php echo $paciente['nombre']. " " . $paciente['aPaterno'];?></h1>
 
                <form action="inserts/pagos.php?id_paciente=<?php echo $id_paciente; ?>" method="POST">
-                    <div class="mb-3">
-                        <label for="monto">Monto:</label>
-                        <input type="number" class="form-control" id="monto" name="monto" step="0.01" required>
-                    </div>
+                <div class="mb-3">
+                    <label for="monto">Monto:</label>
+                    <input type="number" class="form-control" id="monto" name="monto" step="0.01" required>
+                </div>
 
-                    <div class="mb-3">
-                        <label for="observaciones">Concepto:</label>
-                        <input type="text" class="form-control" id="observaciones" name="observaciones" value="Mensualidad">
-                    </div>
+                <div class="mb-3">
+                    <label for="observaciones">Concepto:</label>
+                    <input type="text" class="form-control" id="observaciones" name="observaciones" value="Tratamiento" readonly>
+                </div>
 
-                    <div class="mb-3">
-                        <label for="cantidad_registros">Cantidad de Registros:</label>
-                        <input type="number" class="form-control" id="cantidad_registros" name="cantidad_registros" required>
-                    </div>
+                <div class="mb-3">
+                    <label for="cantidad_registros">Cantidad de Registros:</label>
+                    <input type="number" class="form-control" id="cantidad_registros" name="cantidad_registros" min="1" required>
+                </div> 
 
-                    <div class="mb-3">
-                        <label for="periodicidad">Periodicidad:</label>
-                        <select class="form-control mt-2" id="periodicidad" name="periodicidad" required>
-                            <option value="semanal">Semanal</option>
-                            <option value="quincenal">Quincenal</option>
-                            <option value="1 mes">1 Mes</option>
-                            <option value="2 meses">2 Meses</option>
-                            <option value="3 meses">3 Meses</option>
-                            <option value="4 meses">4 Meses</option>
-                            <option value="5 meses">5 Meses</option>
-                            <option value="6 meses">6 Meses</option>
-                            <option value="7 meses">7 Meses</option>
-                            <option value="8 meses">8 Meses</option>
-                            <option value="9 meses">9 Meses</option>
-                            <option value="10 meses">10 Meses</option>
-                            <option value="11 meses">11 Meses</option>
-                            <option value="12 meses">12 Meses</option>
-                        </select>
-                    </div>
+                <div class="mb-3">
+                    <label for="fecha_inicio">Fecha de Inicio:</label>
+                    <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" required>
+                </div>
 
-                    <button type="submit" class="btn btn-primary">Crear Pagos</button>
-                </form>
+                <div class="mb-3">
+                    <label for="periodicidad">Periodicidad:</label>
+                    <select class="form-control mt-2" id="periodicidad" name="periodicidad" required>
+                        <option value="" disabled selected>Seleccione la periodicidad</option>
+                        <option value="semanal">Semanal</option>
+                        <option value="quincenal">Quincenal</option>
+                        <option value="1 mes">1 Mes</option>
+                        <option value="2 meses">2 Meses</option>
+                        <option value="3 meses">3 Meses</option>
+                        <option value="4 meses">4 Meses</option>
+                        <option value="5 meses">5 Meses</option>
+                        <option value="6 meses">6 Meses</option>
+                        <option value="7 meses">7 Meses</option>
+                        <option value="8 meses">8 Meses</option>
+                        <option value="9 meses">9 Meses</option>
+                        <option value="10 meses">10 Meses</option>
+                        <option value="11 meses">11 Meses</option>
+                        <option value="12 meses">12 Meses</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Crear Pagos</button>
+            </form>
+
                 
               </div>
 

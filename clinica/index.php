@@ -91,7 +91,7 @@ session_start();
 
 
 // Verifica si la sesión existe y si el usuario tiene el rol "SuperAdministrador"
-if (isset($_SESSION['rol']) && $_SESSION['rol'] == 'SuperAdministrador') {
+if (isset($_SESSION['rol']) && ($_SESSION['rol'] == 'SuperAdministrador' || $_SESSION['rol'] == 'Administracion')) {
 
 require "header.php";
 require('global.php');

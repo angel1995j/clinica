@@ -104,6 +104,10 @@ $paciente = $resultado->fetch_assoc();
                 
               </div>
 
+              <a href="pagos-individual.php?id_paciente=<?php echo $id_paciente; ?>" class="btn btn-danger mt-3">
+                Ir a los pagos del paciente
+              </a>
+
             
               
 

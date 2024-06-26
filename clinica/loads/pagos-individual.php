@@ -12,7 +12,7 @@ $table = "pago_paciente";
 $id_paciente = isset($_POST['id_paciente']) ? $link->real_escape_string($_POST['id_paciente']) : null;
 
 /* Filtrado */
-$where = ($id_paciente !== null) ? "id_paciente = '$id_paciente' AND estatus = 'No Pagado'" : 'estatus = "No Pagado"';
+$where = ($id_paciente !== null) ? "id_paciente = '$id_paciente' AND estatus = 'No Pagado' AND archivado = 'no'" : 'estatus = "No Pagado" AND archivado = "no"';
 
 /* Limit */
 $limit = isset($_POST['registros']) ? $link->real_escape_string($_POST['registros']) : 10;
@@ -55,7 +55,7 @@ $row_filtro = $resFiltro->fetch_array();
 $totalFiltro = $row_filtro[0];
 
 /* Consulta para total de registro filtrados */
-$sqlTotal = "SELECT COUNT(id_pago) FROM $table WHERE estatus = 'No Pagado'";
+$sqlTotal = "SELECT COUNT(id_pago) FROM $table WHERE estatus = 'No Pagado' AND archivado = 'no'";
 $resTotal = $link->query($sqlTotal);
 $row_total = $resTotal->fetch_array();
 $totalRegistros = $row_total[0];
@@ -73,11 +73,11 @@ if ($num_rows > 0) {
         $output['data'] .= '<tr>';
         $output['data'] .= '<td class="text-center">' . $row['observaciones'] . '</td>';
         $output['data'] .= '<td class="text-center">' . $row['fecha_agregado'] . '</td>';
-        $output['data'] .= '<td class="text-center">' . $row['fecha_pagado'] . '</td>';
         $output['data'] .= '<td class="text-center">' . $row['monto'] . '</td>';
-        $output['data'] .= '<td class="text-center"><span class="badge badge-sm ' . ($row['descuento'] > 1 ? 'bg-danger' : 'bg-success') . '">' . $row['descuento'] . '</span></td>';
+        //$output['data'] .= '<td class="text-center"><span class="badge badge-sm ' . ($row['descuento'] > 1 ? 'bg-danger' : 'bg-success') . '">' . $row['descuento'] . '</span></td>';
         $output['data'] .= '<td class="text-center"><a class="btn boton-secundario" href="reportar-pago.php?id_pago=' . $row['id_pago'] . '">Reportar pago</a></td>';
         $output['data'] .= '<td class="align-middle text-center text-sm"><span class="text-secondary text-xs font-weight-bold"><a class="btn boton-secundario" href="detalle-pago.php?id_pago=' . $row['id_pago'] . '" target="_blank">Ver detalles</a></span></td>';
+        $output['data'] .= '<td class="text-center"><a class="btn boton-secundario" href="updates/archivar-pago.php?id_pago=' . $row['id_pago'] . '&id_paciente=' . $id_paciente . '">Archivar pago</a></td>';
         $output['data'] .= '</tr>';
     }
 } else {

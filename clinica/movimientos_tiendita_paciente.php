@@ -43,6 +43,7 @@ $paciente = $resultado->fetch_assoc();
                                         <th>Fecha de Creación</th>
                                         <th>Total</th>
                                         <th>Detalles</th>
+                                        <th>Estatus</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -71,6 +72,7 @@ $paciente = $resultado->fetch_assoc();
                                             echo "<li>" . $detalle['titulo'] . " - Cantidad: " . $detalle['cantidad'] . " - Subtotal: $" . $detalle['subtotal'] . "</li>";
                                         }
                                         echo "</ul></td>";
+                                        echo "<td>" . $orden['estatus'] . "</td>";
 
                                         echo "</tr>";
                                     }

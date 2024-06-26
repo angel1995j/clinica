@@ -36,9 +36,26 @@ $paciente = $resultado->fetch_assoc();
             Nuevo adeudo
           </button>
 
+           <a class="btn boton-secundario" href="saldo.php?id_paciente=<?php echo $id_paciente;?>">
+            Gestión de saldo
+          </a>
+
+          <a class="btn boton-secundario" href="pago-paciente.php?id_paciente=<?php echo $id_paciente;?>">
+            Generar esquema de pagos
+          </a>
+
+
            <a class="btn boton-secundario" href="pagos-individual-inactivo.php?id_paciente=<?php echo $id_paciente;?>">
             Ver completados
           </a>
+
+          <a class="btn boton-secundario" href="pagos-individual-archivado.php?id_paciente=<?php echo $id_paciente;?>">
+            Ver archivados
+          </a>
+
+
+          
+
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -71,9 +88,19 @@ $paciente = $resultado->fetch_assoc();
                     </div>
 
                     <div class="form-group mt-3">
-                        <label for="observaciones">Observaciones:</label>
-                        <input type="text" class="form-control" name="observaciones" id="observaciones" value="">
+                        <label for="observaciones">Selecciona la categoría indicada:</label>
+                        <select class="form-control" id="observaciones" name="observaciones">
+                            <option value="medicamento">Medicamento</option>
+                            <option value="consultas externas">Consultas Externas</option>
+                            <option value="peticiones">Peticiones</option>
+                            <option value="tratamiento">Tratamiento</option>
+                            <option value="otros gastos">Otros Gastos</option>
+                        </select>
+                    </div>
 
+                    <div class="form-group mt-3">
+                        <label for="notas">Notas:</label>
+                        <input type="text" class="form-control" name="nota" id="nota" value="">
                     </div>
 
                     <div class="form-group mt-3">
@@ -84,24 +111,25 @@ $paciente = $resultado->fetch_assoc();
                         </select>
                     </div>
 
-
                     <div class="form-group mt-3">
                         <label for="forma_pago">Forma de pago:</label>
                         <select class="form-control" id="forma_pago" name="forma_pago">
                             <option value="Efectivo">Efectivo</option>
                             <option value="Tarjeta">Tarjeta</option>
-                            <option value="Transferencia">Transferencía</option>
-                            <option value="Deposito">Déposito</option>
+                            <option value="Transferencia">Transferencía Cuenta Dante</option>
+                            <option value="Transferencía Cuenta Lenin">Transferencía Cuenta Lenin</option>
+                            <option value="Déposito Cuenta Dante">Déposito Cuenta Dante</option>
+                            <option value="Déposito Cuenta Lenin">Déposito Cuenta Lenin</option>
                             <option value="Envio de efectivo">Envío de efectivo</option>
                         </select>
                     </div>
-                    
 
                     <input type="hidden" name="id_paciente" value="<?php echo $_GET['id_paciente']; ?>">
 
                     <button type="submit" class="btn btn-primary mt-3">Guardar Pago</button>
                     <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Cerrar</button>
                 </form>
+
               </div>
             
             </div>
@@ -146,6 +174,25 @@ $paciente = $resultado->fetch_assoc();
           <div class="card mb-4 px-3 mt-5">
             <div class="card-header pb-0">
               <h6>Pagos individuales del Paciente:  <?php echo $paciente['nombre']. " " . $paciente['aPaterno'];?></h6>
+
+            <?php
+            // Consulta SQL para obtener el saldo del paciente
+            $sql_saldo = "SELECT saldo FROM pacientes WHERE id_paciente = $id_paciente";
+            $resultado_saldo = $link->query($sql_saldo);
+            $saldo_row = $resultado_saldo->fetch_assoc();
+            $saldo_paciente = $saldo_row['saldo'];
+            ?>
+
+            <div class="mt-3">
+                <?php if ($saldo_paciente > 0): ?>
+                    <p><strong>Saldo del Paciente:</strong> <span style="color: green;"><?php echo number_format($saldo_paciente, 0, ',', '.'); ?></span></p>
+                <?php elseif ($saldo_paciente <= 0): ?>
+                    <p><strong>Saldo del Paciente:</strong> <span style="color: red;"><?php echo number_format($saldo_paciente, 0, ',', '.'); ?></span> - Este usuario no cuenta con saldo a favor</p>
+                <?php endif; ?>
+            </div>
+
+
+
             </div>
 
 
@@ -162,11 +209,9 @@ $paciente = $resultado->fetch_assoc();
                     <tr>
                       <th class="text-uppercase text-xxs font-weight-bolder opacity-7">Concepto</th>
                       <th class="text-uppercase text-xxs font-weight-bolder opacity-7 ps-2 text-center">Fecha de Vencimiento</th>
-                      <th class="text-uppercase text-xxs font-weight-bolder opacity-7 ps-2 text-center">Fecha de Pagado</th>
 
                       <th class="text-uppercase text-xxs font-weight-bolder opacity-7 ps-2 text-center">Monto</th>
 
-                      <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7">Descuento</th>
 
                       <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7">Accciones</th>
 

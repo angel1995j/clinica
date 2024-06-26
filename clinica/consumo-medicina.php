@@ -70,7 +70,7 @@ if (!empty($_POST["accion"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras</title>
+    <title>Medicamentos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
@@ -118,15 +118,15 @@ if (!empty($_POST["accion"])) {
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-12 mt-5">
-            <div class="mt-5"><h2 class="text-center mb-4">Productos de la tiendita</h2></div>
+        <div class="col-md-12">
+            <div class="mt-2"><h2 class="text-center mb-4">Productos disponibles en stock de medicamento</h2></div>
             <div class="row">
                 <?php
-                $productos_array = $link->query("SELECT * FROM productos WHERE tipo_producto = 'medicina' ORDER BY id_producto ASC");
+                $productos_array = $link->query("SELECT * FROM productos WHERE tipo_producto = 'medicina' AND stock > 1 ORDER BY id_producto ASC");
                 if ($productos_array) {
                     while ($k = $productos_array->fetch_assoc()) {
                         ?>
-                        <div class="col-md-4 mb-4">
+                        <div class="col-md-3 mb-4 mt-2">
                             <div class="card">
                                 <img src="assets/images/products/<?php echo $k["imagen"]; ?>" class="card-img-top" alt="<?php echo $k["titulo"]; ?>" style="height: 150px; object-fit: cover;">
                                 <div class="card-body">
@@ -146,8 +146,8 @@ if (!empty($_POST["accion"])) {
             </div>
         </div>
 
-        <div class="col-md-12">
-            <h2>Lista de productos a comprar.</h2>
+        <div class="col-md-12 mt-5">
+            <h2>Detalles de la orden.</h2>
             <?php
             if (isset($_SESSION["items_carrito"])) {
                 $totcantidad = 0;
@@ -207,7 +207,7 @@ if (!empty($_POST["accion"])) {
                         <label for="id_paciente">Seleccionar Paciente:</label>
                         <select name="id_paciente" class="form-control" required>
                             <?php
-                            $pacientes_query = $link->query("SELECT id_paciente, aPaterno, aMaterno FROM pacientes");
+                            $pacientes_query = $link->query("SELECT id_paciente, aPaterno, aMaterno FROM pacientes WHERE archivado = 'no'");
                             while ($paciente = $pacientes_query->fetch_assoc()) {
                                 echo "<option value='{$paciente['id_paciente']}'>{$paciente['aPaterno']} {$paciente['aMaterno']}</option>";
                             }
@@ -216,7 +216,7 @@ if (!empty($_POST["accion"])) {
                     </div>
 
                     <div class="mb-3">
-                        <label for="concepto">Concepto:</label>
+                        <label for="concepto">Descripción:</label>
                         <input type="text" name="concepto" class="form-control" required>
                     </div>
 

@@ -81,11 +81,12 @@ if ($num_rows > 0) {
         $output['data'] .= '<td class="text-center">' . $row['fecha_ingreso'] . '</td>';
         $output['data'] .= '<td class="text-center">' . $row['puesto'] . '</td>';
 
-        $output['data'] .= '<td class="align-middle text-center text-sm"><span class="text-secondary text-xs font-weight-bold"><a class="btn boton-secundario" href="quincena-empleado.php?id_empleado=' . $row['id_empleado'] . '">Ver quincena</a></span></td>';
+        $output['data'] .= '<td class="align-middle text-center text-sm"><span class="text-secondary text-xs font-weight-bold"><a class="btn boton-secundario" href="quincena-empleado.php?id_empleado=' . $row['id_empleado'] . '">Perfil</a></span></td>';
 
-        $output['data'] .= '<td class="align-middle text-center text-sm"><span class="text-secondary text-xs font-weight-bold"><a class="btn boton-secundario" href="editar-empleado.php?id_empleado=' . $row['id_empleado'] . '">Editar</a></span></td>';
+        //$output['data'] .= '<td class="align-middle text-center text-sm"><span class="text-secondary text-xs font-weight-bold"><a class="btn boton-secundario" href="editar-empleado.php?id_empleado=' . $row['id_empleado'] . '">Editar</a></span></td>';
 
-        $output['data'] .= '<td class="align-middle text-center text-sm"><span class="text-secondary text-xs font-weight-bold"><a class="btn boton-secundario" href="nota-empleado.php?id_empleado=' . $row['id_empleado'] . '">Nota</a></span></td>';
+        //$output['data'] .= '<td class="align-middle text-center text-sm"><span class="text-secondary text-xs font-weight-bold"><a class="btn boton-secundario" href="nota-empleado.php?id_empleado=' . $row['id_empleado'] . '">Nota</a></span></td>';
+
 
         $output['data'] .= '<td class="align-middle text-center text-sm"><span class="text-secondary text-xs font-weight-bold"><a class="btn boton-secundario" href="updates/archivar-empleados.php?id_empleado=' . $row['id_empleado'] . '">Archivar</a></span></td>';
 

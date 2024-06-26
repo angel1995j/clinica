@@ -13,28 +13,14 @@ if (!$id_empleado) {
 }
 
 // Recupera los datos del empleado de la base de datos
-$sql_select = "SELECT * FROM empleados WHERE id_empleado = ?";
+$sql_select = "SELECT nombre, aPaterno, aMaterno, numero_telefono, fecha_ingreso, fecha_salida, puesto, salario_bruto, salario_neto, otros_conceptos, monto_otros_conceptos, archivado FROM empleados WHERE id_empleado = ?";
 if ($stmt = $link->prepare($sql_select)) {
     $stmt->bind_param("i", $id_empleado);
     $stmt->execute();
-    $result = $stmt->get_result();
+    $stmt->bind_result($nombre, $aPaterno, $aMaterno, $numero_telefono, $fecha_ingreso, $fecha_salida, $puesto, $salario_bruto, $salario_neto, $otros_conceptos, $monto_otros_conceptos, $archivado);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        // Recupera los datos necesarios
-        $nombre = $row['nombre'];
-        $aPaterno = $row['aPaterno'];
-        $aMaterno = $row['aMaterno'];
-        $numero_telefono = $row['numero_telefono'];
-        $fecha_ingreso = $row['fecha_ingreso'];
-        $fecha_salida = $row['fecha_salida'];
-        $puesto = $row['puesto'];
-        $salario_bruto = $row['salario_bruto'];
-        $salario_neto = $row['salario_neto'];
-        $otros_conceptos = $row['otros_conceptos'];
-        $monto_otros_conceptos = $row['monto_otros_conceptos'];
-        $archivado = $row['archivado'];
-        // Recupera los demás campos según tu estructura
+    if ($stmt->fetch()) {
+        // Continuar con la lógica
     } else {
         die('No se encontró el empleado con ID ' . $id_empleado);
     }
@@ -48,16 +34,16 @@ if ($stmt = $link->prepare($sql_select)) {
 require('header.php');
 ?>
 
+<div class="container-fluid py-4 mt-5">
+    <div class="row mt-5">
+        <a href="quincena-empleado.php?id_empleado=<?php echo $id_empleado; ?>" class="text-secondary mt-3"><i class="fa fa-undo" aria-hidden="true"></i>
+             Volver al empleado</a>
 
- <div class="container-fluid py-4 mt-5">
-      <div class="row mt-5">
-        <h3 class="mt-3">Añadir nota  al empleado <?php echo $nombre; ?> <?php echo $aPaterno; ?></h3>
-<!-- Formulario de Edición -->
-       <form action="inserts/nota-empleado.php" method="post" enctype="multipart/form-data">
+        <h3 class="mt-3">Añadir nota al empleado <?php echo $nombre; ?> <?php echo $aPaterno; ?></h3>
+        <!-- Formulario de Edición -->
+        <form action="inserts/nota-empleado.php" method="post" enctype="multipart/form-data">
             <!-- Campo de ID (oculto) -->
             <input type="hidden" name="id_empleado" value="<?php echo $id_empleado; ?>">
-
-            <!-- Otros campos se han eliminado y se agregarán los nuevos -->
 
             <div class="row mt-3">
                 <div class="col-md-6">
@@ -73,7 +59,7 @@ require('header.php');
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="monto">Monto:</label>
-                        <input type="number" step="0.01" class="form-control" name="monto" value="<?php echo $monto; ?>" required>
+                        <input type="number" step="0.01" class="form-control" name="monto" value="<?php echo isset($monto) ? $monto : ''; ?>" required>
                     </div>
                 </div>
             </div>
@@ -82,31 +68,28 @@ require('header.php');
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="fecha">Fecha de Aplicación:</label>
-                        <input type="date" class="form-control" name="fecha" value="" required>
+                        <input type="date" class="form-control" name="fecha" value="<?php echo isset($fecha) ? $fecha : ''; ?>" required>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="motivo">Motivo:</label>
-                        <input type="text" class="form-control" name="motivo" value="" required>
+                        <input type="text" class="form-control" name="motivo" value="<?php echo isset($motivo) ? $motivo : ''; ?>" required>
                     </div>
                 </div>
             </div>
 
             <div class="row mt-3">
                 <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">Crearle nota</button>
+                    <button type="submit" class="btn btn-primary">Crear nota</button>
                 </div>
             </div>
         </form>
-
-
-
-
+    </div>
 </div>
 
-</div>
 <?php
 // Incluye aquí tu pie de página común
+require('footer.php');
 ?>

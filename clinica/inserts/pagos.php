@@ -14,13 +14,19 @@ $monto = $_POST['monto'];
 $cantidad_registros = intval($_POST['cantidad_registros']);
 $periodicidad = $_POST['periodicidad'];
 $observaciones = $_POST['observaciones'];
+$fecha_inicio = $_POST['fecha_inicio'];
+
+// Verifica que la fecha de inicio esté proporcionada y sea válida
+if (empty($fecha_inicio) || !strtotime($fecha_inicio)) {
+    die('Fecha de inicio no proporcionada o inválida');
+}
 
 // Define el estatus por defecto
 $estatus = 'No Pagado';
 $archivado = 'no';
 
-// Define la fecha inicial
-$fecha_actual = new DateTime();
+// Define la fecha inicial usando la fecha proporcionada por el usuario
+$fecha_actual = new DateTime($fecha_inicio);
 
 // Define el número de meses según la periodicidad seleccionada
 switch ($periodicidad) {
@@ -72,8 +78,10 @@ switch ($periodicidad) {
 
 // Inserta los registros en la base de datos
 for ($i = 1; $i <= $cantidad_registros; $i++) {
-    // Calcula la fecha para el próximo registro
-    $fecha_actual->add($intervalo);
+    // Calcula la fecha para el registro actual
+    if ($i > 1) {
+        $fecha_actual->add($intervalo);
+    }
     $fecha_agregado = $fecha_actual->format('Y-m-d');
 
     // Inserta el registro
@@ -89,7 +97,6 @@ for ($i = 1; $i <= $cantidad_registros; $i++) {
 $link->close();
 
 // Redirecciona a la página principal o muestra un mensaje de éxito
-// header("Location: index.php"); // Descomenta si deseas redireccionar
 echo "Pagos insertados exitosamente";
 header("Location: ../pago-paciente-inicial.php?id_paciente=$id_paciente");
 ?>

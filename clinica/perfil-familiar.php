@@ -131,7 +131,7 @@ $paciente = $resultado->fetch_assoc();
                           echo '<table class="table">';
                           echo '<thead>';
                           echo '<tr>';
-                          echo '<th>ID Pago</th>';
+                          echo '<th>Número Pago</th>';
                           echo '<th>Monto</th>';
                           echo '<th>Fecha de pago</th>';
                           echo '<th>Detalles</th>';
@@ -141,7 +141,7 @@ $paciente = $resultado->fetch_assoc();
 
                           while ($rowPagosNoPagados = $resultPagosNoPagados->fetch_assoc()) {
                             echo '<tr>';
-                            echo '<td>' . $rowPagosNoPagados['id_pago'] . '</td>';
+                            echo '<td>' . $rowPagosNoPagados['numero_pago'] . '</td>';
                             echo '<td>' . $rowPagosNoPagados['monto'] . '</td>';
                             echo '<td>' . $rowPagosNoPagados['fecha_agregado'] . '</td>';
                             echo '<td>' . $rowPagosNoPagados['observaciones'] . '</td>';
@@ -165,75 +165,101 @@ $paciente = $resultado->fetch_assoc();
 
 
               <div class="col-md-6 bg-primary text-center cuadros-familiar">
-                  <?php
-                  // Obtener la suma de monto cuando estatus es "Pagado"
-                  $sqlPagado = "SELECT SUM(monto) AS totalPagado FROM pago_paciente WHERE id_paciente = $id_paciente AND estatus = 'Pagado'";
-                  $resultPagado = $link->query($sqlPagado);
-                  $rowPagado = $resultPagado->fetch_assoc();
-                  $totalPagado = $rowPagado['totalPagado'];
-                  ?>
-                  <?php if ($totalPagado > 0): ?>
-                      <p><i class="fa fa-smile-o" aria-hidden="true" style="font-size: 45px; color: black;"></i><br><br>Pagaste la cantidad de: $<?php echo number_format($totalPagado, 2, ',', '.'); ?> MXN</p>
-                  <?php else: ?>
-                      <p><i class="fa fa-meh-o" aria-hidden="true" style="font-size: 45px; color: black;"></i><br><br>No has hecho ningún pago aún.</p>
-                  <?php endif; ?>
-                   <p style="font-size:15px;"><button type="button" class="text-white" data-bs-toggle="modal" data-bs-target="#modalPagosPagados" style="background: none; border: none;">Ver detalles</button></p>
-              </div>
+              <?php
+              // Obtener la suma de monto de pago_paciente cuando estatus es "Pagado"
+              $sqlPagado = "SELECT SUM(monto) AS totalPagado FROM pago_paciente WHERE id_paciente = $id_paciente AND estatus = 'Pagado'";
+              $resultPagado = $link->query($sqlPagado);
+              $rowPagado = $resultPagado->fetch_assoc();
+              $totalPagado = $rowPagado['totalPagado'];
+
+              // Obtener la suma de monto de historial_saldo cuando estatus es "Pagado"
+              $sqlSaldoPagado = "SELECT SUM(monto) AS totalSaldoPagado FROM historial_saldo WHERE id_paciente = $id_paciente";
+              $resultSaldoPagado = $link->query($sqlSaldoPagado);
+              $rowSaldoPagado = $resultSaldoPagado->fetch_assoc();
+              $totalSaldoPagado = $rowSaldoPagado['totalSaldoPagado'];
+
+              // Sumar ambos totales
+              $totalGeneralPagado = $totalPagado + $totalSaldoPagado;
+              ?>
+              <?php if ($totalGeneralPagado > 0): ?>
+                  <p><i class="fa fa-smile-o" aria-hidden="true" style="font-size: 45px; color: black;"></i><br><br>Pagaste la cantidad de: $<?php echo number_format($totalGeneralPagado, 2, ',', '.'); ?> MXN</p>
+              <?php else: ?>
+                  <p><i class="fa fa-meh-o" aria-hidden="true" style="font-size: 45px; color: black;"></i><br><br>No has hecho ningún pago aún.</p>
+              <?php endif; ?>
+              <p style="font-size:15px;"><button type="button" class="text-white" data-bs-toggle="modal" data-bs-target="#modalPagosPagados" style="background: none; border: none;">Ver detalles</button></p>
+          </div>
+
 
 
 
 
                <!-- Agrega este modal al final de tu HTML, antes de cerrar el body -->
                 <div class="modal fade" id="modalPagosPagados" tabindex="-1" aria-labelledby="modalPagosPagadosLabel" aria-hidden="true">
-                  <div class="modal-dialog">
+                <div class="modal-dialog">
                     <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="modalPagosPagadosLabel">Detalle de pagados</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <?php
-                        // Consulta para obtener los registros de pagos pagados para el paciente actual
-                        $sqlPagosNoPagados = "SELECT * FROM pago_paciente WHERE id_paciente = $id_paciente AND estatus = 'Pagado'";
-                        $resultPagosNoPagados = $link->query($sqlPagosNoPagados);
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalPagosPagadosLabel">Detalle de pagos pagados</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <?php
+                            // Consulta para obtener los registros de pago_paciente para el paciente actual
+                            $sqlPagosNoPagados = "SELECT * FROM pago_paciente WHERE id_paciente = $id_paciente AND estatus = 'Pagado' AND observaciones != 'Consumo en tiendita'";
+                            $resultPagosNoPagados = $link->query($sqlPagosNoPagados);
 
-                        // Muestra la tabla solo si hay pagos pagados
-                        if ($resultPagosNoPagados->num_rows > 0) {
-                          echo '<table class="table">';
-                          echo '<thead>';
-                          echo '<tr>';
-                          echo '<th>ID Pago</th>';
-                          echo '<th>Monto</th>';
-                          echo '<th>Fecha de pagado</th>';
-                          echo '<th>Detalles</th>';
-                          echo '</tr>';
-                          echo '</thead>';
-                          echo '<tbody>';
+                            // Consulta para obtener los registros de historial_saldo para el paciente actual
+                            $sqlHistorialSaldo = "SELECT * FROM historial_saldo WHERE id_paciente = $id_paciente";
+                            $resultHistorialSaldo = $link->query($sqlHistorialSaldo);
 
-                          while ($rowPagosNoPagados = $resultPagosNoPagados->fetch_assoc()) {
-                            echo '<tr>';
-                            echo '<td>' . $rowPagosNoPagados['id_pago'] . '</td>';
-                            echo '<td>' . $rowPagosNoPagados['monto'] . '</td>';
-                            echo '<td>' . $rowPagosNoPagados['fecha_pagado'] . '</td>';
-                            echo '<td>' . $rowPagosNoPagados['observaciones'] . '</td>';
-                            echo '</tr>';
-                          }
+                            // Mostrar la tabla solo si hay registros en pago_paciente o historial_saldo
+                            if ($resultPagosNoPagados->num_rows > 0 || $resultHistorialSaldo->num_rows > 0) {
+                                echo '<table class="table">';
+                                echo '<thead>';
+                                echo '<tr>';
+                                echo '<th>Tipo</th>';
+                                //echo '<th>Número Pago</th>';
+                                echo '<th>Monto</th>';
+                                echo '<th>Fecha de pagado</th>';
+                                echo '<th>Detalles</th>';
+                                echo '</tr>';
+                                echo '</thead>';
+                                echo '<tbody>';
 
-                          echo '</tbody>';
-                          echo '</table>';
-                        } else {
-                          echo '<p>No hay pagos pagados para este paciente.</p>';
-                        }
-                        ?>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                      </div>
+                                // Mostrar los registros de pago_paciente
+                                while ($rowPagosNoPagados = $resultPagosNoPagados->fetch_assoc()) {
+                                    echo '<tr>';
+                                    echo '<td>Pago al tratamiento</td>';
+                                    //echo '<td>' . $rowPagosNoPagados['numero_pago'] . '</td>';
+                                    echo '<td>' . $rowPagosNoPagados['monto'] . '</td>';
+                                    echo '<td>' . $rowPagosNoPagados['fecha_pagado'] . '</td>';
+                                    echo '<td>' . $rowPagosNoPagados['observaciones'] . '</td>';
+                                    echo '</tr>';
+                                }
+
+                                // Mostrar los registros de historial_saldo
+                                while ($rowHistorialSaldo = $resultHistorialSaldo->fetch_assoc()) {
+                                    echo '<tr>';
+                                    echo '<td>Abono</td>';
+                                    //echo '<td></td>'; // No hay número de pago en historial_saldo, puedes ajustarlo según tus necesidades
+                                    echo '<td>' . $rowHistorialSaldo['monto'] . '</td>';
+                                    echo '<td>' . $rowHistorialSaldo['fecha_pagado'] . '</td>';
+                                    echo '<td>' . $rowHistorialSaldo['observaciones'] . '</td>';
+                                    echo '</tr>';
+                                }
+
+                                echo '</tbody>';
+                                echo '</table>';
+                            } else {
+                                echo '<p>No hay pagos pagados ni registros en el historial de saldo para este paciente.</p>';
+                            }
+                            ?>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
                     </div>
-                  </div>
                 </div>
-
-
+            </div>
 
 
           </div>
@@ -272,10 +298,10 @@ $paciente = $resultado->fetch_assoc();
 
 
 
-            <div class="row mt-5">
+            <div class="row mt-2">
             
 
-                <div class="col-md-3 col-sm-3 text-center">
+                <div class="col-md-3 col-sm-3 text-center mt-2">
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreditos">
                   Ver movimientos de tiendita
                 </button>
@@ -295,7 +321,7 @@ $paciente = $resultado->fetch_assoc();
                       </div>
                       <div class="modal-body">
 
-                        <h3>Saldo actual: $
+                        <h3>Limite actual: $
 
                           <?php $sql_saldo = "SELECT * FROM credito WHERE id_paciente = $id_paciente ORDER BY `credito`.`id_credito` DESC LIMIT 1";
 
@@ -352,7 +378,7 @@ $paciente = $resultado->fetch_assoc();
 
 
 
-                <div class="col-md-3 col-sm-3 text-center">
+                <div class="col-md-3 col-sm-3 text-center mt-2">
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPeticiones">
                    Ver peticiones del paciente
                   </button>
@@ -418,8 +444,9 @@ $paciente = $resultado->fetch_assoc();
 
 
 
-                <div class="col-md-3 col-sm-3 text-center">
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTodos">Ver detalles de pagos</button>
+                <div class="col-md-3 col-sm-3 text-center mt-2">
+                  <a href="pdf/estado-de-cuenta.php?id_paciente=<?php echo $id_paciente; ?>" class="btn btn-primary" target="_blank">Ver estado de cuenta</a>
+
                 </div>
 
 
@@ -486,7 +513,7 @@ $paciente = $resultado->fetch_assoc();
 
 
 
-                <div class="col-md-3 col-sm-3 text-center">
+                <div class="col-md-3 col-sm-3 text-center mt-2">
                   <a class="btn btn-success" href="https://api.whatsapp.com/send?phone=524435280745&text=Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n." target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i>
                     Preguntar dudas por whatsapp
                   </a>

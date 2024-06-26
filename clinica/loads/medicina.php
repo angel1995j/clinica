@@ -80,6 +80,7 @@ if ($num_rows > 0) {
         
         $output['data'] .= '<div class="card-body"><h5 class="card-title">' . $row['titulo'] . '</h5>';
         $output['data'] .= '<p class="card-text"><b>Precio:' . $row['precio_compra'] . '</b></p>';
+        $output['data'] .= '<p class="card-text"><b>Stock:' . $row['stock'] . '</b></p>';
         
         $output['data'] .= ' <div class="d-flex"> <a href="editar-producto-medicina.php?id_producto=' . $row['id_producto'] . '" class="btn btn-outline-secondary m-1">Editar</a>';
         $output['data'] .= '<a href="updates/archivar-producto-medicina.php?id_producto=' . $row['id_producto'] . '" class="btn btn-outline-danger m-1">Archivar</a></div>';

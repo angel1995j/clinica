@@ -15,7 +15,7 @@ $resultado_pago = $link->query($sql_pago);
 $pago = $resultado_pago->fetch_assoc();
 
 // Recupera el nombre del paciente asociado al id_paciente en la tabla pago_paciente
-$sql_nombre_paciente = "SELECT pacientes.nombre AS nombre_paciente, pacientes.aPaterno, pacientes.aMaterno
+$sql_nombre_paciente = "SELECT pacientes.nombre AS nombre_paciente, pacientes.aPaterno, pacientes.aMaterno, pacientes.id_paciente
                         FROM pago_paciente
                         JOIN pacientes ON pago_paciente.id_paciente = pacientes.id_paciente
                         WHERE pago_paciente.id_pago = $id_pago";
@@ -36,7 +36,8 @@ $datos_usuario = $resultado_nombre_usuario->fetch_assoc();
     <div class="card mb-4 px-3 mt-5">
         <!--- INICIA CONTENIDO DE TABLA -->
         <div class="card-body px-0 pt-0 pb-4 pt-3">
-            <a href="pagos.php" class="text-secondary mt-3"><i class="fa fa-undo" aria-hidden="true"></i> Volver a todos los pagos</a>
+            <a href="pagos-individual.php?id_paciente=<?php echo $datos_paciente['id_paciente'];?>" class="text-secondary mt-3">
+                <i class="fa fa-undo" aria-hidden="true"></i> Volver a todos los pagos del paciente</a>
 
             <div class="container">
                 <h2 class="text-center mb-4">Detalle de Pago</h2>
@@ -58,7 +59,8 @@ $datos_usuario = $resultado_nombre_usuario->fetch_assoc();
                                  <p><strong>Fecha Agregado:</strong> <?php echo $pago['fecha_agregado']; ?></p>
                                 <p><strong>Fecha de Pago:</strong> <?php echo $pago['fecha_pagado']; ?></p>
                                 <p><strong>Periodicidad:</strong> <?php echo $pago['periodicidad']; ?></p>
-                                <p><strong>Observaciones:</strong> <?php echo $pago['observaciones']; ?></p>
+                                <p><strong>Categoria de venta:</strong> <?php echo $pago['observaciones']; ?></p>
+                                <p><strong>Notas de venta:</strong> <?php echo $pago['nota']; ?></p>
                                 <p><strong>Forma de Pago:</strong> <?php echo $pago['forma_pago']; ?></p>
                                 <p><strong>Estatus:</strong> <?php echo $pago['estatus']; ?></p>
                             </div>

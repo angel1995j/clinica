@@ -1,234 +1,293 @@
+<?php require "header-cocina.php";?> 
+
 <?php
-session_start();
-require_once("global.php");
-
-$link = bases();
-
-if (!isset($_SESSION["items_carrito"])) {
-    $_SESSION["items_carrito"] = array();
-}
-
-if (!empty($_POST["accion"])) {
-    switch ($_POST["accion"]) {
-        case "agregar":
-            if (!empty($_POST["txtcantidad"]) && !empty($_POST["cod"])) {
-                $codproducto = $link->query("SELECT * FROM productos WHERE id_producto='" . $_POST["cod"] . "'");
-                
-                // Verificar si la consulta devolvió resultados
-                if ($codproducto && $codproducto->num_rows > 0) {
-                    $producto = $codproducto->fetch_assoc();
-                    
-                    $items_array = array($producto["id_producto"] => array(
-                        'vai_nom'        => $producto["titulo"],
-                        'vai_cod'        => $producto["id_producto"],
-                        'txtcantidad'    => $_POST["txtcantidad"],
-                        'vai_pre'        => $producto["precio_compra"], // Cambiar al campo de precio_compra
-                        'vai_img'        => $producto["imagen"]
-                    ));
-
-                    if (!empty($_SESSION["items_carrito"])) {
-                        if (array_key_exists($producto["id_producto"], $_SESSION["items_carrito"])) {
-                            $_SESSION["items_carrito"][$producto["id_producto"]]["txtcantidad"] += $_POST["txtcantidad"];
-                        } else {
-                            $_SESSION["items_carrito"] += $items_array;
-                        }
-                    } else {
-                        $_SESSION["items_carrito"] = $items_array;
-                    }
-                } else {
-                    echo "Producto no encontrado";
-                }
-            }
-            break;
-
-        case "eliminar":
-            if (!empty($_SESSION["items_carrito"])) {
-                if (array_key_exists($_POST["eliminarcode"], $_SESSION["items_carrito"])) {
-                    unset($_SESSION["items_carrito"][$_POST["eliminarcode"]]);
-                }
-
-                if (empty($_SESSION["items_carrito"])) {
-                    unset($_SESSION["items_carrito"]);
-                }
-            }
-            break;
-
-        case "vacio":
-            unset($_SESSION["items_carrito"]);
-            break;
-
-        case "pagar":
-            echo "<script> alert('Gracias por su compra');window.location= 'carrito.php' </script>";
-            unset($_SESSION["items_carrito"]);
-            break;
+    // Recuperar el id_usuario de la sesión
+    session_start();
+    if (isset($_SESSION['id_usuario'])) {
+        $id_usuario_logueado = $_SESSION['id_usuario'];
+        // Agregar un campo oculto para el id_usuario
+        echo '<input type="hidden" name="id_usuario" value="' . $id_usuario_logueado . '">';
+    } else {
+        // Manejar el caso en que el id_usuario no esté en la sesión
+        echo '<p>Error: No se pudo obtener el id_usuario logueado.</p>';
     }
-}
 ?>
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de Compras</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
-    <script>
-        // Asegúrate de que el código se ejecute después de que el documento esté listo
-        $(document).ready(function () {
-            // Asignar el evento onclick al botón después de que el documento esté listo
-            $(".addToCartButton").click(function () {
-                var productId = $(this).data('product-id');
-                var cantidad = $("#txtcantidad_" + productId).val();
+<!--SECCION GENERAL -->
 
-                // Enviar el formulario mediante AJAX usando jQuery
-                $.ajax({
-                    type: 'POST',
-                    url: 'index_cocina.php',
-                    data: {
-                        accion: 'agregar',
-                        cod: productId,
-                        txtcantidad: cantidad
-                    },
-                    success: function (response) {
-                        // Manejar la respuesta si es necesario
-                        console.log(response);
-                        window.location.reload();
-                    }
-                });
-            });
+    <!-- End Navbar -->
 
-            $(".eliminarButton").click(function () {
-                var productId = $(this).data('product-id');
+    <div class="container-fluid py-4 mt-5">
+      <div class="row mt-5">
 
-                $.ajax({
-                    type: 'POST',
-                    url: 'consumo-cocina.php',
-                    data: {
-                        accion: 'eliminar',
-                        eliminarcode: productId
-                    },
-                    success: function (response) {
-                        console.log(response);
-                        window.location.reload();
-                    }
-                });
-            });
-        });
-    </script>
-</head>
-<body>
+        <div class="col-6 mb-4">
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-12 mt-2">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoEmpleado">
+            Añadir nueva solicitud
+          </button>
+          <!--<a href="solicitudes-archivadas.php" class="btn boton-secundario" style="margin-left: 2%;">Ver archivadas</a>-->
+        </div>
 
-            <div class="mt-5"><h2 class="text-center mb-4">Productos disponibles de la cocina</h2></div>
-            <div class="row">
-                <?php
-                $productos_array = $link->query("SELECT * FROM productos WHERE tipo_producto = 'cocina' ORDER BY id_producto ASC");
-                if ($productos_array) {
-                    while ($k = $productos_array->fetch_assoc()) {
-                        ?>
-                        <div class="col-md-3 mb-4">
-                            <div class="card">
-                                <img src="assets/images/products/<?php echo $k["imagen"]; ?>" class="card-img-top" alt="<?php echo $k["titulo"]; ?>" style="height: 150px; object-fit: cover;">
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo $k["titulo"]; ?></h5>
-                                    <p class="card-text"><?php echo "$" . $k["precio_compra"]; ?></p>
-                                    <div class="mb-3">
-                                        <input type="number" id="txtcantidad_<?php echo $k["id_producto"]; ?>" value="1" min="1" class="form-control">
-                                    </div>
-                                    <button type="button" class="btn btn-primary addToCartButton" data-product-id="<?php echo $k["id_producto"]; ?>" style="background: #5D87FF;">Agregar al Carrito</button>
-                                </div>
-                            </div>
-                        </div>
-                        <?php
-                    }
-                }
-                ?>
+
+        <div class="col-6">
+            <!-- Boton de ayuda -->
+           <button type="button" class="btn boton-ayuda" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-question-circle" aria-hidden="true"></i>
+          </button>
+
+          <!-- Modal de ayuda-->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Página de solicitudes</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Desde aqui se añaden nuevas solicitudes para ser resueltas por administración, estas solicitudes son cosas requeridas por ejemplo compras de insumos.
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
 
-        <div class="col-md-12">
-            <h2>Lista de productos a comprar.</h2>
-            <?php
-            if (isset($_SESSION["items_carrito"])) {
-                $totcantidad = 0;
-                $totprecio = 0;
-                ?>
-                <table class="table">
-                    <thead>
+
+         <!-- Modal -->
+        <div class="modal fade" id="nuevoEmpleado" tabindex="-1" aria-labelledby="nuevoProductoLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Añadir nueva solicitud</h1> 
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="container mt-5">
+
+                <!-- Formulario Bootstrap -->
+                <form action="inserts/solicitudes-cocina.php" method="post" enctype="multipart/form-data">
+                  <input type="hidden" name="id_usuario" value="<?php echo $id_usuario_logueado; ?>">
+
+                  <div class="form-group row mt-3">
+                      <label for="descripcion" class="col-sm-4 col-form-label">Descripción de solicitud:</label>
+                      <div class="col-sm-8">
+                          <textarea class="form-control" name="descripcion" rows="7"></textarea>
+                      </div>
+                  </div>
+
+                  <div class="form-group row mt-3">
+                      <label for="fecha" class="col-sm-4 col-form-label">Fecha:</label>
+                      <div class="col-sm-8">
+                          <input type="date" class="form-control" name="fecha" required>
+                      </div>
+                  </div>
+
+
+
+                  <div class="form-group row mt-3">
+                      <div class="col-sm-12">
+                          <button type="submit" class="btn btn-primary">Agregar</button>
+                      </div>
+                  </div>
+              </form>
+
+            </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+
+
+        
+        <div class="row">
+
+                <div class="col-4 d-flex">
+                    <label for="num_registros" class="col-form-label">Mostrar: </label>
+                
+                    <select name="num_registros" id="num_registros" class="form-select">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+              
+                    <label for="num_registros" class="col-form-label">registros </label>
+                </div>
+
+              <div class="col-4"></div>
+
+                <div class="col-4 d-flex">
+                    <label for="campo" class="col-form-label">Buscar:&nbsp;&nbsp;</label>
+               
+                    <input type="text" name="campo" id="campo" class="form-control">
+                </div>
+            </div>
+
+
+
+
+        <div class="col-12 mt-5">
+          <div class="card mb-4 px-3">
+            <div class="card-header pb-0">
+              <h6>Todas las solicitudes</h6>
+            </div>
+
+
+
+       
+
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            
+            <!--- INICIA CONTENIDO DE TABLA -->
+
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
                     <tr>
-                        <th style="width:30%">Descripción</th>
-                        <th style="width:10%">Código</th>
-                        <th style="width:10%">Cantidad</th>
-                        <th style="width:10%">Precio x unidad</th>
-                        <th style="width:10%">Total</th>
-                        <th style="width:10%">Acción</th>
+                     <th class="text-uppercase text-xxs font-weight-bolder opacity-7">Descripción</th>
+                      <th class="text-uppercase text-xxs font-weight-bolder opacity-7 ps-2 text-center">Fecha</th>
+
+                      <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7"></th>
+                      <th class="text-secondary opacity-7"></th>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    foreach ($_SESSION["items_carrito"] as $item):
-                        $item_price = $item["txtcantidad"] * $item["vai_pre"];
-                        $totcantidad += $item["txtcantidad"];
-                        $totprecio += $item_price;
-                        ?>
-                        <tr>
-                            <td><?php echo $item["vai_nom"]; ?></td>
-                            <td><?php echo $item["vai_cod"]; ?></td>
-                            <td><?php echo $item["txtcantidad"]; ?></td>
-                            <td><?php echo "$" . $item["vai_pre"]; ?></td>
-                            <td><?php echo "$" . number_format($item_price, 2); ?></td>
-                            <td>
-                                <button type="button" class="btn btn-danger btn-sm eliminarButton" data-product-id="<?php echo $item["vai_cod"]; ?>">Eliminar</button>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                    <tr>
-                        <td colspan="2" align="right">Total</td>
-                        <td><?php echo $totcantidad; ?></td>
-                        <td></td>
-                        <td><?php echo "$" . number_format($totprecio, 2); ?></td>
-                        <td></td>
-                    </tr>
-                    </tbody>
+                  </thead>
+
+                  <tbody id="content">
+
+                   </tbody>
+
+                  
                 </table>
+              </div>
 
-                <form method="POST" action="inserts/checkout-cocina.php">
-                    <?php
-                    foreach ($_SESSION["items_carrito"] as $item):
-                        $item_price = $item["txtcantidad"] * $item["vai_pre"];
-                        ?>
-                        <input type="hidden" name="vai_nom[]" value="<?php echo $item["vai_nom"]; ?>">
-                        <input type="hidden" name="vai_cod[]" value="<?php echo $item["vai_cod"]; ?>">
-                        <input type="hidden" name="txtcantidad[]" value="<?php echo $item["txtcantidad"]; ?>">
-                        <input type="hidden" name="vai_pre[]" value="<?php echo $item["vai_pre"]; ?>">
-                    <?php endforeach; ?>
 
-                    <!-- Nuevo campo oculto para enviar el concepto -->
-                    <div class="mb-3">
-                        <label for="concepto">Concepto:</label>
-                        <input type="text" name="concepto" class="form-control" required>
-                    </div>
+              <div class="row">
+                <div class="col-6 text-left">
+                    <label id="lbl-total"></label>
+                </div>
 
-                    <input type="hidden" name="totprecio" value="<?php echo number_format($totprecio, 2); ?>">
+                <div class="col-6" id="nav-paginacion"></div>
 
-                    <button type="submit" class="btn btn-success">Confirmar consumo</button>
-                </form>
-            <?php
-            } else {
-            ?>
-                <div class="text-center"><h3>¡El carrito está vacío!</h3></div>
-            <?php
-            }
-            ?>
+                <input type="hidden" id="pagina" value="1">
+                <input type="hidden" id="orderCol" value="0">
+                <input type="hidden" id="orderType" value="asc">
+               </div>
+
+            </div>
+            <!-- CIERRA CONTENIDO DE TABLA -->
+          </div>
+
+
+
+          
         </div>
-    </div>
-</div>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</body>
-</html>
+
+
+
+
+
+
+          </div>
+        </div>
+
+        
+
+      </div>
+     
+ 
+
+</div>
+<!-- SECCION GENERAL -->
+
+
+ <script>
+        /* Llamando a la función getData() */
+        getData()
+
+        /* Escuchar un evento keyup en el campo de entrada y luego llamar a la función getData. */
+        document.getElementById("campo").addEventListener("keyup", function() {
+            getData()
+        }, false)
+        document.getElementById("num_registros").addEventListener("change", function() {
+            getData()
+        }, false)
+
+
+        /* Peticion AJAX */
+        function getData() {
+            let input = document.getElementById("campo").value
+            let num_registros = document.getElementById("num_registros").value
+            let content = document.getElementById("content")
+            let pagina = document.getElementById("pagina").value
+            let orderCol = document.getElementById("orderCol").value
+            let orderType = document.getElementById("orderType").value
+
+            if (pagina == null) {
+                pagina = 1
+            }
+
+            let url = "loads/solicitudes-cocina.php"
+            let formaData = new FormData()
+            formaData.append('campo', input)
+            formaData.append('registros', num_registros)
+            formaData.append('pagina', pagina)
+            formaData.append('orderCol', orderCol)
+            formaData.append('orderType', orderType)
+
+            fetch(url, {
+                    method: "POST",
+                    body: formaData
+                }).then(response => response.json())
+                .then(data => {
+                    content.innerHTML = data.data
+                    document.getElementById("lbl-total").innerHTML = 'Mostrando ' + data.totalFiltro +
+                        ' de ' + data.totalRegistros + ' registros'
+                    document.getElementById("nav-paginacion").innerHTML = data.paginacion
+                }).catch(err => console.log(err))
+        }
+
+        function nextPage(pagina){
+            document.getElementById('pagina').value = pagina
+            getData()
+        }
+
+        let columns = document.getElementsByClassName("sort")
+        let tamanio = columns.length
+        for(let i = 0; i < tamanio; i++){
+            columns[i].addEventListener("click", ordenar)
+        }
+
+        function ordenar(e){
+            let elemento = e.target
+
+            document.getElementById('orderCol').value = elemento.cellIndex
+
+            if(elemento.classList.contains("asc")){
+                document.getElementById("orderType").value = "asc"
+                elemento.classList.remove("asc")
+                elemento.classList.add("desc")
+            } else {
+                document.getElementById("orderType").value = "desc"
+                elemento.classList.remove("desc")
+                elemento.classList.add("asc")
+            }
+
+            getData()
+        }
+
+    </script>
+
+
+
+
+<?php require "footer.php";?> 

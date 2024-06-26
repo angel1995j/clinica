@@ -12,6 +12,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comprobante = "";
     $forma_pago = $_POST['forma_pago'];
 
+    // Inicializa la variable $total
+    $total = null;
+
+    // Verifica si el estatus es "pagado" y asigna el monto a la variable $total
+    if ($estatus == "Pagado") {
+        $total = $monto;
+    }
+
     // Recupera el id_usuario de la sesión actual
     $id_usuario = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : null;
 
@@ -34,11 +42,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $link = bases();
 
     // Prepara la consulta preparada
-    $sql_insert = "INSERT INTO pago_paciente (monto, comprobante, fecha_agregado, fecha_pagado, observaciones, estatus, archivado, id_paciente, id_usuario, forma_pago) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql_insert = "INSERT INTO pago_paciente (monto, comprobante, fecha_agregado, fecha_pagado, observaciones, estatus, archivado, id_paciente, id_usuario, forma_pago, total) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     if ($stmt = $link->prepare($sql_insert)) {
         // Vincula los parámetros
-        $stmt->bind_param("sssssssiis", $monto, $comprobante, $fecha_agregado, $fecha_pagado, $observaciones, $estatus, $archivado, $id_paciente, $id_usuario, $forma_pago);
+        $stmt->bind_param("sssssssiisd", $monto, $comprobante, $fecha_agregado, $fecha_pagado, $observaciones, $estatus, $archivado, $id_paciente, $id_usuario, $forma_pago, $total);
 
         // Ejecuta la consulta
         if ($stmt->execute()) {

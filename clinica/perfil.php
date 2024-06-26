@@ -123,7 +123,7 @@ $paciente = $resultado->fetch_assoc();
                 </div>
 
                 <div class="col-md-3 col-sm-4 mt-3">
-                  <a href="peticiones.php" class="btn btn-primary">Peticiones del paciente</a>
+                  <a href="peticion.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Peticiones del paciente</a>
                 </div>
 
                 <div class="col-md-3 col-sm-4 mt-3">
@@ -138,6 +138,13 @@ $paciente = $resultado->fetch_assoc();
                 <div class="col-md-3 col-sm-4 mt-3">
                   <a href="evolucion-paciente.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Evolución del paciente</a>
                 </div>
+
+
+                <div class="col-md-3 col-sm-4 mt-3">
+                 <a class="btn btn-primary" href="pdf/estado-de-cuenta.php?id_paciente=<?php echo $id_paciente;?>">
+                  Estado de cuenta
+                </a>
+              </div>
 
 
 

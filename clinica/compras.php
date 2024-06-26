@@ -7,17 +7,23 @@
     <div class="container-fluid py-4 mt-5">
       <div class="row mt-5">
 
-        <div class="col-6 mb-4">
+        <div class="col-8 mb-4">
 
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevaCompra">
             Añadir nueva compra
           </button>
           <a href="compras-por-pagar.php" class="btn btn-primary" style="margin-left: 2%;">Por pagar</a>
+
+          <!-- Botón para abrir el modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#comprasModal">
+                Filtrar Compras
+            </button>
+
           <a href="compras-inactivas.php" class="btn boton-secundario" style="margin-left: 2%;">Ver archivadas</a>
         </div>
 
 
-         <div class="col-6">
+         <div class="col-4">
             <!-- Boton de ayuda -->
            <button type="button" class="btn boton-ayuda" data-toggle="modal" data-target="#exampleModal">
             <i class="fa fa-question-circle" aria-hidden="true"></i>
@@ -47,75 +53,158 @@
 
 
          <!-- Modal -->
-      <!-- Modal -->
-      <div class="modal fade" id="nuevaCompra" tabindex="-1" aria-labelledby="nuevaCompraLabel" aria-hidden="true">
-          <div class="modal-dialog">
-              <div class="modal-content">
-                  <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar nueva compra</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                      <div class="container mt-5">
-                          <!-- Formulario Bootstrap -->
-                          <form action="inserts/compras.php" method="post" enctype="multipart/form-data">
-                            <div class="form-group row">
-                                <label for="concepto" class="col-sm-4 col-form-label">Concepto:</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="concepto" required>
-                                </div>
-                            </div>
 
-                            <div class="form-group row mt-3">
-                                <label for="quien_compra" class="col-sm-4 col-form-label">Quién Compra y con que cuenta:</label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="quien_compra" required>
-                                </div>
+         <!-- Modal -->
+<div class="modal fade" id="nuevaCompra" tabindex="-1" aria-labelledby="nuevaCompraLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="nuevaCompraLabel">Agregar nueva compra</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container mt-5">
+                    <!-- Formulario Bootstrap -->
+                    <form action="inserts/compras.php" method="post" enctype="multipart/form-data">
+                        <div class="form-group row">
+                            <label for="concepto" class="col-sm-4 col-form-label">Concepto:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="concepto" required>
                             </div>
+                        </div>
 
-                            <div class="form-group row mt-3">
-                                <label for="monto" class="col-sm-4 col-form-label">Monto:</label>
-                                <div class="col-sm-8">
-                                    <input type="number" step="0.01" class="form-control" name="monto" required>
-                                </div>
+                        <div class="form-group row mt-3">
+                            <label for="quien_compra" class="col-sm-4 col-form-label">Quién Compra:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="quien_compra" required>
                             </div>
+                        </div>
 
-                            <div class="form-group row mt-3">
-                                <label for="fecha_aplicacion" class="col-sm-4 col-form-label">Fecha de Aplicación:</label>
-                                <div class="col-sm-8">
-                                    <input type="date" class="form-control" name="fecha_aplicacion" required>
-                                </div>
+                        <div class="form-group row mt-3">
+                            <label for="cuenta_compra" class="col-sm-4 col-form-label">Cuenta de compra:</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" name="cuenta_compra" required>
+                                    <option value="Cuenta Lenin">Cuenta Lenin</option>
+                                    <option value="Cuenta Dante">Cuenta Dante</option>
+                                    <option value="Otra">Otra</option>
+                                </select>
                             </div>
+                        </div>
 
-                            <div class="form-group row mt-3">
-                                <label for="comprobante" class="col-sm-4 col-form-label">Comprobante (Imagen):</label>
-                                <div class="col-sm-8">
-                                    <input type="file" class="form-control" name="comprobante" accept="image/*" required>
-                                </div>
+                        <div class="form-group row mt-3">
+                            <label for="tipo_compra" class="col-sm-4 col-form-label">Tipo de Compra:</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" name="tipo_compra" required>
+                                    <option value="Despensa">Despensa</option>
+                                    <option value="Gastos generales">Gastos generales</option>
+                                    <option value="Mantenimiento">Mantenimiento</option>
+                                    <option value="Tiendita">Tiendita</option>
+                                    <option value="Gastos operativos">Gastos operativos</option>
+                                    <option value="Viaticos">Viaticos</option>
+                                    <option value="Medicamento general">Medicamento general</option>
+                                    <option value="otras compras">Otras compras</option>
+                                </select>
                             </div>
+                        </div>
 
-                            <div class="form-group row mt-3">
-                                <label for="estatus" class="col-sm-4 col-form-label">Estatus:</label>
-                                <div class="col-sm-8">
-                                    <select class="form-control" name="estatus" required>
-                                        <option value="Pagada">Pagada</option>
-                                        <option value="No Pagada">No Pagada</option>
-                                    </select>
-                                </div>
+                        <div class="form-group row mt-3">
+                            <label for="monto" class="col-sm-4 col-form-label">Monto:</label>
+                            <div class="col-sm-8">
+                                <input type="number" step="0.01" class="form-control" name="monto" required>
                             </div>
+                        </div>
 
-                            <div class="form-group row mt-3">
-                                <div class="col-sm-12">
-                                    <button type="submit" class="btn btn-primary">Agregar</button>
-                                </div>
+                        <div class="form-group row mt-3">
+                            <label for="fecha_aplicacion" class="col-sm-4 col-form-label">Fecha de Aplicación:</label>
+                            <div class="col-sm-8">
+                                <input type="date" class="form-control" name="fecha_aplicacion" required>
                             </div>
-                        </form>
+                        </div>
 
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+                        <div class="form-group row mt-3">
+                            <label for="comprobante" class="col-sm-4 col-form-label">Comprobante (Imagen):</label>
+                            <div class="col-sm-8">
+                                <input type="file" class="form-control" name="comprobante" accept="image/*" >
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-3">
+                            <label for="estatus" class="col-sm-4 col-form-label">Estatus:</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" name="estatus" required>
+                                    <option value="Pagada">Pagada</option>
+                                    <option value="No Pagada">No Pagada</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-3">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary">Agregar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- END MODAL -->
+
+
+<!-- MODAL DE FILTRADO -->
+
+<!-- Modal -->
+<div class="modal fade" id="comprasModal" tabindex="-1" role="dialog" aria-labelledby="comprasModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="comprasModalLabel">Filtrar Compras</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="compras-individual.php" method="POST">
+                    <div class="form-group">
+                        <label for="fecha_inicio">Fecha Inicio:</label>
+                        <input type="date" id="fecha_inicio" name="fecha_inicio" class="form-control">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="fecha_fin">Fecha Fin:</label>
+                        <input type="date" id="fecha_fin" name="fecha_fin" class="form-control">
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="tipo_compra">Tipo de Compra:</label>
+                        <select id="tipo_compra" name="tipo_compra" class="form-control">
+                            <option value="Todas">Todas</option>
+                            <option value="Despensa">Despensa</option>
+                            <option value="Gastos generales">Gastos generales</option>
+                            <option value="Mantenimiento">Mantenimiento</option>
+                            <option value="Tiendita">Tiendita</option>
+                            <option value="Gastos operativos">Gastos operativos</option>
+                            <option value="Viaticos">Viaticos</option>
+                            <option value="Medicamento general">Medicamento general</option>
+                            <option value="otras compras">Otras compras</option>
+                        </select>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="estatus">Estatus:</label>
+                        <select id="estatus" name="estatus" class="form-control">
+                            <option value="Pagada">Pagada</option>
+                            <option value="No Pagada">No Pagada</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DE FILTRADO -->
 
 
 

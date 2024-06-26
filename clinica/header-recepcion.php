@@ -62,27 +62,41 @@ $nombre_usuario_logueado = isset($_SESSION['nombre_usuario']) ? $_SESSION['nombr
             </li>
             
             <li class="sidebar-item">
-              <a class="sidebar-link" href="pacientes.php" aria-expanded="false">
+              <a class="sidebar-link" href="peticiones.php" aria-expanded="false">
                 <span>
                   <i class="ti ti-id-badge"></i>
                 </span>
-                <span class="hide-menu">Listado de Pacientes</span>
+                <span class="hide-menu">Listado de Peticiones</span>
               </a>
             </li>
 
 
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">CLINICA</span>
+            </li>
+            
             <li class="sidebar-item">
-              <a class="sidebar-link" href="pagos.php" aria-expanded="false">
+              <a class="sidebar-link" href="compras-recepcion.php" aria-expanded="false">
                 <span>
-                  <i class="ti ti-alert-circle"></i>
+                  <i class="ti ti-id-badge"></i>
                 </span>
-                <span class="hide-menu">Seguimiento a Pagos</span>
+                <span class="hide-menu">Compras</span>
               </a>
             </li>
 
 
-            
-            
+             <li class="sidebar-item">
+              <a class="sidebar-link" href="medicina-recepcion.php" aria-expanded="false">
+                <span>
+                  <i class="ti ti-id-badge"></i>
+                </span>
+                <span class="hide-menu">Medicamento</span>
+              </a>
+            </li>
+
+
+                 
 
 
             <li class="nav-small-cap">

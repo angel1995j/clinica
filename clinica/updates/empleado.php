@@ -14,11 +14,11 @@ $numero_telefono = $_POST['numero_telefono'];
 $fecha_ingreso = $_POST['fecha_ingreso'];
 $fecha_salida = isset($_POST['fecha_salida']) ? $_POST['fecha_salida'] : '';
 $puesto = $_POST['puesto'];
-$salario_bruto = $_POST['salario_bruto'];
 $salario_neto = $_POST['salario_neto'];
 $otros_conceptos = $_POST['otros_conceptos'];
 $monto_otros_conceptos = $_POST['monto_otros_conceptos'];
 $archivado = $_POST['archivado'];
+$contactos = $_POST['contactos'];
 
 // Actualiza los datos en la tabla
 $sql_update = "UPDATE empleados SET 
@@ -29,16 +29,16 @@ $sql_update = "UPDATE empleados SET
                fecha_ingreso = ?,
                fecha_salida = ?,
                puesto = ?,
-               salario_bruto = ?,
                salario_neto = ?,
                otros_conceptos = ?,
                monto_otros_conceptos = ?,
-               archivado = ?
+               archivado = ?,
+               contactos = ?
                WHERE id_empleado = ?";
 
 if ($stmt = $link->prepare($sql_update)) {
     // Vincula los parámetros
-    $stmt->bind_param("ssssssssdsssi", $nombre, $aPaterno, $aMaterno, $numero_telefono, $fecha_ingreso, $fecha_salida, $puesto, $salario_bruto, $salario_neto, $otros_conceptos, $monto_otros_conceptos, $archivado, $id_empleado);
+    $stmt->bind_param("ssssssssdsssi", $nombre, $aPaterno, $aMaterno, $numero_telefono, $fecha_ingreso, $fecha_salida, $puesto, $salario_neto, $otros_conceptos, $monto_otros_conceptos, $archivado, $contactos, $id_empleado);
 
     // Ejecuta la consulta
     if ($stmt->execute()) {

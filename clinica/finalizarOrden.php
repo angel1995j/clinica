@@ -10,8 +10,6 @@ $resultPacientes = $link->query($sqlPacientes);
 
 ?>
 
-
-
 <div class="container-fluid py-4 mt-5">
     <div class="row mt-5">
         <div class="col-12">
@@ -26,11 +24,10 @@ $resultPacientes = $link->query($sqlPacientes);
                         $id_orden = $_GET['id_orden'];
                         $total = $_GET['total'];
 
-                        echo "<h1><strong>Se ha completado la orden con éxito, número de orden:</strong> $id_orden</p>";
-                        echo "<h3><strong>Total de la compra del usuario:</strong> $total</h3>";
-                        echo "<a href='pacientes.php' class='text-center btn btn-primary'>Volver a los pacientes</a>";
-
-                        }
+                        echo "<h1><strong>Se ha completado la orden con éxito, número de orden:</strong> $id_orden</h1>";
+                        echo "<h3><strong>Total de la compra del usuario: </strong>$$total</h3>";
+                        echo "<a href='tiendita_paciente.php?id_paciente=8' class='text-center btn btn-primary'>Volver a tiendita paciente</a>";
+                    }
                     ?>
                 </div>
             </div>

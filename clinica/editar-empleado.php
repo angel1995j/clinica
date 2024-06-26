@@ -13,28 +13,14 @@ if (!$id_empleado) {
 }
 
 // Recupera los datos del empleado de la base de datos
-$sql_select = "SELECT * FROM empleados WHERE id_empleado = ?";
+$sql_select = "SELECT nombre, aPaterno, aMaterno, numero_telefono, fecha_ingreso, fecha_salida, puesto, salario_neto, otros_conceptos, monto_otros_conceptos, archivado, contactos FROM empleados WHERE id_empleado = ?";
 if ($stmt = $link->prepare($sql_select)) {
     $stmt->bind_param("i", $id_empleado);
     $stmt->execute();
-    $result = $stmt->get_result();
+    $stmt->bind_result($nombre, $aPaterno, $aMaterno, $numero_telefono, $fecha_ingreso, $fecha_salida, $puesto, $salario_neto, $otros_conceptos, $monto_otros_conceptos, $archivado, $contactos);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        // Recupera los datos necesarios
-        $nombre = $row['nombre'];
-        $aPaterno = $row['aPaterno'];
-        $aMaterno = $row['aMaterno'];
-        $numero_telefono = $row['numero_telefono'];
-        $fecha_ingreso = $row['fecha_ingreso'];
-        $fecha_salida = $row['fecha_salida'];
-        $puesto = $row['puesto'];
-        $salario_bruto = $row['salario_bruto'];
-        $salario_neto = $row['salario_neto'];
-        $otros_conceptos = $row['otros_conceptos'];
-        $monto_otros_conceptos = $row['monto_otros_conceptos'];
-        $archivado = $row['archivado'];
-        // Recupera los demás campos según tu estructura
+    if ($stmt->fetch()) {
+        // Continuar con la lógica
     } else {
         die('No se encontró el empleado con ID ' . $id_empleado);
     }
@@ -48,11 +34,13 @@ if ($stmt = $link->prepare($sql_select)) {
 require('header.php');
 ?>
 
+<div class="container-fluid py-4 mt-5">
+    <div class="row mt-5">
+        <a href="quincena-empleado.php?id_empleado=<?php echo $id_empleado; ?>" class="text-secondary mt-3"><i class="fa fa-undo" aria-hidden="true"></i>
+             Volver al empleado</a>
 
- <div class="container-fluid py-4 mt-5">
-      <div class="row mt-5">
         <h3 class="mt-3">Editar datos del empleado <?php echo $nombre; ?></h3>
-<!-- Formulario de Edición -->
+        <!-- Formulario de Edición -->
         <form action="updates/empleado.php" method="post" enctype="multipart/form-data">
             <!-- Campo de ID (oculto) -->
             <input type="hidden" name="id_empleado" value="<?php echo $id_empleado; ?>">
@@ -115,8 +103,8 @@ require('header.php');
 
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="salario_bruto">Salario Bruto:</label>
-                        <input type="number" step="0.01" class="form-control" name="salario_bruto" value="<?php echo $salario_bruto; ?>" required>
+                        <label for="salario_neto">Salario Neto:</label>
+                        <input type="number" step="0.01" class="form-control" name="salario_neto" value="<?php echo $salario_neto; ?>" required>
                     </div>
                 </div>
             </div>
@@ -124,15 +112,15 @@ require('header.php');
             <div class="row mt-3">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="salario_neto">Salario Neto:</label>
-                        <input type="number" step="0.01" class="form-control" name="salario_neto" value="<?php echo $salario_neto; ?>" required>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
                         <label for="otros_conceptos">Otros Conceptos:</label>
                         <textarea class="form-control" name="otros_conceptos" rows="4"><?php echo $otros_conceptos; ?></textarea>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="contactos">Contactos:</label>
+                        <textarea class="form-control" name="contactos" rows="4"><?php echo $contactos; ?></textarea>
                     </div>
                 </div>
             </div>
@@ -162,12 +150,10 @@ require('header.php');
                 </div>
             </div>
         </form>
-
-
-
+    </div>
 </div>
 
-</div>
 <?php
-// Incluye aquí tu pie de página común
+// Incluye el archivo footer.php
+require('footer.php');
 ?>

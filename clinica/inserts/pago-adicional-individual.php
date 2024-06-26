@@ -11,18 +11,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_paciente = $_GET['id_paciente'];
     $comprobante = "";
     $forma_pago = $_POST['forma_pago'];
+    $nota = $_POST['nota'];
+    $total = $monto; // Asigna el valor de monto a total
 
     // Recupera el id_usuario de la sesión actual
     $id_usuario = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : null;
 
     // Procesa la imagen
-    if(isset($_FILES['comprobante']) && $_FILES['comprobante']['error'] === UPLOAD_ERR_OK) {
+    if (isset($_FILES['comprobante']) && $_FILES['comprobante']['error'] === UPLOAD_ERR_OK) {
         $nombre_imagen = $_FILES['comprobante']['name'];
         $ruta_temporal = $_FILES['comprobante']['tmp_name'];
         $ruta_destino = '../assets/docs/comprobantes/' . $nombre_imagen; // Ruta donde deseas guardar la imagen en tu servidor
 
         // Mueve la imagen a la carpeta de destino
-        if(move_uploaded_file($ruta_temporal, $ruta_destino)) {
+        if (move_uploaded_file($ruta_temporal, $ruta_destino)) {
             $comprobante = $nombre_imagen; // Guarda el nombre de la imagen en la base de datos
         } else {
             echo "Error al mover el archivo de imagen.";
@@ -34,11 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $link = bases();
 
     // Prepara la consulta preparada
-    $sql_insert = "INSERT INTO pago_paciente (monto, comprobante, fecha_agregado, fecha_pagado, observaciones, estatus, archivado, id_paciente, id_usuario, forma_pago) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql_insert = "INSERT INTO pago_paciente (monto, comprobante, fecha_agregado, fecha_pagado, observaciones, estatus, archivado, id_paciente, id_usuario, forma_pago, nota, total) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
     if ($stmt = $link->prepare($sql_insert)) {
         // Vincula los parámetros
-        $stmt->bind_param("sssssssiis", $monto, $comprobante, $fecha_agregado, $fecha_pagado, $observaciones, $estatus, $archivado, $id_paciente, $id_usuario, $forma_pago);
+        $stmt->bind_param("sssssssiisss", $monto, $comprobante, $fecha_agregado, $fecha_pagado, $observaciones, $estatus, $archivado, $id_paciente, $id_usuario, $forma_pago, $nota, $total);
 
         // Ejecuta la consulta
         if ($stmt->execute()) {

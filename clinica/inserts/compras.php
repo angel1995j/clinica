@@ -25,6 +25,12 @@ $archivado = "no";
 // Recupera el valor del campo 'estatus' desde el formulario
 $estatus = $_POST['estatus'];
 
+// Recupera el valor del campo 'cuenta_compra' desde el formulario
+$cuenta_compra = $_POST['cuenta_compra'];
+
+// Recupera el valor del campo 'tipo_compra' desde el formulario
+$tipo_compra = $_POST['tipo_compra'];
+
 // Obtiene el id_usuario de la sesión actual
 $id_usuario = $_SESSION['id_usuario'];
 
@@ -35,9 +41,9 @@ if(move_uploaded_file($ruta_temporal, $ruta_destino)) {
     echo "Error al subir el comprobante.";
 }
 
-$sql = "INSERT INTO compras (concepto, quien_compra, monto, fecha_aplicacion, comprobante, estatus, archivado, id_usuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO compras (concepto, quien_compra, monto, fecha_aplicacion, comprobante, estatus, archivado, cuenta_compra, tipo_compra, id_usuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $link->prepare($sql);
-$stmt->bind_param("ssdssssi", $concepto, $quien_compra, $monto, $fecha_aplicacion, $comprobante, $estatus, $archivado, $id_usuario);
+$stmt->bind_param("ssdssssssi", $concepto, $quien_compra, $monto, $fecha_aplicacion, $comprobante, $estatus, $archivado, $cuenta_compra, $tipo_compra, $id_usuario);
 
 if ($stmt->execute()) {
     echo "Compra registrada correctamente.";

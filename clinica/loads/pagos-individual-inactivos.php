@@ -11,8 +11,11 @@ $table = "pago_paciente";
 // Obtener el id_paciente de la URL
 $id_paciente = isset($_POST['id_paciente']) ? $link->real_escape_string($_POST['id_paciente']) : null;
 
-/* Filtrado */
-$where = ($id_paciente !== null) ? "id_paciente = '$id_paciente' AND estatus = 'Pagado'" : 'estatus = "Pagado"';
+/*WHERE*/
+$where = ($id_paciente !== null) 
+    ? "id_paciente = '$id_paciente' AND estatus = 'Pagado' AND archivado = 'no' AND observaciones != 'Consumo en tiendita'" 
+    : "estatus = 'Pagado' AND archivado = 'no' AND observaciones != 'Consumo en tiendita'";
+
 
 /* Limit */
 $limit = isset($_POST['registros']) ? $link->real_escape_string($_POST['registros']) : 10;
@@ -55,7 +58,7 @@ $row_filtro = $resFiltro->fetch_array();
 $totalFiltro = $row_filtro[0];
 
 /* Consulta para total de registro filtrados */
-$sqlTotal = "SELECT COUNT(id_pago) FROM $table WHERE estatus = 'Pagado'";
+$sqlTotal = "SELECT COUNT(id_pago) FROM $table WHERE estatus = 'Pagado' AND observaciones != 'Consumo en tiendita'";
 $resTotal = $link->query($sqlTotal);
 $row_total = $resTotal->fetch_array();
 $totalRegistros = $row_total[0];
@@ -76,6 +79,7 @@ if ($num_rows > 0) {
         $output['data'] .= '<td class="text-center">' . $row['fecha_pagado'] . '</td>';
         $output['data'] .= '<td class="text-center">' . $row['monto'] . '</td>';
         $output['data'] .= '<td class="text-center">' . $row['descuento'] . '</td>';
+        $output['data'] .= '<td class="text-center"><a class="btn boton-secundario" href="updates/archivar-pago.php?id_pago=' . $row['id_pago'] . '&id_paciente=' . $id_paciente . '">Archivar pago</a></td>';
         $output['data'] .= '</tr>';
     }
 } else {

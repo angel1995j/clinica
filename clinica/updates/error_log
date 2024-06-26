@@ -71,3 +71,12 @@ Stack trace:
   thrown in /home/hoysicom/public_html/clinica/updates/comision.php on line 2
 [24-Jan-2024 19:43:35 UTC] PHP Warning:  Undefined array key "id_solicitud" in /home/tecolot1/public_html/clinica/updates/archivar-solicitud.php on line 6
 [25-Feb-2024 23:57:57 UTC] PHP Warning:  Undefined array key "id_empleado" in /home/tecolot1/public_html/clinica/updates/activar-pacientes.php on line 6
+[07-May-2024 19:52:13 UTC] PHP Warning:  Undefined array key "id_paciente" in /home/tecolot1/public_html/clinica/updates/archivar-pago.php on line 8
+[31-May-2024 21:14:54 UTC] PHP Warning:  Undefined variable $id_pago in /home/tecolot1/public_html/clinica/updates/archivar-saldo.php on line 14
+[31-May-2024 21:15:44 UTC] PHP Warning:  Undefined variable $id_pago in /home/tecolot1/public_html/clinica/updates/archivar-saldo.php on line 14
+[21-Jun-2024 23:51:26 UTC] PHP Warning:  Undefined array key "observaciones" in /home/tecolot1/public_html/clinica/updates/pago.php on line 15
+[22-Jun-2024 18:15:41 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/tecolot1/public_html/clinica/updates/empleado.php:41
+Stack trace:
+#0 /home/tecolot1/public_html/clinica/updates/empleado.php(41): mysqli_stmt->bind_param()
+#1 {main}
+  thrown in /home/tecolot1/public_html/clinica/updates/empleado.php on line 41

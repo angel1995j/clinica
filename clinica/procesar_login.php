@@ -28,6 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 case 'SuperAdministrador':
                     header("Location: index.php");
                     break;
+
+                case 'Administracion':
+                    header("Location: index.php");
+                    break;
+                        
                 case 'Cocina':
                     header("Location: index_cocina.php");
                     break;

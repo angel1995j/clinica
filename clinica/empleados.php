@@ -103,16 +103,24 @@
                   <div class="form-group row mt-3">
                       <label for="puesto" class="col-sm-4 col-form-label">Puesto:</label>
                       <div class="col-sm-8">
-                          <input type="text" class="form-control" name="puesto">
+                          <select class="form-control" name="puesto">
+                              <option value="psicologia">Psicología</option>
+                              <option value="padrinos">Padrinos</option>
+                              <option value="administrativo">Administrativo</option>
+                              <option value="recepcion">Recepción</option>
+                              <option value="cocina">Cocina</option>
+                              <option value="otros">Otros</option>
+                          </select>
                       </div>
                   </div>
 
-                  <div class="form-group row mt-3">
+
+                  <!--<div class="form-group row mt-3">
                       <label for="salario_bruto" class="col-sm-4 col-form-label">Salario Bruto:</label>
                       <div class="col-sm-8">
                           <input type="number" step="0.01" class="form-control" name="salario_bruto" required>
                       </div>
-                  </div>
+                  </div>-->
 
                   <div class="form-group row mt-3">
                       <label for="salario_neto" class="col-sm-4 col-form-label">Salario Neto:</label>
@@ -132,6 +140,14 @@
                       <label for="monto_otros_conceptos" class="col-sm-4 col-form-label">Monto Otros Conceptos:</label>
                       <div class="col-sm-8">
                           <input type="number" step="0.01" class="form-control" name="monto_otros_conceptos">
+                      </div>
+                  </div>
+
+
+                  <div class="form-group row mt-3">
+                      <label for="contactos" class="col-sm-4 col-form-label">Contactos de emergencia:</label>
+                      <div class="col-sm-8">
+                          <textarea class="form-control" name="contactos" rows="4"></textarea>
                       </div>
                   </div>
 

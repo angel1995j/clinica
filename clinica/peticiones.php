@@ -1,375 +1,245 @@
 <?php
-require "header.php";
-require "global.php";
-$link = bases();
+require('global.php');
+
+// Verificar si el usuario está logueado y tiene un rol asignado
+session_start();
+if (isset($_SESSION['rol'])) {
+    $user_role = $_SESSION['rol'];
+} else {
+    // Redirigir al login si no hay usuario logueado o rol asignado
+    header("Location: login.php");
+    exit();
+}
+
+// Incluir el encabezado según el rol del usuario
+if ($user_role == 'SuperAdministrador') {
+    require "header.php";
+} else {
+    require "header-recepcion.php";
+}
 ?>
 
+<!--SECCION GENERAL -->
 
-      <!--SECCION GENERAL -->
+<div class="container-fluid py-4 mt-5">
+  <div class="row mt-5">
 
-    <!-- End Navbar -->
+    <div class="col-6 d-flex mb-4">
+      <!--<a href="nuevo-paciente.php" class="btn btn-primary">Añadir nuevo paciente</a>
+      <a href="pacientes-archivados.php" class="btn boton-secundario">Ver Archivados</a>-->
+    </div>
 
-    <div class="container-fluid py-4 mt-5">
-        
+    <div class="col-6">
+        <!-- Boton de ayuda -->
+       <button type="button" class="btn boton-ayuda" data-toggle="modal" data-target="#exampleModal">
+        <i class="fa fa-question-circle" aria-hidden="true"></i>
+      </button>
 
-        
-
-
-
-          <div class="card mb-4 px-3 mt-5">
-            
-            
-            <!--- INICIA CONTENIDO DE TABLA -->
-
-            <div class="card-body px-0 pt-0 pb-4 pt-3">
-            <a href="perfil.php" class="text-secondary mt-3"><i class="fa fa-undo" aria-hidden="true"></i>
-             Volver a paciente</a>
-
-
-             <div class="col-12 mb-4" style="text-align: right;">
-              <a href="" class="btn btn-primary">Nueva solicitud</a>
-           </div>
-              
-
-            <div class="container">
-            <h2 class="mt-5 text-center"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-            Paciente: Juan Lopez</h2>
-
-            
-            <nav>
-          <div class="nav nav-tabs mt-3" id="nav-tab" role="tablist">
-            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Activas</button>
-            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Solicitudes resueltas</button>
-          </div>
-          </nav>
-
-
-          <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            
-            <!--- INICIA CONTENIDO DE TABLA -->
-
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-xxs font-weight-bolder opacity-7">TIPO DE PETICION</th>
-                      <th class="text-uppercase text-xxs font-weight-bolder opacity-7 ps-2">Nota petición</th>
-                      <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7">Fecha </th>
-
-                      <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7">Accciones</th>
-
-                      <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7"></th>
-                      <th class="text-secondary opacity-7"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                   
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                            <h6 class="mb-0 text-sm">Ropa</h6>
-                        </div>
-                      </td>
-                      
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-xs font-weight-bold">Usuario refiere necesitar sudaderas</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">10/25/2023</span>
-                      </td>
-
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-secondary text-xs font-weight-bold"><a href="perfil.html">Resolver</a></span>
-                      </td>
-
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><a href="perfil.html">Archivar</a></span>
-                      </td>
-                      
-
-                    </tr>
-
-
-
-
-                     <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                            <h6 class="mb-0 text-sm">Calzado</h6>
-                        </div>
-                      </td>
-                      
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-xs font-weight-bold">Usuario refiere necesitar calzado</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">10/35/2023</span>
-                      </td>
-
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-secondary text-xs font-weight-bold"><a href="perfil.html">Resolver</a></span>
-                      </td>
-
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><a href="perfil.html">Archivar</a></span>
-                      </td>
-                      
-
-                    </tr>
-
-
-                  
-
-
-                  </tbody>
-                </table>
-              </div>
+      <!-- Modal de ayuda-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Sección Pacientes</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            <!-- CIERRA CONTENIDO DE TABLA -->
-          </div>
+            <div class="modal-body">
+             En esta sección podemos visualizar la lista completa de pacientes, contamos con un formulario de búsqueda para encontrar pacientes más rápidamente, contamos además con varias opciones:<br><br>
+             <b>Ver documentos: </b>En esta sección podemos revisar todos los contratos iniciales del paciente<br><br>
+             <b>Ver perfíl: </b>En esta sección podemos visualizar toda la información del paciente: pagos, tiendita, historia clinica, agenda, peticiones, editar sus datos generales, enlace del familiar y evolución del paciente<br><br>
+             <b>Archivar paciente: </b>Desde esta sección podemos enviar a archivado a un paciente para "eliminarlo temporalmente"
 
-
-
-
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            
-            <!--- INICIA CONTENIDO DE TABLA -->
-              
-            <div class="card-body px-0 pt-0 pb-2">
-              <div class="table-responsive p-0">
-                <table class="table align-items-center mb-0">
-                  <thead>
-                    <tr>
-                      <th class="text-uppercase text-xxs font-weight-bolder opacity-7">Paciente</th>
-                      <th class="text-uppercase text-xxs font-weight-bolder opacity-7 ps-2">Fecha Ingreso</th>
-                      <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7">Fecha Salida</th>
-
-                      <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7">Accciones</th>
-
-                      <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7"></th>
-                      <th class="text-secondary opacity-7"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                   
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <i class="fa fa-user me-3"></i>
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Juan Lopez</h6>
-                            <p class="text-xs mb-0">4433627874</p>
-                          </div>
-                        </div>
-                      </td>
-                      
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-xs font-weight-bold">11/10/2023</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">11/10/2023</span>
-                      </td>
-
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-secondary text-xs font-weight-bold">Ver Contrato</span>
-                      </td>
-
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><a href="perfil.html">Ver perfil</a></span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Archivar
-                        </a>
-                      </td>
-                    </tr>
-
-
-                  <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <i class="fa fa-user me-3"></i>
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Juan Lopez</h6>
-                            <p class="text-xs mb-0">4433627874</p>
-                          </div>
-                        </div>
-                      </td>
-                      
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-xs font-weight-bold">11/10/2023</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">11/10/2023</span>
-                      </td>
-
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-secondary text-xs font-weight-bold">Ver Contrato</span>
-                      </td>
-
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><a href="perfil.html">Ver perfil</a></span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Archivar
-                        </a>
-                      </td>
-                    </tr>
-
-
-
-
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <i class="fa fa-user me-3"></i>
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Juan Lopez</h6>
-                            <p class="text-xs mb-0">4433627874</p>
-                          </div>
-                        </div>
-                      </td>
-                      
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-xs font-weight-bold">11/10/2023</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">11/10/2023</span>
-                      </td>
-
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-secondary text-xs font-weight-bold">Ver Contrato</span>
-                      </td>
-
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><a href="perfil.html">Ver perfil</a></span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Archivar
-                        </a>
-                      </td>
-                    </tr>
-
-
-
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <i class="fa fa-user me-3"></i>
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Juan Lopez</h6>
-                            <p class="text-xs mb-0">4433627874</p>
-                          </div>
-                        </div>
-                      </td>
-                      
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-xs font-weight-bold">11/10/2023</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">11/10/2023</span>
-                      </td>
-
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-secondary text-xs font-weight-bold">Ver Contrato</span>
-                      </td>
-
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><a href="perfil.html">Ver perfil</a></span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Archivar
-                        </a>
-                      </td>
-                    </tr>
-
-
-
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          <div>
-                            <i class="fa fa-user me-3"></i>
-                          </div>
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Juan Lopez</h6>
-                            <p class="text-xs mb-0">4433627874</p>
-                          </div>
-                        </div>
-                      </td>
-                      
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-xs font-weight-bold">11/10/2023</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">11/10/2023</span>
-                      </td>
-
-                      <td class="align-middle text-center text-sm">
-                       <span class="text-secondary text-xs font-weight-bold">Ver Contrato</span>
-                      </td>
-
-                      <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><a href="perfil.html">Ver perfil</a></span>
-                      </td>
-                      <td class="align-middle">
-                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Archivar
-                        </a>
-                      </td>
-                    </tr>
-
-
-                  </tbody>
-                </table>
-              </div>
             </div>
-            <!-- CIERRA CONTENIDO DE TABLA -->
-
-
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="row">
+
+            <div class="col-4 d-flex">
+                <label for="num_registros" class="col-form-label">Mostrar: </label>
+            
+                <select name="num_registros" id="num_registros" class="form-select">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
           
+                <label for="num_registros" class="col-form-label">registros </label>
+            </div>
+
+          <div class="col-4"></div>
+
+            <div class="col-4 d-flex">
+                <label for="campo" class="col-form-label">Buscar:&nbsp;&nbsp;</label>
+           
+                <input type="text" name="campo" id="campo" class="form-control">
+            </div>
         </div>
 
 
 
 
-          
+    <div class="col-12 mt-3">
+      <div class="card mb-4 px-3">
+        <div class="card-header pb-0">
+          <h6>Todos los Pacientes</h6>
+        </div>
 
 
-            
+
+   
+
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        
+        <!--- INICIA CONTENIDO DE TABLA -->
+
+        <div class="card-body px-0 pt-0 pb-2">
+          <div class="table-responsive p-0">
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-uppercase text-xxs font-weight-bolder opacity-7">Paciente</th>
+                  <th class="text-uppercase text-xxs font-weight-bolder opacity-7 ps-2">Fecha Siguiente pago</th>
+
+                  <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7">Accciones</th>
+                  <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7">Accciones</th>
+                  <th class="text-secondary opacity-7"></th>
+                </tr>
+              </thead>
+
+              <tbody id="content">
+
+               </tbody>
+
               
+            </table>
+          </div>
 
+
+          <div class="row">
+            <div class="col-6 text-left">
+                <label id="lbl-total"></label>
             </div>
 
+            <div class="col-6" id="nav-paginacion"></div>
+
+            <input type="hidden" id="pagina" value="1">
+            <input type="hidden" id="orderCol" value="0">
+            <input type="hidden" id="orderType" value="asc">
+           </div>
+
+        </div>
+        <!-- CIERRA CONTENIDO DE TABLA -->
+      </div>
 
 
 
-            </div>          
-          
+      
+    </div>
+
+
+
+
+
+
+
+      </div>
+    </div>
+
+    
+
+  </div>
  
 
+</div>
+<!-- SECCION GENERAL -->
 
 
+ <script>
+    /* Llamando a la función getData() */
+    getData()
+
+    /* Escuchar un evento keyup en el campo de entrada y luego llamar a la función getData. */
+    document.getElementById("campo").addEventListener("keyup", function() {
+        getData()
+    }, false)
+    document.getElementById("num_registros").addEventListener("change", function() {
+        getData()
+    }, false)
 
 
+    /* Peticion AJAX */
+    function getData() {
+        let input = document.getElementById("campo").value
+        let num_registros = document.getElementById("num_registros").value
+        let content = document.getElementById("content")
+        let pagina = document.getElementById("pagina").value
+        let orderCol = document.getElementById("orderCol").value
+        let orderType = document.getElementById("orderType").value
 
+        if (pagina == null) {
+            pagina = 1
+        }
 
-          </div>
-       
-<?php
-require "footer.php";
-?>
+        let url = "loads/peticiones.php"
+        let formaData = new FormData()
+        formaData.append('campo', input)
+        formaData.append('registros', num_registros)
+        formaData.append('pagina', pagina)
+        formaData.append('orderCol', orderCol)
+        formaData.append('orderType', orderType)
+
+        fetch(url, {
+                method: "POST",
+                body: formaData
+            }).then(response => response.json())
+            .then(data => {
+                content.innerHTML = data.data
+                document.getElementById("lbl-total").innerHTML = 'Mostrando ' + data.totalFiltro +
+                    ' de ' + data.totalRegistros + ' registros'
+                document.getElementById("nav-paginacion").innerHTML = data.paginacion
+            }).catch(err => console.log(err))
+    }
+
+    function nextPage(pagina){
+        document.getElementById('pagina').value = pagina
+        getData()
+    }
+
+    let columns = document.getElementsByClassName("sort")
+    let tamanio = columns.length
+    for(let i = 0; i < tamanio; i++){
+        columns[i].addEventListener("click", ordenar)
+    }
+
+    function ordenar(e){
+        let elemento = e.target
+
+        document.getElementById('orderCol').value = elemento.cellIndex
+
+        if(elemento.classList.contains("asc")){
+            document.getElementById("orderType").value = "asc"
+            elemento.classList.remove("asc")
+            elemento.classList.add("desc")
+        } else {
+            document.getElementById("orderType").value = "desc"
+            elemento.classList.remove("desc")
+            elemento.classList.add("asc")
+        }
+
+        getData()
+    }
+
+</script>
+
+<?php require "footer.php";?>

@@ -38,6 +38,8 @@ $pago = $resultado_pago->fetch_assoc();
                                 <p><strong>Monto:</strong> <?php echo $pago['monto']; ?></p>
                                 <p><strong>Concepto:</strong> <?php echo $pago['concepto']; ?></p>
                                 <p><strong>Quién Compra:</strong> <?php echo $pago['quien_compra']; ?></p>
+                                <p><strong>Cuenta de Compra:</strong> <?php echo $pago['cuenta_compra']; ?></p>
+                                <p><strong>Tipo de Compra:</strong> <?php echo $pago['tipo_compra']; ?></p>
                                 <p><strong>Fecha de Aplicación:</strong> <?php echo $pago['fecha_aplicacion']; ?></p>
                                 <p><strong>Comprobante:</strong> <?php echo $pago['comprobante']; ?></p>
                                 <p><strong>Archivado:</strong> <?php echo $pago['archivado']; ?></p>

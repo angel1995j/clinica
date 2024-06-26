@@ -105,7 +105,6 @@ if ($num_rows > 0) {
     $total = isset($row['monto']) ? $row['monto'] : 'Total no disponible';
     $output['data'] .= $total;
     $output['data'] .= '</td>';
-
     // Resto del código...
 }
 

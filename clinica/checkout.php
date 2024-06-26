@@ -1,38 +1,43 @@
 <?php
 session_start();
 
-// Lógica para agregar productos al carrito
-if (!isset($_SESSION["items_carrito"])) {
-    $_SESSION["items_carrito"] = array();  // Inicializa la variable de sesión como un array vacío si no está definida
-}
-
-// Recuperar los datos del formulario en checkout.php
+// Verificar si la solicitud es GET para procesar los datos del carrito desde checkout.php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $vai_nom = $_GET["vai_nom"];
-    $vai_cod = $_GET["vai_cod"];
-    $txtcantidad = $_GET["txtcantidad"];
-    $vai_pre = $_GET["vai_pre"];
-    $item_price = $_GET["item_price"];
-    $totcantidad = $_GET["totcantidad"];
-    $totprecio = $_GET["totprecio"];
+    // Verificar que todos los datos necesarios estén presentes en la solicitud GET
+    if (!isset($_GET["vai_nom"]) || !isset($_GET["vai_cod"]) || !isset($_GET["txtcantidad"]) || !isset($_GET["vai_pre"]) || !isset($_GET["totprecio"]) || !isset($_GET["id_paciente"])) {
+        die('Faltan parámetros necesarios para procesar la orden.');
+    }
 
     // Obtener id_paciente de la URL
-    $id_paciente = isset($_GET["id_paciente"]) ? intval($_GET["id_paciente"]) : 0;
+    $id_paciente = intval($_GET["id_paciente"]);
 
     if ($id_paciente == 0) {
         die('ID del paciente no proporcionado');
     }
 
-    // Puedes utilizar estos datos como desees, por ejemplo, insertar en la base de datos
-    // o realizar otras operaciones.
+    // Verificar la autenticación del usuario
+    if (!isset($_SESSION['id_usuario'])) {
+        die('Usuario no autenticado');
+    }
 
-    require('global.php');
+    // Obtener el id_usuario de la sesión
+    $id_usuario = $_SESSION['id_usuario'];
+
+    // Incluir el archivo global.php y establecer la conexión a la base de datos
+    require_once('global.php');
     $link = bases();
 
-    // Insertar en la tabla 'ordenes'
-    $sqlOrdenes = "INSERT INTO ordenes (id_paciente, fecha_creacion, total) VALUES (?, NOW(), ?)";
+    // Recuperar datos del carrito
+    $vai_nom = $_GET["vai_nom"];
+    $vai_cod = $_GET["vai_cod"];
+    $txtcantidad = $_GET["txtcantidad"];
+    $vai_pre = $_GET["vai_pre"];
+    $totprecio = floatval($_GET["totprecio"]);
 
-    // Usar una declaración preparada para evitar la inyección de SQL
+    // Insertar en la tabla 'ordenes' con estatus 'No Pagado'
+    $sqlOrdenes = "INSERT INTO ordenes (id_paciente, fecha_creacion, total, estatus) VALUES (?, NOW(), ?, 'No Pagado')";
+
+    // Preparar la declaración SQL
     $stmtOrdenes = $link->prepare($sqlOrdenes);
 
     if ($stmtOrdenes === false) {
@@ -40,11 +45,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 
     // Vincular parámetros
-    $stmtOrdenes->bind_param("id", $id_paciente, $total);
+    $stmtOrdenes->bind_param("id", $id_paciente, $totprecio);
 
-    // Asignar valores a los parámetros y ejecutar la inserción
-    $total = $totprecio;
-
+    // Asignar valor al parámetro y ejecutar la inserción
     if (!$stmtOrdenes->execute()) {
         die('Error al ejecutar la consulta de ordenes: ' . $stmtOrdenes->error);
     }
@@ -52,11 +55,18 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Obtener el ID de la orden recién insertada
     $id_orden = $stmtOrdenes->insert_id;
 
+    // Cerrar la declaración de ordenes
+    $stmtOrdenes->close();
+
     // Insertar en la tabla 'detalles_orden' para cada ítem en el carrito
-    foreach ($_SESSION["items_carrito"] as $item) {
+    $num_items = count($vai_cod); // Obtener el número de ítems en el carrito
+    for ($i = 0; $i < $num_items; $i++) {
+        // Calcular el subtotal
+        $subtotal = $txtcantidad[$i] * $vai_pre[$i];
+
         $sqlDetallesOrden = "INSERT INTO detalles_orden (id_orden, id_producto, cantidad, precio_unitario, subtotal) VALUES (?, ?, ?, ?, ?)";
 
-        // Usar una declaración preparada para evitar la inyección de SQL
+        // Preparar la declaración SQL
         $stmtDetallesOrden = $link->prepare($sqlDetallesOrden);
 
         if ($stmtDetallesOrden === false) {
@@ -64,14 +74,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         }
 
         // Vincular parámetros
-        $stmtDetallesOrden->bind_param("iiidd", $id_orden, $id_producto, $cantidad, $precio_unitario, $subtotal);
+        $stmtDetallesOrden->bind_param("iiidd", $id_orden, $vai_cod[$i], $txtcantidad[$i], $vai_pre[$i], $subtotal);
 
-        // Asignar valores a los parámetros y ejecutar la inserción
-        $id_producto = $item["vai_cod"];
-        $cantidad = $item["txtcantidad"];
-        $precio_unitario = $item["vai_pre"];
-        $subtotal = $item["txtcantidad"] * $item["vai_pre"];
-
+        // Ejecutar la inserción
         if (!$stmtDetallesOrden->execute()) {
             die('Error al ejecutar la consulta de detalles_orden: ' . $stmtDetallesOrden->error);
         }
@@ -99,68 +104,62 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     // Cerrar la declaración de actualización de total
     $stmtUpdateTotal->close();
 
-    // Obtener el último saldo de la tabla 'credito'
-    $sqlObtenerSaldo = "SELECT saldo FROM credito WHERE id_paciente = ? ORDER BY id_credito DESC LIMIT 1";
-    $stmtObtenerSaldo = $link->prepare($sqlObtenerSaldo);
+    // Obtener el crédito próximo con la fecha de fin más cercana
+    $fecha_actual = date('Y-m-d');
+    $sqlCreditosSimilares = "SELECT id_credito, saldo, fecha_fin FROM credito WHERE id_paciente = ? AND operacion = 'Generación de límite de crédito' AND fecha_fin > ? ORDER BY fecha_fin ASC LIMIT 1";
+    $stmtCreditosSimilares = $link->prepare($sqlCreditosSimilares);
 
-    if ($stmtObtenerSaldo === false) {
-        die('Error al preparar la consulta para obtener el último saldo de credito: ' . $link->error);
+    if ($stmtCreditosSimilares === false) {
+        die('Error al preparar la consulta de créditos similares: ' . $link->error);
     }
 
     // Vincular parámetros
-    $stmtObtenerSaldo->bind_param("i", $id_paciente);
+    $stmtCreditosSimilares->bind_param("is", $id_paciente, $fecha_actual);
 
-    // Ejecutar la consulta para obtener el último saldo de credito
-    if (!$stmtObtenerSaldo->execute()) {
-        die('Error al ejecutar la consulta para obtener el último saldo de credito: ' . $stmtObtenerSaldo->error);
+    // Ejecutar la consulta
+    if (!$stmtCreditosSimilares->execute()) {
+        die('Error al ejecutar la consulta de créditos similares: ' . $stmtCreditosSimilares->error);
     }
 
-    // Vincular el resultado
-    $stmtObtenerSaldo->bind_result($saldoActual);
+    // Vincular resultados
+    $stmtCreditosSimilares->bind_result($id_credito, $saldo, $fecha_fin);
 
-    // Obtener el resultado
-    $stmtObtenerSaldo->fetch();
+    // Obtener el crédito próximo
+    if ($stmtCreditosSimilares->fetch()) {
+        // Calcular el nuevo saldo restando el total de la compra del saldo del crédito próximo
+        $nuevoSaldoProximo = $saldo - $totprecio;
 
-    // Cerrar la declaración de obtener el último saldo de credito
-    $stmtObtenerSaldo->close();
+        // Cerrar la declaración de créditos similares
+        $stmtCreditosSimilares->close();
 
-    // Calcular el nuevo saldo restando el total
-    $nuevoSaldo = $saldoActual - floatval($total); // Convertir $total a tipo float
+        // Actualizar el saldo del crédito próximo en la base de datos
+        $sqlActualizarCreditoProximo = "UPDATE credito SET saldo = ? WHERE id_credito = ?";
+        $stmtActualizarCreditoProximo = $link->prepare($sqlActualizarCreditoProximo);
 
-    // Insertar un nuevo registro en la tabla 'credito' para reflejar la nueva operación y saldo
-    $sqlInsertCredito = "INSERT INTO credito (id_paciente, saldo, fecha_actualizacion, operacion, metodoPago) VALUES (?, ?, NOW(), 'Compra', 'Tarjeta')";
-    $stmtInsertCredito = $link->prepare($sqlInsertCredito);
+        if ($stmtActualizarCreditoProximo === false) {
+            die('Error al preparar la consulta de actualización de crédito próximo: ' . $link->error);
+        }
 
-    if ($stmtInsertCredito === false) {
-        die('Error al preparar la consulta de inserción de crédito: ' . $link->error);
+        // Vincular parámetros
+        $stmtActualizarCreditoProximo->bind_param("di", $nuevoSaldoProximo, $id_credito);
+
+        // Ejecutar la actualización
+        if (!$stmtActualizarCreditoProximo->execute()) {
+            die('Error al ejecutar la consulta de actualización de crédito próximo: ' . $stmtActualizarCreditoProximo->error);
+        }
+
+        // Cerrar la declaración de actualización de crédito próximo
+        $stmtActualizarCreditoProximo->close();
+    } else {
+        // Si no se encontró un crédito próximo válido
+        die('No se encontró un crédito próximo válido.');
     }
 
-    // Vincular parámetros
-    $stmtInsertCredito->bind_param("id", $id_paciente, $nuevoSaldo);
-
-    // Ejecutar la inserción
-    if (!$stmtInsertCredito->execute()) {
-        die('Error al ejecutar la consulta de inserción de crédito: ' . $stmtInsertCredito->error);
-    }
-
-    // Cerrar la declaración de inserción de crédito
-    $stmtInsertCredito->close();
-
-    // Cerrar la conexión
+    // Cerrar la conexión a la base de datos
     $link->close();
 
-    // Restablecer la variable de sesión del carrito después de la compra
-    unset($_SESSION["items_carrito"]);
-
-    // Enviar datos por POST a finalizarOrden.php
-    $data = array(
-        'id_orden' => $id_orden,
-        'total' => $total
-    );
-
-    // Redireccionar a finalizarOrden.php
-    header('Location: finalizarOrden.php?' . http_build_query($data));
-
-    // Puedes realizar otras operaciones o redireccionar al usuario según tus necesidades.
+    // Redirigir a finalizarOrden.php
+    header('Location: finalizarOrden.php?id_orden=' . $id_orden . '&total=' . $totprecio);
+    exit;
 }
 ?>

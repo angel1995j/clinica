@@ -105,14 +105,14 @@ $nombre_usuario_logueado = isset($_SESSION['nombre_usuario']) ? $_SESSION['nombr
             </li>
 
 
-            <li class="sidebar-item">
+            <!--<li class="sidebar-item">
               <a class="sidebar-link" href="cocina.php" aria-expanded="false">
                 <span>
                   <i class="ti ti-book-off"></i>
                 </span>
                 <span class="hide-menu">Cocina</span>
               </a>
-            </li>
+            </li>-->
 
              <li class="sidebar-item">
               <a class="sidebar-link" href="medicina.php" aria-expanded="false">

@@ -5,6 +5,7 @@ $link = bases();
 
     // Procesa el formulario de actualización
     $id_pago = $_GET['id_pago'];
+    $id_paciente = $_GET['id_paciente'];
     $archivado = "si";
 
 
@@ -14,7 +15,8 @@ $link = bases();
 
     if ($link->query($sql_actualizar) === TRUE) {
         echo "Pago actualizado correctamente.";
-        header("Location: ../pagos.php");
+        header("Location: ../pagos-individual.php?id_paciente=" . $id_paciente);
+        exit;
     } else {
         echo "Error al actualizar el pago: " . $link->error;
     }
