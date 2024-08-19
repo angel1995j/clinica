@@ -6,7 +6,7 @@ session_start();
     function obtenerUltimosIngresos($link, $limit)
           {
                 // Realiza la consulta para obtener los últimos ingresos limitados de pacientes
-                $sql = "SELECT id_paciente, nombre, aPaterno, aMaterno, fechaIngreso FROM pacientes ORDER BY fechaIngreso DESC LIMIT $limit";
+                $sql = "SELECT id_paciente, nombre, aPaterno, aMaterno, fechaIngreso FROM pacientes WHERE archivado = 'No' ORDER BY fechaIngreso DESC LIMIT $limit";
 
                 // Ejecuta la consulta y obtén los datos
                 $result = $link->query($sql);
@@ -52,7 +52,7 @@ session_start();
                 function obtenerUltimosPagos($link, $limit)
                 {
                     // Realiza la consulta para obtener los últimos pagos limitados
-                    $sql = "SELECT fecha_pagado, id_paciente, monto FROM pago_paciente ORDER BY fecha_pagado DESC LIMIT $limit";
+                    $sql = "SELECT fecha_pagado, id_paciente, monto FROM pago_paciente WHERE archivado ='no' ORDER BY fecha_pagado DESC LIMIT $limit";
                 
                     // Ejecuta la consulta y obtén los datos
                     $result = $link->query($sql);
@@ -176,9 +176,11 @@ $link = bases();
                 <?php
                   // Realiza la consulta para obtener la suma de monto por fecha_pagado por año
                   $sqlYearlySales = "SELECT YEAR(fecha_pagado) as anio, SUM(monto) as total_ventas 
-                                     FROM pago_paciente 
-                                     GROUP BY YEAR(fecha_pagado)
-                                     ORDER BY anio DESC LIMIT 1";
+FROM pago_paciente 
+WHERE archivado = 'no'
+GROUP BY YEAR(fecha_pagado)
+ORDER BY anio DESC
+LIMIT 1;";
 
                   $resultYearlySales = $link->query($sqlYearlySales);
 
@@ -316,7 +318,7 @@ $link = bases();
             <div class="card w-100">
               <div class="card-body p-4">
                 <div class="mb-4">
-                  <h5 class="card-title fw-semibold">Operaciones recientes</h5>
+                  <h5 class="card-title fw-semibold">Operaciones recientes pagos</h5>
                 </div>
                 <ul class="timeline-widget mb-0 position-relative mb-n5">
                  

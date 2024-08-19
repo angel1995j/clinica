@@ -201,3 +201,22 @@ Stack trace:
 [22-Jun-2024 17:11:47 UTC] PHP Warning:  Undefined variable $sumaCreditos in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 234
 [22-Jun-2024 17:16:43 UTC] PHP Warning:  Undefined variable $sumaAbonos in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 207
 [22-Jun-2024 17:16:43 UTC] PHP Warning:  Undefined variable $sumaCreditos in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 234
+[26-Jun-2024 15:54:52 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 100
+[26-Jun-2024 15:54:52 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 100
+[26-Jun-2024 15:54:52 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 100
+[26-Jun-2024 15:54:52 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 101
+[10-Jul-2024 22:05:34 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[10-Jul-2024 22:05:34 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[10-Jul-2024 22:05:34 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[10-Jul-2024 22:05:34 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[10-Jul-2024 22:05:34 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[10-Jul-2024 22:05:46 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
+[19-Jul-2024 22:17:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
+[19-Jul-2024 22:17:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
+[19-Jul-2024 22:17:28 UTC] PHP Warning:  Undefined array key "municipioPaciente" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[19-Jul-2024 22:17:28 UTC] PHP Warning:  Undefined array key "marcaVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[19-Jul-2024 22:17:28 UTC] PHP Warning:  Undefined array key "tipoVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[19-Jul-2024 22:17:28 UTC] PHP Warning:  Undefined array key "modeloVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[19-Jul-2024 22:17:28 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
+[09-Aug-2024 18:43:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
+[09-Aug-2024 18:43:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126

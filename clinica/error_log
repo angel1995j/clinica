@@ -317,3 +317,163 @@ Stack trace:
 [26-Jun-2024 00:08:57 UTC] PHP Warning:  Undefined variable $id_paciente in /home/tecolot1/public_html/clinica/adeudo.php on line 12
 [26-Jun-2024 00:09:07 UTC] PHP Warning:  Undefined variable $id_paciente in /home/tecolot1/public_html/clinica/adeudo.php on line 12
 [26-Jun-2024 00:10:05 UTC] PHP Warning:  Undefined variable $id_paciente in /home/tecolot1/public_html/clinica/adeudo.php on line 12
+[26-Jun-2024 16:09:52 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/index_cocina.php on line 5
+[26-Jun-2024 16:10:50 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[26-Jun-2024 16:10:50 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[26-Jun-2024 16:10:55 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[26-Jun-2024 16:10:55 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[11-Jul-2024 18:17:43 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[11-Jul-2024 18:17:43 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm-vendedor.php on line 25
+[11-Jul-2024 22:40:18 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[11-Jul-2024 22:44:22 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/detalle-pago.php on line 91
+[11-Jul-2024 22:52:13 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[11-Jul-2024 22:52:13 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[11-Jul-2024 22:52:13 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 183
+[11-Jul-2024 22:52:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/saldo.php on line 146
+[11-Jul-2024 22:52:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/saldo.php on line 146
+[11-Jul-2024 22:52:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/saldo.php on line 153
+[11-Jul-2024 22:57:56 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/detalle-pago.php on line 91
+[11-Jul-2024 23:25:55 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[11-Jul-2024 23:25:55 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[11-Jul-2024 23:25:55 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 183
+[11-Jul-2024 23:26:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/perfil.php on line 86
+[11-Jul-2024 23:26:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/perfil.php on line 86
+[11-Jul-2024 23:26:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/perfil.php on line 134
+[11-Jul-2024 23:26:32 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[11-Jul-2024 23:26:32 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[11-Jul-2024 23:26:32 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 183
+[11-Jul-2024 23:26:37 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/perfil.php on line 86
+[11-Jul-2024 23:26:37 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/perfil.php on line 86
+[11-Jul-2024 23:26:37 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/perfil.php on line 134
+[11-Jul-2024 23:26:40 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[11-Jul-2024 23:26:40 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[11-Jul-2024 23:26:40 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 183
+[11-Jul-2024 23:27:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[11-Jul-2024 23:27:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[11-Jul-2024 23:27:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 183
+[19-Jul-2024 22:35:15 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[19-Jul-2024 22:35:15 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[19-Jul-2024 22:35:15 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 183
+[19-Jul-2024 22:35:23 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual-inactivo.php on line 152
+[19-Jul-2024 22:35:23 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual-inactivo.php on line 152
+[19-Jul-2024 22:35:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[19-Jul-2024 22:35:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 176
+[19-Jul-2024 22:35:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pagos-individual.php on line 183
+[24-Jul-2024 00:25:12 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 00:25:12 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 16:51:05 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5
+[24-Jul-2024 16:56:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 16:56:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 16:57:04 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 16:57:04 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 17:01:26 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 17:01:26 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 17:01:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 17:01:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 17:03:48 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 17:03:48 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 17:04:14 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 17:04:14 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 17:07:25 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 17:07:25 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 17:07:52 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 17:07:52 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 17:08:38 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 17:08:38 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 17:09:18 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 17:09:18 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 17:10:23 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 17:10:23 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 17:10:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[24-Jul-2024 17:10:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[24-Jul-2024 17:11:38 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/generar-adeudo.php on line 12
+[25-Jul-2024 20:37:27 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[25-Jul-2024 20:37:27 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[25-Jul-2024 20:38:25 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[25-Jul-2024 20:38:25 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[05-Aug-2024 17:53:52 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[05-Aug-2024 17:53:52 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[05-Aug-2024 17:54:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[05-Aug-2024 17:54:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[05-Aug-2024 17:58:30 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[05-Aug-2024 17:58:30 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[05-Aug-2024 18:01:50 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[05-Aug-2024 18:01:53 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[05-Aug-2024 18:01:53 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[05-Aug-2024 18:05:34 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/generar-adeudo.php on line 12
+[05-Aug-2024 18:12:56 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[05-Aug-2024 18:13:27 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[05-Aug-2024 18:13:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[05-Aug-2024 18:13:53 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[05-Aug-2024 18:13:56 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[05-Aug-2024 18:14:09 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/generar-adeudo.php on line 12
+[05-Aug-2024 18:14:18 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/pagar-tiendita.php on line 12
+[05-Aug-2024 18:15:11 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/pagar-tiendita.php on line 12
+[05-Aug-2024 18:15:44 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/generar-adeudo.php on line 12
+[05-Aug-2024 18:17:32 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/pagar-tiendita.php on line 12
+[05-Aug-2024 18:17:49 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/pagar-tiendita.php on line 12
+[05-Aug-2024 18:18:04 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/pagar-tiendita.php on line 12
+[05-Aug-2024 18:18:31 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[05-Aug-2024 18:18:43 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[05-Aug-2024 18:18:46 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[05-Aug-2024 18:18:48 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[05-Aug-2024 18:19:01 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/generar-adeudo.php on line 12
+[07-Aug-2024 04:45:13 UTC] PHP Parse error:  syntax error, unexpected identifier "Saldo" in /home/tecolot1/public_html/clinica/perfil-familiar.php on line 170
+[07-Aug-2024 04:50:37 UTC] PHP Parse error:  syntax error, unexpected identifier "Saldo" in /home/tecolot1/public_html/clinica/perfil-familiar.php on line 170
+[07-Aug-2024 04:55:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/tecolot1/public_html/clinica/perfil-familiar.php:220
+Stack trace:
+#0 {main}
+  thrown in /home/tecolot1/public_html/clinica/perfil-familiar.php on line 220
+[07-Aug-2024 04:55:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/tecolot1/public_html/clinica/perfil-familiar.php:220
+Stack trace:
+#0 {main}
+  thrown in /home/tecolot1/public_html/clinica/perfil-familiar.php on line 220
+[07-Aug-2024 05:14:51 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli_stmt::get_result() in /home/tecolot1/public_html/clinica/perfil-familiar.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/tecolot1/public_html/clinica/perfil-familiar.php on line 30
+[07-Aug-2024 05:20:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on bool in /home/tecolot1/public_html/clinica/perfil-familiar.php:178
+Stack trace:
+#0 {main}
+  thrown in /home/tecolot1/public_html/clinica/perfil-familiar.php on line 178
+[09-Aug-2024 18:40:28 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[09-Aug-2024 18:40:28 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[09-Aug-2024 18:42:08 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[09-Aug-2024 18:42:08 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[09-Aug-2024 18:42:55 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[09-Aug-2024 18:42:55 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[09-Aug-2024 18:44:41 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[09-Aug-2024 18:44:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[09-Aug-2024 18:45:03 UTC] PHP Warning:  Undefined variable $row in /home/tecolot1/public_html/clinica/crm.php on line 16
+[09-Aug-2024 18:45:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/crm.php on line 16
+[10-Aug-2024 18:46:07 UTC] PHP Warning:  Undefined variable $datos_usuario in /home/tecolot1/public_html/clinica/detalle-saldo.php on line 80
+[10-Aug-2024 18:46:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/detalle-saldo.php on line 80
+[10-Aug-2024 19:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/perfil-familiar.php on line 331
+[10-Aug-2024 19:03:03 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/perfil-familiar.php on line 331
+[10-Aug-2024 19:37:33 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[10-Aug-2024 19:37:33 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[10-Aug-2024 19:37:37 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[10-Aug-2024 19:37:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[10-Aug-2024 19:37:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[10-Aug-2024 19:43:19 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[10-Aug-2024 19:45:59 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/generar-adeudo.php on line 12
+[13-Aug-2024 17:36:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[13-Aug-2024 17:36:44 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[13-Aug-2024 17:36:57 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[13-Aug-2024 17:37:05 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[13-Aug-2024 17:37:05 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[13-Aug-2024 17:37:11 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[13-Aug-2024 17:37:11 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[13-Aug-2024 17:37:14 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[13-Aug-2024 17:37:14 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[13-Aug-2024 17:45:31 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/generar-adeudo.php on line 12
+[16-Aug-2024 17:40:37 UTC] PHP Warning:  Undefined variable $datos_usuario in /home/tecolot1/public_html/clinica/detalle-saldo.php on line 80
+[16-Aug-2024 17:40:37 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/detalle-saldo.php on line 80
+[16-Aug-2024 17:47:38 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[16-Aug-2024 17:47:38 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[16-Aug-2024 18:32:02 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 77
+[16-Aug-2024 18:32:02 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/tiendita_paciente.php on line 216
+[16-Aug-2024 18:32:39 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[16-Aug-2024 18:32:54 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/pagar-tiendita.php on line 12
+[16-Aug-2024 18:34:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/carrito.php on line 174
+[17-Aug-2024 19:15:30 UTC] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in /home/tecolot1/public_html/clinica/solicitudes.php on line 5

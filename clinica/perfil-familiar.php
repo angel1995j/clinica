@@ -167,16 +167,16 @@ $paciente = $resultado->fetch_assoc();
               <div class="col-md-6 bg-primary text-center cuadros-familiar">
               <?php
               // Obtener la suma de monto de pago_paciente cuando estatus es "Pagado"
-              $sqlPagado = "SELECT SUM(monto) AS totalPagado FROM pago_paciente WHERE id_paciente = $id_paciente AND estatus = 'Pagado'";
+              $sqlPagado = "SELECT SUM(total) AS totalPagado FROM pago_paciente WHERE id_paciente = $id_paciente AND estatus = 'Pagado'";
               $resultPagado = $link->query($sqlPagado);
               $rowPagado = $resultPagado->fetch_assoc();
               $totalPagado = $rowPagado['totalPagado'];
 
               // Obtener la suma de monto de historial_saldo cuando estatus es "Pagado"
-              $sqlSaldoPagado = "SELECT SUM(monto) AS totalSaldoPagado FROM historial_saldo WHERE id_paciente = $id_paciente";
+              $sqlSaldoPagado = "SELECT saldo from pacientes WHERE id_paciente = $id_paciente";
               $resultSaldoPagado = $link->query($sqlSaldoPagado);
               $rowSaldoPagado = $resultSaldoPagado->fetch_assoc();
-              $totalSaldoPagado = $rowSaldoPagado['totalSaldoPagado'];
+              $totalSaldoPagado = $rowSaldoPagado['saldo'];
 
               // Sumar ambos totales
               $totalGeneralPagado = $totalPagado + $totalSaldoPagado;
@@ -204,7 +204,7 @@ $paciente = $resultado->fetch_assoc();
                         <div class="modal-body">
                             <?php
                             // Consulta para obtener los registros de pago_paciente para el paciente actual
-                            $sqlPagosNoPagados = "SELECT * FROM pago_paciente WHERE id_paciente = $id_paciente AND estatus = 'Pagado' AND observaciones != 'Consumo en tiendita'";
+                            $sqlPagosNoPagados = "SELECT * FROM pago_paciente WHERE id_paciente = $id_paciente AND estatus = 'Pagado' AND observaciones != 'Consumo en tiendita' AND forma_pago != 'Saldo'";
                             $resultPagosNoPagados = $link->query($sqlPagosNoPagados);
 
                             // Consulta para obtener los registros de historial_saldo para el paciente actual

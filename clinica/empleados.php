@@ -56,117 +56,128 @@
               <div class="modal-body">
                 <div class="container mt-5">
 
-                <!-- Formulario Bootstrap -->
-                <form action="inserts/empleados.php" method="post" enctype="multipart/form-data">
-                  <div class="form-group row">
-                      <label for="nombre" class="col-sm-4 col-form-label">Nombre:</label>
-                      <div class="col-sm-8">
-                          <input type="text" class="form-control" name="nombre" required>
-                      </div>
-                  </div>
 
-                  <div class="form-group row mt-3">
-                      <label for="aPaterno" class="col-sm-4 col-form-label">Apellido Paterno:</label>
-                      <div class="col-sm-8">
-                          <input type="text" class="form-control" name="aPaterno" required>
-                      </div>
-                  </div>
+               <!-- Formulario Bootstrap -->
+              <form action="inserts/empleados.php" method="post" enctype="multipart/form-data">
+                <div class="form-group row">
+                    <label for="nombre" class="col-sm-4 col-form-label">Nombre:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="nombre" required>
+                    </div>
+                </div>
 
-                  <div class="form-group row mt-3">
-                      <label for="aMaterno" class="col-sm-4 col-form-label">Apellido Materno:</label>
-                      <div class="col-sm-8">
-                          <input type="text" class="form-control" name="aMaterno" required>
-                      </div>
-                  </div>
+                <div class="form-group row mt-3">
+                    <label for="aPaterno" class="col-sm-4 col-form-label">Apellido Paterno:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="aPaterno" required>
+                    </div>
+                </div>
 
-                  <div class="form-group row mt-3">
-                      <label for="numero_telefono" class="col-sm-4 col-form-label">Número de Teléfono:</label>
-                      <div class="col-sm-8">
-                          <input type="tel" class="form-control" name="numero_telefono">
-                      </div>
-                  </div>
+                <div class="form-group row mt-3">
+                    <label for="aMaterno" class="col-sm-4 col-form-label">Apellido Materno:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="aMaterno" required>
+                    </div>
+                </div>
 
-                  <div class="form-group row mt-3">
-                      <label for="fecha_ingreso" class="col-sm-4 col-form-label">Fecha de Ingreso:</label>
-                      <div class="col-sm-8">
-                          <input type="date" class="form-control" name="fecha_ingreso" required>
-                      </div>
-                  </div>
+                <div class="form-group row mt-3">
+                    <label for="numero_telefono" class="col-sm-4 col-form-label">Número de Teléfono:</label>
+                    <div class="col-sm-8">
+                        <input type="tel" class="form-control" name="numero_telefono">
+                    </div>
+                </div>
 
-                  <div class="form-group row mt-3">
-                      <label for="fecha_salida" class="col-sm-4 col-form-label">Fecha de Salida:</label>
-                      <div class="col-sm-8">
-                          <input type="date" class="form-control" name="fecha_salida">
-                      </div>
-                  </div>
+                <div class="form-group row mt-3">
+                    <label for="fecha_ingreso" class="col-sm-4 col-form-label">Fecha de Ingreso:</label>
+                    <div class="col-sm-8">
+                        <input type="date" class="form-control" name="fecha_ingreso" required>
+                    </div>
+                </div>
 
-                  <div class="form-group row mt-3">
-                      <label for="puesto" class="col-sm-4 col-form-label">Puesto:</label>
-                      <div class="col-sm-8">
-                          <select class="form-control" name="puesto">
-                              <option value="psicologia">Psicología</option>
-                              <option value="padrinos">Padrinos</option>
-                              <option value="administrativo">Administrativo</option>
-                              <option value="recepcion">Recepción</option>
-                              <option value="cocina">Cocina</option>
-                              <option value="otros">Otros</option>
-                          </select>
-                      </div>
-                  </div>
+                <div class="form-group row mt-3">
+                    <label for="puesto" class="col-sm-4 col-form-label">Puesto:</label>
+                    <div class="col-sm-8">
+                        <select class="form-control" name="puesto">
+                            <option value="psicologia">Psicología</option>
+                            <option value="padrino">Padrino</option>
+                            <option value="madrina">Madrina</option>
+                            <option value="administrativo">Administrativo</option>
+                            <option value="recepcion">Recepción</option>
+                            <option value="recursos humanos">Recursos humanos</option>
+                            <option value="cocina">Cocina</option>
+                            <option value="ventas">Ventas</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-3">
+                    <label for="salario_neto" class="col-sm-4 col-form-label">Salario Neto:</label>
+                    <div class="col-sm-8">
+                        <input type="number" step="0.01" class="form-control" name="salario_neto" required>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-3">
+                    <label for="otros_conceptos" class="col-sm-4 col-form-label">Otros Conceptos:</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" name="otros_conceptos" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-3">
+                    <label for="monto_otros_conceptos" class="col-sm-4 col-form-label">Monto Otros Conceptos:</label>
+                    <div class="col-sm-8">
+                        <input type="number" step="0.01" class="form-control" name="monto_otros_conceptos">
+                    </div>
+                </div>
+
+                <div class="form-group row mt-3">
+                    <label for="contactos" class="col-sm-4 col-form-label">Contactos de emergencia:<br><small>*Inserte 2 o más</small></label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" name="contactos" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-3">
+                    <label for="datos_familiares" class="col-sm-4 col-form-label">Datos Familiares:</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" name="datos_familiares" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-3">
+                    <label for="domicilio" class="col-sm-4 col-form-label">Domicilio:</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" name="domicilio" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row mt-3">
+                    <label for="fecha_antidoping" class="col-sm-4 col-form-label">Fecha de Antidoping:</label>
+                    <div class="col-sm-8">
+                        <input type="date" class="form-control" name="fecha_antidoping">
+                    </div>
+                </div>
+
+                <div class="form-group row mt-3">
+                    <label for="referencias_laborales" class="col-sm-4 col-form-label">Referencias Laborales:</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" name="referencias_laborales" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <input type="hidden" class="form-control" name="archivado" value="no">
+                <input type="hidden" class="form-control" name="fecha_salida" value="">
+                <div class="form-group row mt-3">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-primary">Agregar</button>
+                    </div>
+                </div>
+            </form>
 
 
-                  <!--<div class="form-group row mt-3">
-                      <label for="salario_bruto" class="col-sm-4 col-form-label">Salario Bruto:</label>
-                      <div class="col-sm-8">
-                          <input type="number" step="0.01" class="form-control" name="salario_bruto" required>
-                      </div>
-                  </div>-->
 
-                  <div class="form-group row mt-3">
-                      <label for="salario_neto" class="col-sm-4 col-form-label">Salario Neto:</label>
-                      <div class="col-sm-8">
-                          <input type="number" step="0.01" class="form-control" name="salario_neto" required>
-                      </div>
-                  </div>
-
-                  <div class="form-group row mt-3">
-                      <label for="otros_conceptos" class="col-sm-4 col-form-label">Otros Conceptos:</label>
-                      <div class="col-sm-8">
-                          <textarea class="form-control" name="otros_conceptos" rows="4"></textarea>
-                      </div>
-                  </div>
-
-                  <div class="form-group row mt-3">
-                      <label for="monto_otros_conceptos" class="col-sm-4 col-form-label">Monto Otros Conceptos:</label>
-                      <div class="col-sm-8">
-                          <input type="number" step="0.01" class="form-control" name="monto_otros_conceptos">
-                      </div>
-                  </div>
-
-
-                  <div class="form-group row mt-3">
-                      <label for="contactos" class="col-sm-4 col-form-label">Contactos de emergencia:</label>
-                      <div class="col-sm-8">
-                          <textarea class="form-control" name="contactos" rows="4"></textarea>
-                      </div>
-                  </div>
-
-                  <div class="form-group row mt-3">
-                      <label for="archivado" class="col-sm-4 col-form-label">Archivado:</label>
-                      <div class="col-sm-8">
-                          <select class="form-select" name="archivado">
-                              <option value="no" selected>No</option>
-                              <option value="si">Sí</option>
-                          </select>
-                      </div>
-                  </div>
-
-                  <div class="form-group row mt-3">
-                      <div class="col-sm-12">
-                          <button type="submit" class="btn btn-primary">Agregar</button>
-                      </div>
-                  </div>
-              </form>
 
             </div>
               </div>

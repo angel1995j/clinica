@@ -86,11 +86,13 @@ $paciente = $resultado->fetch_assoc();
 
                     <div class="form-group mt-3">
                         <label for="forma_pago">Forma de pago:</label>
-                        <select class="form-control" id="forma_pago" name="forma_pago">
+                       <select class="form-control" id="forma_pago" name="forma_pago">
                             <option value="Efectivo">Efectivo</option>
                             <option value="Tarjeta">Tarjeta</option>
-                            <option value="Transferencia">Transferencía</option>
-                            <option value="Deposito">Déposito</option>
+                            <option value="Transferencia Cuenta Lenin">Transferencía Cuenta Lenin</option>
+                            <option value="Transferencia Cuenta Dante">Transferencía Cuenta Dante</option>
+                            <option value="Deposito Cuenta Dante">Déposito Cuenta Dante</option>
+                            <option value="Deposito Cuenta Lenin">Déposito Cuenta Lenin</option>
                             <option value="Envio de efectivo">Envío de efectivo</option>
                         </select>
                     </div>

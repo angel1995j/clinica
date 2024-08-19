@@ -7,11 +7,11 @@ if (!$id_empleado) {
     die('ID del empleado no proporcionado');
 }
 
-$sql_select = "SELECT id_empleado, nombre, aPaterno, aMaterno, numero_telefono, fecha_ingreso, fecha_salida, puesto, salario_bruto, salario_neto, otros_conceptos, monto_otros_conceptos, archivado, contactos FROM empleados WHERE id_empleado = ?";
+$sql_select = "SELECT id_empleado, nombre, aPaterno, aMaterno, numero_telefono, fecha_ingreso, puesto, salario_bruto, salario_neto, otros_conceptos, monto_otros_conceptos, archivado, contactos, fecha_antidoping FROM empleados WHERE id_empleado = ?";
 if ($stmt = $link->prepare($sql_select)) {
     $stmt->bind_param("i", $id_empleado);
     $stmt->execute();
-    $stmt->bind_result($id_empleado, $nombre, $aPaterno, $aMaterno, $numero_telefono, $fecha_ingreso, $fecha_salida, $puesto, $salario_bruto, $salario_neto, $otros_conceptos, $monto_otros_conceptos, $archivado, $contactos);
+    $stmt->bind_result($id_empleado, $nombre, $aPaterno, $aMaterno, $numero_telefono, $fecha_ingreso, $puesto, $salario_bruto, $salario_neto, $otros_conceptos, $monto_otros_conceptos, $archivado, $contactos, $fecha_antidoping);
 
     if ($stmt->fetch()) {
         // Continuar con la lógica
@@ -87,10 +87,6 @@ if ($stmt_pagos_empleado = $link->prepare($sql_pagos_empleado)) {
             <div class="col-md-6">
                 <table class="table table-bordered mt-4">
                     <tr>
-                        <th>Salario Bruto</th>
-                        <td><?php echo $salario_bruto; ?></td>
-                    </tr>
-                    <tr>
                         <th>Salario Neto</th>
                         <td><?php echo $salario_neto; ?></td>
                     </tr>
@@ -101,6 +97,11 @@ if ($stmt_pagos_empleado = $link->prepare($sql_pagos_empleado)) {
                     <tr>
                         <th>Monto Otros Conceptos</th>
                         <td><?php echo $monto_otros_conceptos; ?></td>
+                    </tr>
+
+                     <tr>
+                        <th>Fecha Antidoping</th>
+                        <td><?php echo $fecha_antidoping; ?></td>
                     </tr>
                 </table>
             </div>
@@ -139,15 +140,57 @@ if ($stmt_pagos_empleado = $link->prepare($sql_pagos_empleado)) {
                 </table>
             </div>
 
-            <div class="col-md-4 text-center mt-4">
+            <!-- Nueva Sección: Documentos del Empleado -->
+            <div class="col-md-12 mt-4">
+                <h3>Documentos del Empleado / Actualizaciones / Actas Administrativas</h3>
+                <?php
+                $sql_docs_empleado = "SELECT id_docs, tipo_documento, fecha, observaciones, archivo FROM docs_empleado WHERE id_empleado = ?";
+                if ($stmt_docs_empleado = $link->prepare($sql_docs_empleado)) {
+                    $stmt_docs_empleado->bind_param("i", $id_empleado);
+                    $stmt_docs_empleado->execute();
+                    $stmt_docs_empleado->bind_result($id_docs, $tipo_documento, $fecha_doc, $observaciones_doc, $archivo);
+                ?>
+                    <table class="table table-bordered mt-2">
+                        <thead>
+                            <tr>
+                                <th>Tipo de Documento</th>
+                                <th>Fecha</th>
+                                <th>Observaciones</th>
+                                <th>Archivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while ($stmt_docs_empleado->fetch()) : ?>
+                                <tr>
+                                    <td><?php echo $tipo_documento; ?></td>
+                                    <td><?php echo $fecha_doc; ?></td>
+                                    <td><?php echo $observaciones_doc; ?></td>
+                                    <td><a href="assets/docs/empleados/<?php echo $archivo; ?>" target="_blank">Ver Documento</a></td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                <?php
+                    $stmt_docs_empleado->close();
+                } else {
+                    echo 'Error en la preparación de la consulta para obtener los documentos del empleado';
+                }
+                ?>
+            </div>
+
+            <div class="col-md-3 text-center mt-4">
                 <a href="editar-empleado.php?id_empleado=<?php echo $id_empleado; ?>" class="btn btn-primary">Editar empleado</a>
             </div>
 
-            <div class="col-md-4 text-center mt-4">
-                <a href="nota-empleado.php?id_empleado=<?php echo $id_empleado; ?>" class="btn btn-primary">Agregar nota</a>
+            <div class="col-md-3 text-center mt-4">
+                <a href="nota-empleado.php?id_empleado=<?php echo $id_empleado; ?>" class="btn btn-primary">Agregar bono/descuento</a>
             </div>
 
-            <div class="col-md-4 text-center mt-4">
+             <div class="col-md-3 text-center mt-4">
+                <a href="doc-empleado.php?id_empleado=<?php echo $id_empleado; ?>" class="btn btn-primary">Gestionar notas</a>
+            </div>
+
+            <div class="col-md-3 text-center mt-4">
                 <a href="" class="btn btn-primary">Contrato</a>
             </div>
 

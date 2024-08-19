@@ -115,7 +115,18 @@ $html .= 'Suma de pagos pendientes (Tratamiento): $' . number_format($sumaPendie
 while ($pago = $resultadoPagos->fetch_assoc()) {
     $sumaPagado += $pago['total'];
 }
-$html .= 'Suma de pagos realizados: $' . number_format($sumaPagado, 2) . '<br><br><br>';
+
+
+$html .= 'Suma de pagos realizados aplicados: $' . number_format($sumaPagado, 2) . '<br><br><br>';
+
+$total_final = $sumaPagado + $paciente['saldo'];
+$html .= 'Se han pagado en total: $' . number_format($total_final, 2) . '<br>';
+
+$total_pendientes = $sumaNoPagado + $sumaPendientesTratamiento;
+
+$total_deuda = $total_pendientes - $paciente['saldo'];
+$html .= 'En total se deben: $' . number_format($total_deuda, 2) . '<br><br><br>';
+
 
 // Define las observaciones a filtrar
 $observaciones = [
@@ -168,7 +179,7 @@ foreach ($observaciones as $obs) {
                     <td>' . htmlspecialchars($pago['fecha_agregado']) . '</td>
                     <td>' . htmlspecialchars($pago['fecha_pagado']) . '</td>
                     <td>' . htmlspecialchars($pago['observaciones']) . '</td>
-                    <td>' . htmlspecialchars($pago['forma_pago']) . '</td>
+                    <td>' . htmlspecialchars($pago['forma_pago']) . '</td> 
                 </tr>';
         }
 

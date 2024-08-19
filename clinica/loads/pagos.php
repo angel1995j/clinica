@@ -21,8 +21,8 @@ if (!empty($campo)) {
     $where .= " AND (pac.nombre LIKE '%$campo%' OR pac.aPaterno LIKE '%$campo%' OR pac.aMaterno LIKE '%$campo%')";
 }
 
-/* Agrega la condición para archivado = 'no' */
-$where .= " AND p.archivado = 'no'";
+/* Agrega la condición para archivado = 'no' en ambas tablas */
+$where .= " AND p.archivado = 'no' AND pac.archivado = 'no'";
 
 /* Limit */
 $limit = isset($_POST['registros']) ? $link->real_escape_string($_POST['registros']) : 10;
@@ -52,7 +52,7 @@ if (isset($_POST['orderCol'])) {
 $sql = "SELECT SQL_CALC_FOUND_ROWS " . implode(", ", $columns) . "
 FROM $table_pago AS p
 JOIN $table_paciente AS pac ON p.id_paciente = pac.id_paciente
-$where
+WHERE 1=1 $where
 $sOrder
 $sLimit";
 $resultado = $link->query($sql);
@@ -65,7 +65,7 @@ $row_filtro = $resFiltro->fetch_array();
 $totalFiltro = $row_filtro[0];
 
 /* Consulta para total de registros filtrados */
-$sqlTotal = "SELECT count(p.id_pago) FROM $table_pago AS p WHERE p.archivado = 'no'";
+$sqlTotal = "SELECT count(p.id_pago) FROM $table_pago AS p JOIN $table_paciente AS pac ON p.id_paciente = pac.id_paciente WHERE p.archivado = 'no' AND pac.archivado = 'no'";
 $resTotal = $link->query($sqlTotal);
 $row_total = $resTotal->fetch_array();
 $totalRegistros = $row_total[0];

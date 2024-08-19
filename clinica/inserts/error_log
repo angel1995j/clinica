@@ -1,279 +1,42 @@
-[23-Nov-2023 04:27:36 UTC] PHP Warning:  Undefined array key "productos" in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 10
-[23-Nov-2023 04:27:36 UTC] PHP Warning:  Undefined array key "total" in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 11
-[23-Nov-2023 04:27:36 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 23
-[23-Nov-2023 04:27:36 UTC] PHP Warning:  Undefined variable $stmt_detalle in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 37
-[23-Nov-2023 04:27:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php:37
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "nombre" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 8
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "aPaterno" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 9
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "aMaterno" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 10
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "numero_telefono" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 11
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "fecha_ingreso" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 12
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "puesto" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 14
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "salario_bruto" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 15
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "salario_neto" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 16
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "otros_conceptos" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 17
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "monto_otros_conceptos" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 18
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "archivado" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 19
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "contactos" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 20
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "domicilio" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 21
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "fecha_antidoping" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 22
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "referencias_laborales" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 23
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "fecha_salida" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 24
+[19-Jul-2024 23:17:17 UTC] PHP Warning:  Undefined array key "datos_familiares" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 25
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "nombre" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 8
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "aPaterno" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 9
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "aMaterno" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 10
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "numero_telefono" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 11
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "fecha_ingreso" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 12
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "puesto" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 14
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "salario_bruto" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 15
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "salario_neto" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 16
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "otros_conceptos" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 17
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "monto_otros_conceptos" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 18
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "archivado" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 19
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "contactos" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 20
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "domicilio" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 21
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "fecha_antidoping" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 22
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "referencias_laborales" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 23
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "fecha_salida" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 24
+[19-Jul-2024 23:33:22 UTC] PHP Warning:  Undefined array key "datos_familiares" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 25
+[19-Jul-2024 23:35:43 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/tecolot1/public_html/clinica/inserts/empleados.php:33
 Stack trace:
-#0 {main}
-  thrown in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 37
-[23-Nov-2023 04:38:31 UTC] PHP Warning:  Undefined variable $stmt_orden in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 54
-[23-Nov-2023 04:38:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php:54
-Stack trace:
-#0 {main}
-  thrown in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 54
-[23-Nov-2023 05:27:20 UTC] PHP Warning:  Undefined variable $stmt_orden in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 54
-[23-Nov-2023 05:27:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php:54
-Stack trace:
-#0 {main}
-  thrown in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 54
-[23-Nov-2023 05:30:39 UTC] PHP Warning:  Undefined variable $stmt_orden in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 54
-[23-Nov-2023 05:30:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php:54
-Stack trace:
-#0 {main}
-  thrown in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 54
-[23-Nov-2023 05:48:48 UTC] PHP Warning:  Undefined variable $stmt_orden in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 54
-[23-Nov-2023 05:48:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php:54
-Stack trace:
-#0 {main}
-  thrown in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 54
-[23-Nov-2023 06:00:45 UTC] PHP Warning:  Undefined variable $stmt_orden in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 54
-[23-Nov-2023 06:00:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php:54
-Stack trace:
-#0 {main}
-  thrown in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 54
-[23-Nov-2023 06:25:50 UTC] PHP Warning:  Undefined variable $stmt_orden in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 54
-[23-Nov-2023 06:25:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php:54
-Stack trace:
-#0 {main}
-  thrown in /home/hoysicom/public_html/clinica/inserts/procesar-pago.php on line 54
-[24-Nov-2023 03:55:22 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 22
-[24-Nov-2023 03:55:22 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 25
-[24-Nov-2023 03:55:22 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 29
-[30-Nov-2023 15:53:24 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 22
-[30-Nov-2023 15:53:24 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 25
-[30-Nov-2023 15:53:24 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 29
-[30-Nov-2023 15:54:39 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 22
-[30-Nov-2023 15:54:39 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 25
-[30-Nov-2023 15:54:39 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 29
-[26-Dec-2023 18:28:37 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 22
-[26-Dec-2023 18:28:37 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 29
-[26-Dec-2023 18:30:06 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 22
-[26-Dec-2023 18:30:06 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 25
-[26-Dec-2023 18:30:06 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 29
-[26-Dec-2023 18:45:43 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 22
-[26-Dec-2023 18:45:43 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 25
-[26-Dec-2023 18:45:43 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 29
-[26-Dec-2023 22:24:55 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 22
-[26-Dec-2023 22:24:55 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 25
-[26-Dec-2023 22:24:55 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 29
-[27-Dec-2023 03:02:03 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 22
-[27-Dec-2023 03:02:03 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 25
-[27-Dec-2023 03:02:03 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 29
-[27-Dec-2023 03:28:32 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 22
-[27-Dec-2023 03:28:32 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 25
-[27-Dec-2023 03:28:32 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 29
-[29-Dec-2023 22:14:39 UTC] PHP Warning:  require(global.php): Failed to open stream: No such file or directory in /home/hoysicom/public_html/clinica/inserts/credito.php on line 4
-[29-Dec-2023 22:14:39 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'global.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/hoysicom/public_html/clinica/inserts/credito.php:4
-Stack trace:
-#0 {main}
-  thrown in /home/hoysicom/public_html/clinica/inserts/credito.php on line 4
-[29-Dec-2023 22:54:07 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/inserts/credito.php on line 23
-[30-Dec-2023 20:51:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/inserts/credito.php on line 23
-[30-Dec-2023 22:45:22 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/inserts/credito.php on line 23
-[30-Dec-2023 23:03:21 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/inserts/credito.php on line 23
-[02-Jan-2024 23:19:40 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 22
-[02-Jan-2024 23:19:40 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 25
-[02-Jan-2024 23:19:40 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 29
-[03-Jan-2024 19:51:54 UTC] PHP Warning:  Undefined variable $id_usuario in /home/hoysicom/public_html/clinica/inserts/credito.php on line 31
-[04-Jan-2024 23:06:30 UTC] PHP Warning:  require_once(global.php): Failed to open stream: No such file or directory in /home/hoysicom/public_html/clinica/inserts/checkout-cocina.php on line 4
-[04-Jan-2024 23:06:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'global.php' (include_path='.:/opt/alt/php80/usr/share/pear:/opt/alt/php80/usr/share/php:/usr/share/pear:/usr/share/php') in /home/hoysicom/public_html/clinica/inserts/checkout-cocina.php:4
-Stack trace:
-#0 {main}
-  thrown in /home/hoysicom/public_html/clinica/inserts/checkout-cocina.php on line 4
-[04-Jan-2024 23:06:40 UTC] PHP Warning:  Undefined array key "precio_venta" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 7
-[04-Jan-2024 23:06:40 UTC] PHP Warning:  Undefined array key "stock" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 8
-[04-Jan-2024 23:06:40 UTC] PHP Warning:  Undefined array key "titulo" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 9
-[04-Jan-2024 23:06:40 UTC] PHP Warning:  Undefined array key "descripcion" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 10
-[04-Jan-2024 23:06:40 UTC] PHP Warning:  Undefined array key "precio_compra" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 11
-[04-Jan-2024 23:06:40 UTC] PHP Warning:  Undefined array key "imagen" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 14
-[04-Jan-2024 23:06:40 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 14
-[04-Jan-2024 23:06:40 UTC] PHP Warning:  Undefined array key "imagen" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 15
-[04-Jan-2024 23:06:40 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 15
-[04-Jan-2024 23:06:56 UTC] PHP Warning:  Undefined array key "precio_venta" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 7
-[04-Jan-2024 23:06:56 UTC] PHP Warning:  Undefined array key "stock" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 8
-[04-Jan-2024 23:06:56 UTC] PHP Warning:  Undefined array key "titulo" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 9
-[04-Jan-2024 23:06:56 UTC] PHP Warning:  Undefined array key "descripcion" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 10
-[04-Jan-2024 23:06:56 UTC] PHP Warning:  Undefined array key "precio_compra" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 11
-[04-Jan-2024 23:06:56 UTC] PHP Warning:  Undefined array key "imagen" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 14
-[04-Jan-2024 23:06:56 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 14
-[04-Jan-2024 23:06:56 UTC] PHP Warning:  Undefined array key "imagen" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 15
-[04-Jan-2024 23:06:56 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 15
-[04-Jan-2024 23:07:34 UTC] PHP Warning:  Undefined array key "precio_venta" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 7
-[04-Jan-2024 23:07:34 UTC] PHP Warning:  Undefined array key "stock" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 8
-[04-Jan-2024 23:07:34 UTC] PHP Warning:  Undefined array key "titulo" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 9
-[04-Jan-2024 23:07:34 UTC] PHP Warning:  Undefined array key "descripcion" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 10
-[04-Jan-2024 23:07:34 UTC] PHP Warning:  Undefined array key "precio_compra" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 11
-[04-Jan-2024 23:07:34 UTC] PHP Warning:  Undefined array key "imagen" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 14
-[04-Jan-2024 23:07:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 14
-[04-Jan-2024 23:07:34 UTC] PHP Warning:  Undefined array key "imagen" in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 15
-[04-Jan-2024 23:07:34 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/inserts/cocina.php on line 15
-[05-Jan-2024 00:05:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/hoysicom/public_html/clinica/inserts/medicina.php:27
-Stack trace:
-#0 {main}
-  thrown in /home/hoysicom/public_html/clinica/inserts/medicina.php on line 27
-[05-Jan-2024 00:05:45 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/hoysicom/public_html/clinica/inserts/medicina.php:27
-Stack trace:
-#0 /home/hoysicom/public_html/clinica/inserts/medicina.php(27): mysqli_stmt->bind_param()
+#0 /home/tecolot1/public_html/clinica/inserts/empleados.php(33): mysqli_stmt->bind_param()
 #1 {main}
-  thrown in /home/hoysicom/public_html/clinica/inserts/medicina.php on line 27
-[05-Jan-2024 00:06:08 UTC] PHP Fatal error:  Uncaught ArgumentCountError: The number of elements in the type definition string must match the number of bind variables in /home/hoysicom/public_html/clinica/inserts/medicina.php:27
-Stack trace:
-#0 /home/hoysicom/public_html/clinica/inserts/medicina.php(27): mysqli_stmt->bind_param()
-#1 {main}
-  thrown in /home/hoysicom/public_html/clinica/inserts/medicina.php on line 27
-[05-Jan-2024 16:35:11 UTC] PHP Warning:  Undefined array key "id_usuario" in /home/hoysicom/public_html/clinica/inserts/checkout-medicina.php on line 20
-[07-Jan-2024 01:35:55 UTC] PHP Warning:  Undefined array key "numero_telefono" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 23
-[07-Jan-2024 01:35:55 UTC] PHP Warning:  Undefined array key "fecha_ingreso" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 24
-[07-Jan-2024 01:35:55 UTC] PHP Warning:  Undefined array key "puesto" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 26
-[07-Jan-2024 01:35:55 UTC] PHP Warning:  Undefined array key "salario_bruto" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 27
-[07-Jan-2024 01:35:55 UTC] PHP Warning:  Undefined array key "salario_neto" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 28
-[07-Jan-2024 01:35:55 UTC] PHP Warning:  Undefined array key "otros_conceptos" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 29
-[07-Jan-2024 01:35:55 UTC] PHP Warning:  Undefined array key "monto_otros_conceptos" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 30
-[07-Jan-2024 01:35:55 UTC] PHP Warning:  Undefined array key "archivado" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 31
-[07-Jan-2024 01:36:23 UTC] PHP Warning:  Undefined array key "numero_telefono" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 23
-[07-Jan-2024 01:36:23 UTC] PHP Warning:  Undefined array key "fecha_ingreso" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 24
-[07-Jan-2024 01:36:23 UTC] PHP Warning:  Undefined array key "puesto" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 26
-[07-Jan-2024 01:36:23 UTC] PHP Warning:  Undefined array key "salario_bruto" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 27
-[07-Jan-2024 01:36:23 UTC] PHP Warning:  Undefined array key "salario_neto" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 28
-[07-Jan-2024 01:36:23 UTC] PHP Warning:  Undefined array key "otros_conceptos" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 29
-[07-Jan-2024 01:36:23 UTC] PHP Warning:  Undefined array key "monto_otros_conceptos" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 30
-[07-Jan-2024 01:36:23 UTC] PHP Warning:  Undefined array key "archivado" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 31
-[07-Jan-2024 01:38:03 UTC] PHP Warning:  Undefined array key "fecha_ingreso" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 26
-[07-Jan-2024 01:38:03 UTC] PHP Warning:  Undefined array key "archivado" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 27
-[07-Jan-2024 01:39:17 UTC] PHP Warning:  Undefined array key "archivado" in /home/hoysicom/public_html/clinica/inserts/contactos.php on line 27
-[12-Jan-2024 15:36:12 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 22
-[12-Jan-2024 15:36:12 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 25
-[12-Jan-2024 15:36:12 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 29
-[12-Jan-2024 15:42:07 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 22
-[12-Jan-2024 15:42:07 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 25
-[12-Jan-2024 15:42:07 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/hoysicom/public_html/clinica/inserts/pacientes.php on line 29
-[12-Jan-2024 16:03:20 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/hoysicom/public_html/clinica/inserts/credito.php on line 29
-[12-Jan-2024 19:04:57 UTC] PHP Warning:  Undefined array key "id_usuario" in /home/hoysicom/public_html/clinica/inserts/credito.php on line 18
-[22-Jan-2024 04:20:10 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 24
-[22-Jan-2024 04:20:10 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[22-Jan-2024 04:36:41 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 21
-[22-Jan-2024 04:36:41 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 24
-[22-Jan-2024 04:36:41 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[24-Jan-2024 19:26:42 UTC] PHP Warning:  Undefined array key "nombre" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 8
-[24-Jan-2024 19:26:42 UTC] PHP Warning:  Undefined array key "aPaterno" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 9
-[24-Jan-2024 19:26:42 UTC] PHP Warning:  Undefined array key "aMaterno" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 10
-[24-Jan-2024 19:26:42 UTC] PHP Warning:  Undefined array key "numero_telefono" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 11
-[24-Jan-2024 19:26:42 UTC] PHP Warning:  Undefined array key "fecha_ingreso" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 12
-[24-Jan-2024 19:26:42 UTC] PHP Warning:  Undefined array key "puesto" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 14
-[24-Jan-2024 19:26:42 UTC] PHP Warning:  Undefined array key "salario_bruto" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 15
-[24-Jan-2024 19:26:42 UTC] PHP Warning:  Undefined array key "salario_neto" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 16
-[24-Jan-2024 19:26:42 UTC] PHP Warning:  Undefined array key "otros_conceptos" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 17
-[24-Jan-2024 19:26:42 UTC] PHP Warning:  Undefined array key "monto_otros_conceptos" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 18
-[24-Jan-2024 19:26:42 UTC] PHP Warning:  Undefined array key "archivado" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 19
-[12-Feb-2024 22:30:41 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[12-Feb-2024 22:33:47 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[13-Feb-2024 15:01:23 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[15-Feb-2024 18:28:12 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/inserts/credito.php on line 29
-[16-Feb-2024 21:57:19 UTC] PHP Warning:  Undefined array key "nombre" in /home/tecolot1/public_html/clinica/inserts/comisiones.php on line 7
-[16-Feb-2024 21:57:19 UTC] PHP Warning:  Undefined array key "aPaterno" in /home/tecolot1/public_html/clinica/inserts/comisiones.php on line 8
-[16-Feb-2024 21:57:19 UTC] PHP Warning:  Undefined array key "aMaterno" in /home/tecolot1/public_html/clinica/inserts/comisiones.php on line 9
-[16-Feb-2024 21:57:19 UTC] PHP Warning:  Undefined array key "fecha_ingreso" in /home/tecolot1/public_html/clinica/inserts/comisiones.php on line 11
-[16-Feb-2024 21:57:19 UTC] PHP Warning:  Undefined array key "puesto" in /home/tecolot1/public_html/clinica/inserts/comisiones.php on line 13
-[16-Feb-2024 21:57:19 UTC] PHP Warning:  Undefined array key "salario_bruto" in /home/tecolot1/public_html/clinica/inserts/comisiones.php on line 14
-[16-Feb-2024 21:57:19 UTC] PHP Warning:  Undefined array key "salario_neto" in /home/tecolot1/public_html/clinica/inserts/comisiones.php on line 15
-[16-Feb-2024 22:10:17 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[23-Feb-2024 19:32:02 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 21
-[23-Feb-2024 19:32:02 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 24
-[23-Feb-2024 19:32:02 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[24-Feb-2024 20:37:19 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 24
-[24-Feb-2024 20:37:19 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[25-Feb-2024 23:51:34 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 21
-[25-Feb-2024 23:51:34 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 24
-[25-Feb-2024 23:51:34 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[27-Feb-2024 02:34:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/inserts/credito.php on line 29
-[27-Feb-2024 19:02:34 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/tecolot1/public_html/clinica/inserts/pacientes-vendedor.php on line 21
-[27-Feb-2024 19:02:34 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/tecolot1/public_html/clinica/inserts/pacientes-vendedor.php on line 24
-[27-Feb-2024 19:02:34 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes-vendedor.php on line 28
-[24-Mar-2024 17:53:50 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[24-Mar-2024 20:33:04 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[25-Mar-2024 18:13:32 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[25-Mar-2024 19:35:07 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[25-Mar-2024 20:45:23 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[02-Apr-2024 17:13:17 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[03-Apr-2024 16:25:04 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[03-Apr-2024 16:48:23 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[03-Apr-2024 22:00:20 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[13-Apr-2024 17:59:51 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes-vendedor.php on line 28
-[13-Apr-2024 19:51:52 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/tecolot1/public_html/clinica/inserts/pacientes-vendedor.php on line 24
-[13-Apr-2024 19:51:52 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes-vendedor.php on line 28
-[13-Apr-2024 20:18:19 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes-vendedor.php on line 28
-[25-Apr-2024 17:22:50 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 21
-[25-Apr-2024 17:22:50 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 24
-[25-Apr-2024 17:22:50 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[25-Apr-2024 18:42:12 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/inserts/credito.php on line 29
-[26-Apr-2024 23:15:08 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes-vendedor.php on line 28
-[08-May-2024 01:44:52 UTC] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #6 cannot be passed by reference in /home/tecolot1/public_html/clinica/inserts/limite-credito.php:76
-Stack trace:
-#0 {main}
-  thrown in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 76
-[08-May-2024 01:50:09 UTC] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #8 cannot be passed by reference in /home/tecolot1/public_html/clinica/inserts/limite-credito.php:79
-Stack trace:
-#0 {main}
-  thrown in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 79
-[08-May-2024 01:50:12 UTC] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #8 cannot be passed by reference in /home/tecolot1/public_html/clinica/inserts/limite-credito.php:79
-Stack trace:
-#0 {main}
-  thrown in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 79
-[08-May-2024 01:52:34 UTC] PHP Fatal error:  Uncaught Error: mysqli_stmt::bind_param(): Argument #8 cannot be passed by reference in /home/tecolot1/public_html/clinica/inserts/limite-credito.php:79
-Stack trace:
-#0 {main}
-  thrown in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 79
-[23-May-2024 17:35:03 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[23-May-2024 18:31:47 UTC] PHP Warning:  Undefined array key "fecha_pagado" in /home/tecolot1/public_html/clinica/inserts/pagos.php on line 23
-[23-May-2024 18:31:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function add() on null in /home/tecolot1/public_html/clinica/inserts/pagos.php:76
-Stack trace:
-#0 {main}
-  thrown in /home/tecolot1/public_html/clinica/inserts/pagos.php on line 76
-[23-May-2024 18:32:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function add() on string in /home/tecolot1/public_html/clinica/inserts/pagos.php:76
-Stack trace:
-#0 {main}
-  thrown in /home/tecolot1/public_html/clinica/inserts/pagos.php on line 76
-[31-May-2024 19:32:41 UTC] PHP Warning:  Undefined array key "id_paciente" in /home/tecolot1/public_html/clinica/inserts/pago-adicional-individual.php on line 11
-[31-May-2024 19:35:20 UTC] PHP Warning:  move_uploaded_file(../uploads/Captura de Pantalla 2024-05-31 a la(s) 13.32.23.png): Failed to open stream: No such file or directory in /home/tecolot1/public_html/clinica/inserts/saldo.php on line 27
-[31-May-2024 19:35:20 UTC] PHP Warning:  move_uploaded_file(): Unable to move &quot;/tmp/phpbsjHCv&quot; to &quot;../uploads/Captura de Pantalla 2024-05-31 a la(s) 13.32.23.png&quot; in /home/tecolot1/public_html/clinica/inserts/saldo.php on line 27
-[07-Jun-2024 16:15:49 UTC] PHP Warning:  Undefined array key "parentescoFamiliar" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 28
-[07-Jun-2024 16:56:41 UTC] PHP Warning:  Undefined array key "monto" in /home/tecolot1/public_html/clinica/inserts/saldo.php on line 10
-[07-Jun-2024 16:56:41 UTC] PHP Warning:  Undefined array key "comprobante" in /home/tecolot1/public_html/clinica/inserts/saldo.php on line 11
-[07-Jun-2024 16:56:41 UTC] PHP Warning:  Undefined array key "fecha_pagado" in /home/tecolot1/public_html/clinica/inserts/saldo.php on line 13
-[07-Jun-2024 16:56:41 UTC] PHP Warning:  Undefined array key "observaciones" in /home/tecolot1/public_html/clinica/inserts/saldo.php on line 14
-[07-Jun-2024 16:56:41 UTC] PHP Warning:  Undefined array key "estatus" in /home/tecolot1/public_html/clinica/inserts/saldo.php on line 15
-[07-Jun-2024 16:56:41 UTC] PHP Warning:  Undefined array key "forma_pago" in /home/tecolot1/public_html/clinica/inserts/saldo.php on line 16
-[07-Jun-2024 16:56:41 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/inserts/saldo.php on line 21
-[07-Jun-2024 17:01:36 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: float + string in /home/tecolot1/public_html/clinica/inserts/limite-credito.php:80
-Stack trace:
-#0 {main}
-  thrown in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 80
-[13-Jun-2024 18:44:11 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 21
-[13-Jun-2024 18:44:11 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 24
-[13-Jun-2024 19:33:58 UTC] PHP Warning:  Undefined array key "metodoPago" in /home/tecolot1/public_html/clinica/inserts/credito.php on line 9
-[13-Jun-2024 19:34:09 UTC] PHP Warning:  Undefined array key "metodoPago" in /home/tecolot1/public_html/clinica/inserts/credito.php on line 9
-[13-Jun-2024 19:34:18 UTC] PHP Warning:  Undefined array key "metodoPago" in /home/tecolot1/public_html/clinica/inserts/credito.php on line 9
-[13-Jun-2024 19:34:30 UTC] PHP Warning:  Undefined array key "metodoPago" in /home/tecolot1/public_html/clinica/inserts/credito.php on line 9
-[13-Jun-2024 19:41:04 UTC] PHP Warning:  Undefined array key "metodoPago" in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 12
-[13-Jun-2024 19:41:04 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: int + string in /home/tecolot1/public_html/clinica/inserts/limite-credito.php:80
-Stack trace:
-#0 {main}
-  thrown in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 80
-[13-Jun-2024 19:42:10 UTC] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: float + string in /home/tecolot1/public_html/clinica/inserts/limite-credito.php:79
-Stack trace:
-#0 {main}
-  thrown in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 79
-[13-Jun-2024 21:36:27 UTC] PHP Warning:  Undefined array key "metodoPago" in /home/tecolot1/public_html/clinica/inserts/credito.php on line 9
-[14-Jun-2024 15:37:40 UTC] PHP Warning:  Undefined array key "metodoPago" in /home/tecolot1/public_html/clinica/inserts/credito.php on line 9
-[14-Jun-2024 15:41:03 UTC] PHP Warning:  Undefined array key "metodoPago" in /home/tecolot1/public_html/clinica/inserts/credito.php on line 9
-[14-Jun-2024 15:41:20 UTC] PHP Warning:  Undefined array key "metodoPago" in /home/tecolot1/public_html/clinica/inserts/credito.php on line 9
-[22-Jun-2024 18:02:57 UTC] PHP Warning:  Undefined array key "salario_bruto" in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 15
-[25-Jun-2024 22:06:18 UTC] PHP Warning:  Undefined array key "id_usuario" in /home/tecolot1/public_html/clinica/inserts/checkout-medicina.php on line 20
-[25-Jun-2024 23:49:09 UTC] PHP Warning:  Undefined array key "usuario" in /home/tecolot1/public_html/clinica/inserts/checkout-medicina.php on line 80
-[25-Jun-2024 23:49:09 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/inserts/checkout-medicina.php on line 80
-[25-Jun-2024 23:49:09 UTC] PHP Warning:  Undefined array key "usuario" in /home/tecolot1/public_html/clinica/inserts/checkout-medicina.php on line 82
-[25-Jun-2024 23:49:09 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/inserts/checkout-medicina.php on line 82
-[25-Jun-2024 23:50:00 UTC] PHP Warning:  Undefined array key "usuario" in /home/tecolot1/public_html/clinica/inserts/checkout-medicina.php on line 80
-[25-Jun-2024 23:50:00 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/inserts/checkout-medicina.php on line 80
-[25-Jun-2024 23:50:00 UTC] PHP Warning:  Undefined array key "usuario" in /home/tecolot1/public_html/clinica/inserts/checkout-medicina.php on line 82
-[25-Jun-2024 23:50:00 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/inserts/checkout-medicina.php on line 82
+  thrown in /home/tecolot1/public_html/clinica/inserts/empleados.php on line 33
+[05-Aug-2024 17:39:04 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 21
+[13-Aug-2024 17:10:13 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 21
+[13-Aug-2024 17:10:13 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 24

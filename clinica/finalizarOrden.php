@@ -24,9 +24,20 @@ $resultPacientes = $link->query($sqlPacientes);
                         $id_orden = $_GET['id_orden'];
                         $total = $_GET['total'];
 
-                        echo "<h1><strong>Se ha completado la orden con éxito, número de orden:</strong> $id_orden</h1>";
-                        echo "<h3><strong>Total de la compra del usuario: </strong>$$total</h3>";
-                        echo "<a href='tiendita_paciente.php?id_paciente=8' class='text-center btn btn-primary'>Volver a tiendita paciente</a>";
+                        // Aquí asumimos que el id_paciente está en la URL o en la orden. Puedes modificar según tu lógica.
+                        $sqlOrden = "SELECT id_paciente FROM ordenes WHERE id_orden = $id_orden";
+                        $resultOrden = $link->query($sqlOrden);
+
+                        if ($resultOrden->num_rows > 0) {
+                            $rowOrden = $resultOrden->fetch_assoc();
+                            $id_paciente = $rowOrden['id_paciente'];
+                            
+                            echo "<h1><strong>Se ha completado la orden con éxito, número de orden:</strong> $id_orden</h1>";
+                            echo "<h3><strong>Total de la compra del usuario: </strong>$$total</h3>";
+                            echo "<a href='tiendita_paciente.php?id_paciente=$id_paciente' class='text-center btn btn-primary'>Volver a tiendita paciente</a>";
+                        } else {
+                            echo "<h1>Orden no encontrada.</h1>";
+                        }
                     }
                     ?>
                 </div>

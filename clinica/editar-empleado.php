@@ -13,11 +13,11 @@ if (!$id_empleado) {
 }
 
 // Recupera los datos del empleado de la base de datos
-$sql_select = "SELECT nombre, aPaterno, aMaterno, numero_telefono, fecha_ingreso, fecha_salida, puesto, salario_neto, otros_conceptos, monto_otros_conceptos, archivado, contactos FROM empleados WHERE id_empleado = ?";
+$sql_select = "SELECT nombre, aPaterno, aMaterno, numero_telefono, fecha_ingreso, fecha_salida, puesto, salario_neto, otros_conceptos, monto_otros_conceptos, archivado, contactos, datos_familiares, domicilio, fecha_antidoping, referencias_laborales FROM empleados WHERE id_empleado = ?";
 if ($stmt = $link->prepare($sql_select)) {
     $stmt->bind_param("i", $id_empleado);
     $stmt->execute();
-    $stmt->bind_result($nombre, $aPaterno, $aMaterno, $numero_telefono, $fecha_ingreso, $fecha_salida, $puesto, $salario_neto, $otros_conceptos, $monto_otros_conceptos, $archivado, $contactos);
+    $stmt->bind_result($nombre, $aPaterno, $aMaterno, $numero_telefono, $fecha_ingreso, $fecha_salida, $puesto, $salario_neto, $otros_conceptos, $monto_otros_conceptos, $archivado, $contactos, $datos_familiares, $domicilio, $fecha_antidoping, $referencias_laborales);
 
     if ($stmt->fetch()) {
         // Continuar con la lógica
@@ -140,6 +140,39 @@ require('header.php');
                             <option value="si" <?php echo ($archivado == 'si') ? 'selected' : ''; ?>>Sí</option>
                             <option value="no" <?php echo ($archivado == 'no') ? 'selected' : ''; ?>>No</option>
                         </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nuevos campos añadidos -->
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="datos_familiares">Datos Familiares:</label>
+                        <textarea class="form-control" name="datos_familiares" rows="4"><?php echo $datos_familiares; ?></textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="domicilio">Domicilio:</label>
+                        <textarea class="form-control" name="domicilio" rows="4"><?php echo $domicilio; ?></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fecha_antidoping">Fecha de Antidoping:</label>
+                        <input type="date" class="form-control" name="fecha_antidoping" value="<?php echo $fecha_antidoping; ?>">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="referencias_laborales">Referencias Laborales:</label>
+                        <textarea class="form-control" name="referencias_laborales" rows="4"><?php echo $referencias_laborales; ?></textarea>
                     </div>
                 </div>
             </div>
