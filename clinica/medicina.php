@@ -72,6 +72,13 @@
                         </div>
                     </div>
 
+                     <div class="form-group row mt-3">
+                        <label for="codigo" class="col-sm-4 col-form-label">Código:</label>
+                        <div class="col-sm-8">
+                            <input type="text"  class="form-control" name="codigo" required>
+                        </div>
+                    </div>
+
                     <div class="form-group row mt-3">
                         <label for="titulo" class="col-sm-4 col-form-label">Título:</label>
                         <div class="col-sm-8">
@@ -87,7 +94,7 @@
                     </div>
 
                     <div class="form-group row mt-3">
-                        <label for="precio_compra" class="col-sm-4 col-form-label">Precio de Compra:</label>
+                        <label for="precio_compra" class="col-sm-4 col-form-label">Precio:</label>
                         <div class="col-sm-8">
                             <input type="number" step="0.01" class="form-control" name="precio_compra" required>
                         </div>

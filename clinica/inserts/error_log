@@ -40,3 +40,34 @@ Stack trace:
 [05-Aug-2024 17:39:04 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 21
 [13-Aug-2024 17:10:13 UTC] PHP Warning:  Undefined array key "institucionRefiere" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 21
 [13-Aug-2024 17:10:13 UTC] PHP Warning:  Undefined array key "tipoIngreso" in /home/tecolot1/public_html/clinica/inserts/pacientes.php on line 24
+[07-Sep-2024 17:34:54 UTC] PHP Warning:  Undefined variable $conexion in /home/tecolot1/public_html/clinica/inserts/solicitudes.php on line 11
+[07-Sep-2024 17:34:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/tecolot1/public_html/clinica/inserts/solicitudes.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/tecolot1/public_html/clinica/inserts/solicitudes.php on line 11
+[07-Sep-2024 20:12:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/tecolot1/public_html/clinica/inserts/medicina.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/tecolot1/public_html/clinica/inserts/medicina.php on line 28
+[07-Sep-2024 20:13:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/tecolot1/public_html/clinica/inserts/medicina.php:28
+Stack trace:
+#0 {main}
+  thrown in /home/tecolot1/public_html/clinica/inserts/medicina.php on line 28
+[07-Sep-2024 20:13:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/tecolot1/public_html/clinica/inserts/medicina.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/tecolot1/public_html/clinica/inserts/medicina.php on line 22
+[07-Sep-2024 20:14:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bind_param() on bool in /home/tecolot1/public_html/clinica/inserts/medicina.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/tecolot1/public_html/clinica/inserts/medicina.php on line 22
+[07-Sep-2024 21:23:37 UTC] PHP Warning:  Undefined array key "estatus" in /home/tecolot1/public_html/clinica/inserts/compras.php on line 26
+[07-Sep-2024 21:23:37 UTC] PHP Warning:  Undefined array key "cuenta_compra" in /home/tecolot1/public_html/clinica/inserts/compras.php on line 29
+[07-Sep-2024 21:23:37 UTC] PHP Warning:  Undefined array key "tipo_compra" in /home/tecolot1/public_html/clinica/inserts/compras.php on line 32
+[07-Sep-2024 21:31:54 UTC] PHP Warning:  Undefined array key "tipo_compra" in /home/tecolot1/public_html/clinica/inserts/compras.php on line 32
+[11-Sep-2024 17:05:31 UTC] PHP Warning:  Undefined array key "id_paciente" in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 7
+[11-Sep-2024 17:05:31 UTC] PHP Warning:  Undefined array key "saldo" in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 8
+[11-Sep-2024 17:05:31 UTC] PHP Warning:  Undefined array key "fecha_actualizacion" in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 9
+[11-Sep-2024 17:05:31 UTC] PHP Warning:  Undefined array key "duracion" in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 10
+[11-Sep-2024 17:05:31 UTC] PHP Warning:  Undefined array key "numero_periodos" in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 11
+[11-Sep-2024 17:05:31 UTC] PHP Warning:  Undefined array key "saldo_paciente" in /home/tecolot1/public_html/clinica/inserts/limite-credito.php on line 12

@@ -25,17 +25,18 @@ $estado = $_POST['estado'];
 $observaciones = $_POST['observaciones'];
 $fecha_ingreso = $_POST['fecha_ingreso'];
 $archivado = "no";
-
-// Nuevo campo agregado
 $intensidad = $_POST['intensidad'];
 
+// Nuevo campo agregado
+$costo = $_POST['costo']; // Recupera el valor del campo "costo" del formulario
+
 // Inserta los datos en la tabla
-$sql_insert = "INSERT INTO contactos (id_usuario, nombre, aPaterno, aMaterno, telefono, estado, observaciones, fecha_ingreso, archivado, intensidad) 
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+$sql_insert = "INSERT INTO contactos (id_usuario, nombre, aPaterno, aMaterno, telefono, estado, observaciones, fecha_ingreso, archivado, intensidad, costo) 
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 if ($stmt = $link->prepare($sql_insert)) {
     // Vincula los parámetros
-    $stmt->bind_param("dsssssssss", $id_usuario, $nombre, $aPaterno, $aMaterno, $telefono, $estado, $observaciones, $fecha_ingreso, $archivado, $intensidad);
+    $stmt->bind_param("dsssssssssd", $id_usuario, $nombre, $aPaterno, $aMaterno, $telefono, $estado, $observaciones, $fecha_ingreso, $archivado, $intensidad, $costo);
 
     // Ejecuta la consulta
     if ($stmt->execute()) {
@@ -53,4 +54,5 @@ if ($stmt = $link->prepare($sql_insert)) {
 
 // Cierra la conexión a la base de datos
 $link->close();
+
 ?>

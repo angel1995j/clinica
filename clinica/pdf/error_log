@@ -220,3 +220,118 @@ Stack trace:
 [19-Jul-2024 22:17:28 UTC] PHP Warning:  Undefined array key "placasVehiculo" in /home/tecolot1/public_html/clinica/pdf/orden-de-traslado.php on line 106
 [09-Aug-2024 18:43:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
 [09-Aug-2024 18:43:17 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/tecolot1/public_html/clinica/pdf/solicitud-de-internamiento.php on line 126
+[24-Aug-2024 02:21:48 UTC] PHP Warning:  Undefined array key "aPaterno" in /home/tecolot1/public_html/clinica/pdf/nota-psicologica.php on line 76
+[28-Aug-2024 21:03:49 UTC] PHP Warning:  Attempt to read property "num_rows" on bool in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 41
+[28-Aug-2024 21:05:03 UTC] PHP Warning:  Undefined array key "no_exp" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 79
+[28-Aug-2024 21:05:03 UTC] PHP Warning:  Undefined array key "objetivo_sesion" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 81
+[28-Aug-2024 21:05:03 UTC] PHP Warning:  Undefined array key "resumen_sesion" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 89
+[28-Aug-2024 21:05:03 UTC] PHP Warning:  Undefined array key "resultados_sesion" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 94
+[28-Aug-2024 21:05:03 UTC] PHP Warning:  Undefined array key "objetivo_proximo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 99
+[28-Aug-2024 21:05:03 UTC] PHP Warning:  Undefined array key "actividades_asignadas" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 104
+[28-Aug-2024 21:05:03 UTC] PHP Warning:  Undefined array key "plan_terapeutico" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 109
+[28-Aug-2024 21:05:03 UTC] PHP Warning:  Undefined array key "fecha_proxima_sesion" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 113
+[28-Aug-2024 21:05:03 UTC] PHP Warning:  Undefined array key "nombre_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 121
+[28-Aug-2024 21:05:03 UTC] PHP Warning:  Undefined array key "cedula_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 121
+[28-Aug-2024 21:06:53 UTC] PHP Warning:  Undefined array key "no_exp" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 79
+[28-Aug-2024 21:06:53 UTC] PHP Warning:  Undefined array key "nombre_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:06:53 UTC] PHP Warning:  Undefined array key "cedula_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:07:07 UTC] PHP Warning:  Undefined array key "no_exp" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 79
+[28-Aug-2024 21:07:07 UTC] PHP Warning:  Undefined array key "nombre_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:07:07 UTC] PHP Warning:  Undefined array key "cedula_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:09:53 UTC] PHP Warning:  Undefined array key "no_exp" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 79
+[28-Aug-2024 21:09:53 UTC] PHP Warning:  Undefined array key "nombre_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:09:53 UTC] PHP Warning:  Undefined array key "cedula_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:09:53 UTC] PHP Warning:  Undefined array key "no_exp" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 79
+[28-Aug-2024 21:09:53 UTC] PHP Warning:  Undefined array key "nombre_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:09:53 UTC] PHP Warning:  Undefined array key "cedula_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:11:37 UTC] PHP Warning:  Undefined array key "no_exp" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 79
+[28-Aug-2024 21:11:37 UTC] PHP Warning:  Undefined array key "nombre_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:11:37 UTC] PHP Warning:  Undefined array key "cedula_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:11:38 UTC] PHP Warning:  Undefined array key "no_exp" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 79
+[28-Aug-2024 21:11:38 UTC] PHP Warning:  Undefined array key "nombre_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:11:38 UTC] PHP Warning:  Undefined array key "cedula_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:12:32 UTC] PHP Warning:  Undefined array key "no_exp" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 79
+[28-Aug-2024 21:12:32 UTC] PHP Warning:  Undefined array key "nombre_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:12:32 UTC] PHP Warning:  Undefined array key "cedula_psicologo" in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 117
+[28-Aug-2024 21:15:33 UTC] PHP Warning:  Attempt to read property "num_rows" on bool in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 30
+[28-Aug-2024 21:15:35 UTC] PHP Warning:  Attempt to read property "num_rows" on bool in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 30
+[28-Aug-2024 21:15:53 UTC] PHP Warning:  Attempt to read property "num_rows" on bool in /home/tecolot1/public_html/clinica/pdf/nota-consejeria.php on line 30
+[02-Sep-2024 20:02:17 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 78
+[02-Sep-2024 20:02:17 UTC] PHP Warning:  Undefined array key "objetivo" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 80
+[02-Sep-2024 20:02:17 UTC] PHP Warning:  Undefined array key "resumen" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 88
+[02-Sep-2024 20:02:17 UTC] PHP Warning:  Undefined array key "resultados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 93
+[02-Sep-2024 20:02:17 UTC] PHP Warning:  Undefined array key "aspectos_esperados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 98
+[02-Sep-2024 20:02:17 UTC] PHP Warning:  Undefined array key "tareas" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 103
+[02-Sep-2024 20:02:17 UTC] PHP Warning:  Undefined array key "aspectos_trabajados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 108
+[02-Sep-2024 20:02:17 UTC] PHP Warning:  Undefined array key "observaciones" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 113
+[02-Sep-2024 20:02:17 UTC] PHP Warning:  Undefined array key "fecha_proxima" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 117
+[02-Sep-2024 20:03:30 UTC] PHP Warning:  Undefined array key "domicilio" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 78
+[02-Sep-2024 20:03:30 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[02-Sep-2024 20:03:30 UTC] PHP Warning:  Undefined array key "objetivo" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 81
+[02-Sep-2024 20:03:30 UTC] PHP Warning:  Undefined array key "resumen" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 89
+[02-Sep-2024 20:03:30 UTC] PHP Warning:  Undefined array key "resultados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 94
+[02-Sep-2024 20:03:30 UTC] PHP Warning:  Undefined array key "aspectos_esperados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 99
+[02-Sep-2024 20:03:30 UTC] PHP Warning:  Undefined array key "tareas" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 104
+[02-Sep-2024 20:03:30 UTC] PHP Warning:  Undefined array key "aspectos_trabajados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 109
+[02-Sep-2024 20:03:30 UTC] PHP Warning:  Undefined array key "observaciones" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 114
+[02-Sep-2024 20:03:30 UTC] PHP Warning:  Undefined array key "fecha_proxima" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 118
+[02-Sep-2024 20:04:36 UTC] PHP Warning:  Undefined array key "direccion" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 78
+[02-Sep-2024 20:04:36 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[02-Sep-2024 20:04:36 UTC] PHP Warning:  Undefined array key "objetivo" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 81
+[02-Sep-2024 20:04:36 UTC] PHP Warning:  Undefined array key "resumen" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 89
+[02-Sep-2024 20:04:36 UTC] PHP Warning:  Undefined array key "resultados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 94
+[02-Sep-2024 20:04:36 UTC] PHP Warning:  Undefined array key "aspectos_esperados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 99
+[02-Sep-2024 20:04:36 UTC] PHP Warning:  Undefined array key "tareas" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 104
+[02-Sep-2024 20:04:36 UTC] PHP Warning:  Undefined array key "aspectos_trabajados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 109
+[02-Sep-2024 20:04:36 UTC] PHP Warning:  Undefined array key "observaciones" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 114
+[02-Sep-2024 20:04:36 UTC] PHP Warning:  Undefined array key "fecha_proxima" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 118
+[02-Sep-2024 20:05:07 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[02-Sep-2024 20:05:07 UTC] PHP Warning:  Undefined array key "objetivo" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 81
+[02-Sep-2024 20:05:07 UTC] PHP Warning:  Undefined array key "resumen" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 89
+[02-Sep-2024 20:05:07 UTC] PHP Warning:  Undefined array key "resultados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 94
+[02-Sep-2024 20:05:07 UTC] PHP Warning:  Undefined array key "aspectos_esperados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 99
+[02-Sep-2024 20:05:07 UTC] PHP Warning:  Undefined array key "tareas" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 104
+[02-Sep-2024 20:05:07 UTC] PHP Warning:  Undefined array key "aspectos_trabajados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 109
+[02-Sep-2024 20:05:07 UTC] PHP Warning:  Undefined array key "observaciones" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 114
+[02-Sep-2024 20:05:07 UTC] PHP Warning:  Undefined array key "fecha_proxima" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 118
+[02-Sep-2024 21:29:38 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[02-Sep-2024 21:29:38 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 106
+[02-Sep-2024 21:29:38 UTC] PHP Warning:  Undefined array key "aspectos_trabajados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 111
+[02-Sep-2024 21:29:38 UTC] PHP Warning:  Undefined array key "observaciones" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 116
+[02-Sep-2024 21:29:38 UTC] PHP Warning:  Undefined array key "fecha_proxima" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 120
+[02-Sep-2024 21:30:46 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[02-Sep-2024 21:30:46 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 106
+[02-Sep-2024 21:30:46 UTC] PHP Warning:  Undefined array key "aspectos_trabajados" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 111
+[02-Sep-2024 21:30:46 UTC] PHP Warning:  Undefined array key "observaciones" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 116
+[02-Sep-2024 21:30:46 UTC] PHP Warning:  Undefined array key "fecha_proxima" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 120
+[02-Sep-2024 21:34:43 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[02-Sep-2024 21:34:43 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 106
+[02-Sep-2024 21:35:35 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[02-Sep-2024 21:35:35 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 106
+[02-Sep-2024 21:36:18 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[02-Sep-2024 21:36:18 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 106
+[02-Sep-2024 21:37:10 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[02-Sep-2024 21:37:10 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 106
+[02-Sep-2024 21:37:23 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[02-Sep-2024 21:37:23 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 106
+[02-Sep-2024 21:37:33 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[02-Sep-2024 21:37:33 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 106
+[03-Sep-2024 17:57:25 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[03-Sep-2024 17:57:25 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 106
+[03-Sep-2024 17:59:51 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/seguimiento.php on line 79
+[03-Sep-2024 17:59:51 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/seguimiento.php on line 106
+[03-Sep-2024 18:01:40 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/seguimiento.php on line 154
+[07-Sep-2024 14:54:49 UTC] PHP Warning:  Undefined variable $sumaMedicina in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 318
+[07-Sep-2024 14:54:49 UTC] PHP Warning:  Undefined array key "id_orden" in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 321
+[07-Sep-2024 14:54:49 UTC] PHP Warning:  Undefined array key "id_orden" in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 321
+[07-Sep-2024 14:54:49 UTC] PHP Warning:  Undefined array key "id_orden" in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 321
+[07-Sep-2024 14:55:10 UTC] PHP Warning:  Undefined variable $sumaMedicina in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 318
+[07-Sep-2024 14:55:10 UTC] PHP Warning:  Undefined array key "id_orden" in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 321
+[07-Sep-2024 14:55:10 UTC] PHP Warning:  Undefined array key "id_orden" in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 321
+[07-Sep-2024 14:55:30 UTC] PHP Warning:  Undefined variable $sumaMedicina in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 318
+[07-Sep-2024 14:55:44 UTC] PHP Warning:  Undefined variable $sumaMedicina in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 318
+[11-Sep-2024 17:14:25 UTC] PHP Warning:  Undefined variable $sumaMedicina in /home/tecolot1/public_html/clinica/pdf/estado-de-cuenta.php on line 318
+[11-Sep-2024 17:22:01 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[11-Sep-2024 17:22:01 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 106
+[11-Sep-2024 18:03:50 UTC] PHP Warning:  Undefined array key "hora" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 79
+[11-Sep-2024 18:03:50 UTC] PHP Warning:  Undefined array key "egg" in /home/tecolot1/public_html/clinica/pdf/hoja-egreso.php on line 106

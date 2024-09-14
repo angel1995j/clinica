@@ -68,37 +68,105 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <div class="container mt-5">
+    <div class="container mt-5">
+        <!-- Formulario Bootstrap -->
+        <form action="inserts/solicitudes.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id_usuario" value="<?php echo $id_usuario_logueado; ?>">
 
-                <!-- Formulario Bootstrap -->
-                <form action="inserts/solicitudes.php" method="post" enctype="multipart/form-data">
-                  <input type="hidden" name="id_usuario" value="<?php echo $id_usuario_logueado; ?>">
+            <!-- Información general de la solicitud -->
+            <div class="form-group row mt-3">
+                <label for="descripcion" class="col-sm-4 col-form-label">Descripción de la solicitud:</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" name="descripcion_solicitud" rows="2"></textarea>
+                </div>
+            </div>
 
-                  <div class="form-group row mt-3">
-                      <label for="descripcion" class="col-sm-4 col-form-label">Descripción de solicitud:</label>
-                      <div class="col-sm-8">
-                          <textarea class="form-control" name="descripcion" rows="7"></textarea>
-                      </div>
+            <div class="form-group row mt-3">
+                <label for="fecha" class="col-sm-4 col-form-label">Fecha:</label>
+                <div class="col-sm-8">
+                    <input type="date" class="form-control" name="fecha" required>
+                </div>
+            </div>
+
+            <!-- Detalles de la solicitud (lista de productos) -->
+            <div id="items-container">
+                <div class="form-group row mt-3">
+                    <label class="col-sm-4 col-form-label">Descripción del ítem:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="descripcion_item[]" required>
+                    </div>
+                </div>
+                <div class="form-group row mt-3">
+                    <label class="col-sm-4 col-form-label">Cantidad:</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" name="cantidad[]" step="0.01" required>
+                    </div>
+                </div>
+                <div class="form-group row mt-3">
+                  <label class="col-sm-4 col-form-label">Unidad de Medida:</label>
+                  <div class="col-sm-8">
+                      <select class="form-select" name="unidad_medida[]">
+                          <option value="pieza">Pieza</option>
+                          <option value="kilogramo">Kilogramo</option>
+                          <option value="gramo">Gramo</option>
+                          <option value="litro">Litro</option>
+                          <option value="mililitro">Mililitro</option>
+                          <option value="caja">Caja</option>
+                          <option value="bolsa">Bolsa</option>
+                          <option value="docena">Docena</option>
+                      </select>
                   </div>
-
-                  <div class="form-group row mt-3">
-                      <label for="fecha" class="col-sm-4 col-form-label">Fecha:</label>
-                      <div class="col-sm-8">
-                          <input type="date" class="form-control" name="fecha" required>
-                      </div>
-                  </div>
-
-
-
-                  <div class="form-group row mt-3">
-                      <div class="col-sm-12">
-                          <button type="submit" class="btn btn-primary">Agregar</button>
-                      </div>
-                  </div>
-              </form>
+              </div>
 
             </div>
-              </div>
+
+            <button type="button" class="btn btn-success mt-3" id="add-item">Agregar otro artículo</button>
+
+            <div class="form-group row mt-3">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary">Agregar Solicitud</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <script>
+                document.getElementById('add-item').addEventListener('click', function() {
+                    let itemsContainer = document.getElementById('items-container');
+                    let newItemHtml = `
+                        <div class="form-group row mt-3" style="border-top: 1px solid black; padding-top:5%;">
+                            <label class="col-sm-4 col-form-label">Descripción del ítem:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="descripcion_item[]" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-3">
+                            <label class="col-sm-4 col-form-label">Cantidad:</label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" name="cantidad[]" step="0.01" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-3">
+                            <label class="col-sm-4 col-form-label">Unidad de Medida:</label>
+                            <div class="col-sm-8">
+                               <select class="form-select" name="unidad_medida[]">
+                                <option value="pieza">Pieza</option>
+                                <option value="kilogramo">Kilogramo</option>
+                                <option value="gramo">Gramo</option>
+                                <option value="litro">Litro</option>
+                                <option value="mililitro">Mililitro</option>
+                                <option value="caja">Caja</option>
+                                <option value="bolsa">Bolsa</option>
+                                <option value="docena">Docena</option>
+                               </select>
+                            </div>
+                        </div>
+                    `;
+                    itemsContainer.insertAdjacentHTML('beforeend', newItemHtml);
+                });
+            </script>
+
              
             </div>
           </div>

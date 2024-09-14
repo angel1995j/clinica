@@ -81,12 +81,12 @@
                         </div>
 
                         <div class="form-group row mt-3">
-                            <label for="cuenta_compra" class="col-sm-4 col-form-label">Cuenta de compra:</label>
+                            <label for="cuenta_compra" class="col-sm-4 col-form-label">Método de pago:</label>
                             <div class="col-sm-8">
                                 <select class="form-control" name="cuenta_compra" required>
                                     <option value="Cuenta Lenin">Cuenta Lenin</option>
                                     <option value="Cuenta Dante">Cuenta Dante</option>
-                                    <option value="Otra">Otra</option>
+                                    <option value="Efectivo">Efectivo</option>
                                 </select>
                             </div>
                         </div>

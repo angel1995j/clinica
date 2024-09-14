@@ -44,6 +44,11 @@ $resultadoHistorialSaldo = $link->query($sqlHistorialSaldo);
 $sqlOrdenes = "SELECT * FROM ordenes WHERE id_paciente = $id_paciente";
 $resultadoOrdenes = $link->query($sqlOrdenes);
 
+
+// Consulta los consumos de medicina del paciente
+$sqlOrdenesMedicina = "SELECT * FROM consumo WHERE id_paciente = $id_paciente";
+$resultadoOrdenesMedicina = $link->query($sqlOrdenesMedicina);
+
 $anioActual = date("Y");
 
 // Obtiene el mes actual (sin ceros a la izquierda)
@@ -298,6 +303,32 @@ while ($orden = $resultadoOrdenes->fetch_assoc()) {
 $html .= '
     </table>';
 $html .= '<br>Suma de consumo de tiendita: $' . number_format($sumaCreditos, 2) . '<br><br><br><br>';
+
+// Consulta las órdenes y agrega los datos al HTML
+$html .= '<br><br><b>Consumos de medicina:</b>
+    <table class="table">
+        <tr>
+            <th>ID Consumo</th>
+            <th>Fecha de consumo</th>
+            <th>Concepto</th>
+            <th>Total</th>
+        </tr>';
+
+while ($orden_medicina = $resultadoOrdenesMedicina->fetch_assoc()) {
+    $sumaMedicina += $orden_medicina['monto'];
+    $html .= '
+        <tr>
+            <td>' . htmlspecialchars($orden_medicina['id_consumo']) . '</td>
+            <td>' . htmlspecialchars($orden_medicina['fecha_consumo']) . '</td>
+            <td>' . htmlspecialchars($orden_medicina['concepto']) . '</td>
+            <td>' . htmlspecialchars($orden_medicina['monto']) . '</td>
+        </tr>';
+}
+
+$html .= '
+    </table>';
+$html .= '<br>Suma de consumo de medicina: $' . number_format($sumaMedicina, 2) . '<br><br><br><br>';
+
 
 $html .= '
 </div>

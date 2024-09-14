@@ -74,6 +74,8 @@ $paciente = $resultado->fetch_assoc();
                                         echo "</ul></td>";
                                         echo "<td>" . $orden['estatus'] . "</td>";
 
+                                         echo "<td><a href='detalles-venta-tiendita.php?id_orden=" . $orden['id_orden'] . "'>Ver Orden </a></td>";
+
                                         echo "</tr>";
                                     }
                                     ?>

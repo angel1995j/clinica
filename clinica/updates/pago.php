@@ -17,6 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $estatus = $_POST['estatus'];
     $forma_pago = $_POST['forma_pago']; // Nuevo campo forma_pago
 
+    $id_paciente = $_POST['id_paciente'];
+
     // Obtén el ID del usuario desde la sesión (asumido aquí como $_SESSION['id_usuario'])
     session_start();
     $id_usuario = $_SESSION['id_usuario']; // Asegúrate de ajustar según cómo almacenes el ID del usuario en la sesión
@@ -72,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($link->query($sql_actualizar) === TRUE) {
         echo "Pago actualizado correctamente.";
         // Redirecciona al usuario a la página de pagos individuales del paciente
-        header("Location: ../pagos-individual.php?id_paciente=8"); // Reemplaza 8 con el ID correcto del paciente
+        header("Location: ../pagos-individual.php?id_paciente=$id_paciente");
     } else {
         echo "Error al actualizar el pago: " . $link->error;
     }

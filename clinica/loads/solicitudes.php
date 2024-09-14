@@ -77,6 +77,9 @@ if ($num_rows > 0) {
 
         $output['data'] .= '<td>' . $row['descripcion'] . '</td>';
         $output['data'] .= '<td class="text-center">' . $row['fecha'] . '</td>';
+        
+        $output['data'] .= '<td class="align-middle text-center text-sm"><span class="text-secondary text-xs font-weight-bold"><a class="btn boton-secundario" href="detalle-solicitud.php?id_solicitud=' . $row['id_solicitud'] . '"">Ver detalles</a></span></td>';
+
         $output['data'] .= '<td class="align-middle text-center text-sm"><span class="text-secondary text-xs font-weight-bold"><a class="btn boton-secundario" href="updates/archivar-solicitud.php?id_solicitud=' . $row['id_solicitud'] . '"">Archivar</a></span></td>';
 
         $output['data'] .= '</tr>';

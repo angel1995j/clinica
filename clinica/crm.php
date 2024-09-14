@@ -18,19 +18,29 @@ $intensidad = $row['intensidad'];
 // Define los colores según el valor de intensidad
 $color = '';
 switch ($intensidad) {
-    case 'Frio':
-        $color = 'blue';
+    case 'Interesado':
+        $color = 'green'; // Cambia el color según tu preferencia
         break;
-    case 'Tibio':
-        $color = 'yellow';
+    case 'Muy interesado':
+        $color = 'darkgreen'; // Cambia el color según tu preferencia
         break;
-    case 'Caliente':
-        $color = 'red';
+    case 'Poco interesado':
+        $color = 'orange'; // Cambia el color según tu preferencia
+        break;
+    case 'No contesta':
+        $color = 'gray'; // Cambia el color según tu preferencia
+        break;
+    case 'Mal momento':
+        $color = 'red'; // Cambia el color según tu preferencia
+        break;
+    case 'En espera':
+        $color = 'yellow'; // Cambia el color según tu preferencia
         break;
     default:
         // Color predeterminado si no coincide con ninguna categoría
-        $color = 'gray';
+        $color = 'blue';
 }
+
 
 
 
@@ -53,6 +63,10 @@ switch ($intensidad) {
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoContacto">
             Añadir nuevo contacto
           </button>
+
+          <a class="btn btn-danger" href="crm-lista.php">
+            Modo Lista
+          </a>
           
         </div>
 
@@ -128,6 +142,13 @@ switch ($intensidad) {
                                     </div>
                                 </div>
 
+                                  <div class="form-group row mt-3">
+                                    <label for="costo" class="col-sm-4 col-form-label">Costo:</label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" name="costo">
+                                    </div>
+                                </div>
+
                                 <div class="form-group row mt-3">
                                     <label for="fecha_ingreso" class="col-sm-4 col-form-label">Fecha de ingreso:</label>
                                     <div class="col-sm-8">
@@ -139,10 +160,11 @@ switch ($intensidad) {
                                     <label for="estado" class="col-sm-4 col-form-label">Estado:</label>
                                     <div class="col-sm-8">
                                         <select class="form-select" name="estado" required>
-                                            <option value="Ingresado" selected>Ingresado</option>
-                                            <option value="En Proceso">En Proceso</option>
-                                            <option value="En espera">En espera</option>
-                                            <option value="Cerrado">Cerrado</option>
+                                            <option value="Suscriptor" selected>Suscriptor</option>
+                                            <option value="Lead">Lead</option>
+                                            <option value="Lead calificado">Lead calificado</option>
+                                            <option value="Oportunidad">Oportunidad</option>
+                                            <option value="Ganado">Ganado</option>
                                         </select>
                                     </div>
                                 </div>
@@ -159,12 +181,16 @@ switch ($intensidad) {
                                     <label for="intensidad" class="col-sm-4 col-form-label">Intensidad:</label>
                                     <div class="col-sm-8">
                                         <select class="form-select" name="intensidad" required>
-                                            <option value="Frio" selected>Frio</option>
-                                            <option value="Tibio">Tibio</option>
-                                            <option value="Caliente">Caliente</option>
+                                            <option value="Interesado" selected>Interesado</option>
+                                            <option value="Muy interesado">Muy interesado</option>
+                                            <option value="Poco interesado">Poco interesado</option>
+                                            <option value="No contesta">No contesta</option>
+                                            <option value="Mal momento">Mal momento</option>
+                                            <option value="En espera">En espera</option>
                                         </select>
                                     </div>
                                 </div>
+
 
                           
 
@@ -186,11 +212,11 @@ switch ($intensidad) {
         <div class="col-3 mt-5">
           <div class="card overflow-hidden">
               <div class="card-body">
-                  <h5 class="card-title mb-9 fw-semibold">Ingresado &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-play" aria-hidden="true"></i></h5>
+                  <h5 class="card-title mb-9 fw-semibold">Suscriptor &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-play" aria-hidden="true"></i></h5>
 
                   <?php
-                  // Realiza una consulta SQL para obtener los registros con estado "Ingresado"
-                  $sql = "SELECT * FROM contactos WHERE estado = 'Ingresado'";
+                  // Realiza una consulta SQL para obtener los registros con estado "Suscriptor"
+                  $sql = "SELECT * FROM contactos WHERE estado = 'Suscriptor'";
                   $result = $link->query($sql);
 
                   // Verifica si hay resultados
@@ -228,15 +254,47 @@ switch ($intensidad) {
                                         
 
 
-                                      <?php
+                                     <?php
+                                        // Definimos el color y el texto según la intensidad usando un switch
+                                        $color = '';
+                                        $texto = '';
+                                        switch ($row['intensidad']) {
+                                            case 'Interesado':
+                                                $color = 'green';
+                                                $texto = 'Interesado';
+                                                break;
+                                            case 'Muy interesado':
+                                                $color = 'darkgreen';
+                                                $texto = 'Muy interesado';
+                                                break;
+                                            case 'Poco interesado':
+                                                $color = 'orange';
+                                                $texto = 'Poco interesado';
+                                                break;
+                                            case 'No contesta':
+                                                $color = 'gray';
+                                                $texto = 'No contesta';
+                                                break;
+                                            case 'Mal momento':
+                                                $color = 'red';
+                                                $texto = 'Mal momento';
+                                                break;
+                                            case 'En espera':
+                                                $color = 'yellow';
+                                                $texto = 'En espera';
+                                                break;
+                                            default:
+                                                $color = 'blue'; // Color predeterminado
+                                                $texto = 'Desconocido';
+                                                break;
+                                        }
+                                        ?>
 
-                                        if ($row['intensidad'] == "Caliente") { ?>
-                                          <div style="background-color: red; height:25px; width:25px; border-radius: 50%;"></div>
-                                        <?php } elseif ($row['intensidad'] == "Tibio") {?>
-                                          <div style="background-color: yellow; height:25px; width:25px; border-radius: 50%;"></div>
-                                       <?php } elseif ($row['intensidad'] == "Frio") {?>
-                                          <div style="background-color: blue; height:25px; width:25px; border-radius: 50%;"></div>
-                                      <?php }?>
+                                        <!-- Aquí mostramos el círculo de color y el texto correspondiente -->
+                                        <div style="display: flex; align-items: center;">
+                                            <div style="background-color: <?php echo $color; ?>; height:25px; width:25px; border-radius: 50%; margin-right: 10px;"></div>
+                                            <span><?php echo $texto; ?></span>
+                                        </div>
 
 
                                   </div>
@@ -263,11 +321,11 @@ switch ($intensidad) {
           <div class="col-3 mt-5">
           <div class="card overflow-hidden">
               <div class="card-body">
-                  <h5 class="card-title mb-9 fw-semibold">En Espera &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-play" aria-hidden="true"></i></h5>
+                  <h5 class="card-title mb-9 fw-semibold">Lead &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-play" aria-hidden="true"></i></h5>
 
                   <?php
-                  // Realiza una consulta SQL para obtener los registros con estado "En Espera"
-                  $sql = "SELECT * FROM contactos WHERE estado = 'En Espera'";
+                  // Realiza una consulta SQL para obtener los registros con estado "Lead"
+                  $sql = "SELECT * FROM contactos WHERE estado = 'Lead'";
                   $result = $link->query($sql);
 
                   // Verifica si hay resultados
@@ -302,14 +360,46 @@ switch ($intensidad) {
                                       ?>
 
                                       <?php
+                                        // Definimos el color y el texto según la intensidad usando un switch
+                                        $color = '';
+                                        $texto = '';
+                                        switch ($row['intensidad']) {
+                                            case 'Interesado':
+                                                $color = 'green';
+                                                $texto = 'Interesado';
+                                                break;
+                                            case 'Muy interesado':
+                                                $color = 'darkgreen';
+                                                $texto = 'Muy interesado';
+                                                break;
+                                            case 'Poco interesado':
+                                                $color = 'orange';
+                                                $texto = 'Poco interesado';
+                                                break;
+                                            case 'No contesta':
+                                                $color = 'gray';
+                                                $texto = 'No contesta';
+                                                break;
+                                            case 'Mal momento':
+                                                $color = 'red';
+                                                $texto = 'Mal momento';
+                                                break;
+                                            case 'En espera':
+                                                $color = 'yellow';
+                                                $texto = 'En espera';
+                                                break;
+                                            default:
+                                                $color = 'blue'; // Color predeterminado
+                                                $texto = 'Desconocido';
+                                                break;
+                                        }
+                                        ?>
 
-                                        if ($row['intensidad'] == "Caliente") { ?>
-                                          <div style="background-color: red; height:25px; width:25px; border-radius: 50%;"></div>
-                                        <?php } elseif ($row['intensidad'] == "Tibio") {?>
-                                          <div style="background-color: yellow; height:25px; width:25px; border-radius: 50%;"></div>
-                                       <?php } elseif ($row['intensidad'] == "Frio") {?>
-                                          <div style="background-color: blue; height:25px; width:25px; border-radius: 50%;"></div>
-                                      <?php }?>
+                                        <!-- Aquí mostramos el círculo de color y el texto correspondiente -->
+                                        <div style="display: flex; align-items: center;">
+                                            <div style="background-color: <?php echo $color; ?>; height:25px; width:25px; border-radius: 50%; margin-right: 10px;"></div>
+                                            <span><?php echo $texto; ?></span>
+                                        </div>
 
                                   </div>
                                   <div class="col-md-2">
@@ -333,11 +423,11 @@ switch ($intensidad) {
 <div class="col-3 mt-5">
           <div class="card overflow-hidden">
               <div class="card-body">
-                  <h5 class="card-title mb-9 fw-semibold">En Proceso &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-play" aria-hidden="true"></i></h5>
+                  <h5 class="card-title mb-9 fw-semibold">Lead calificado &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-play" aria-hidden="true"></i></h5>
 
                   <?php
-                  // Realiza una consulta SQL para obtener los registros con estado "En Proceso"
-                  $sql = "SELECT * FROM contactos WHERE estado = 'En Proceso'";
+                  // Realiza una consulta SQL para obtener los registros con estado "Lead calificado"
+                  $sql = "SELECT * FROM contactos WHERE estado = 'Lead calificado'";
                   $result = $link->query($sql);
 
                   // Verifica si hay resultados
@@ -371,15 +461,47 @@ switch ($intensidad) {
                                       }
                                       ?>
 
-                                      <?php
+                                     <?php
+                                        // Definimos el color y el texto según la intensidad usando un switch
+                                        $color = '';
+                                        $texto = '';
+                                        switch ($row['intensidad']) {
+                                            case 'Interesado':
+                                                $color = 'green';
+                                                $texto = 'Interesado';
+                                                break;
+                                            case 'Muy interesado':
+                                                $color = 'darkgreen';
+                                                $texto = 'Muy interesado';
+                                                break;
+                                            case 'Poco interesado':
+                                                $color = 'orange';
+                                                $texto = 'Poco interesado';
+                                                break;
+                                            case 'No contesta':
+                                                $color = 'gray';
+                                                $texto = 'No contesta';
+                                                break;
+                                            case 'Mal momento':
+                                                $color = 'red';
+                                                $texto = 'Mal momento';
+                                                break;
+                                            case 'En espera':
+                                                $color = 'yellow';
+                                                $texto = 'En espera';
+                                                break;
+                                            default:
+                                                $color = 'blue'; // Color predeterminado
+                                                $texto = 'Desconocido';
+                                                break;
+                                        }
+                                        ?>
 
-                                        if ($row['intensidad'] == "Caliente") { ?>
-                                          <div style="background-color: red; height:25px; width:25px; border-radius: 50%;"></div>
-                                        <?php } elseif ($row['intensidad'] == "Tibio") {?>
-                                          <div style="background-color: yellow; height:25px; width:25px; border-radius: 50%;"></div>
-                                       <?php } elseif ($row['intensidad'] == "Frio") {?>
-                                          <div style="background-color: blue; height:25px; width:25px; border-radius: 50%;"></div>
-                                      <?php }?>
+                                        <!-- Aquí mostramos el círculo de color y el texto correspondiente -->
+                                        <div style="display: flex; align-items: center;">
+                                            <div style="background-color: <?php echo $color; ?>; height:25px; width:25px; border-radius: 50%; margin-right: 10px;"></div>
+                                            <span><?php echo $texto; ?></span>
+                                        </div>
 
                                   </div>
                                   <div class="col-md-2">
@@ -407,11 +529,11 @@ switch ($intensidad) {
 <div class="col-3 mt-5">
           <div class="card overflow-hidden">
               <div class="card-body">
-                  <h5 class="card-title mb-9 fw-semibold">Cerrado &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-play" aria-hidden="true"></i></h5>
+                  <h5 class="card-title mb-9 fw-semibold">Oportunidad &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-play" aria-hidden="true"></i></h5>
 
                   <?php
-                  // Realiza una consulta SQL para obtener los registros con estado "Cerrado"
-                  $sql = "SELECT * FROM contactos WHERE estado = 'Cerrado'";
+                  // Realiza una consulta SQL para obtener los registros con estado "Oportunidad"
+                  $sql = "SELECT * FROM contactos WHERE estado = 'Oportunidad'";
                   $result = $link->query($sql);
 
                   // Verifica si hay resultados
@@ -447,14 +569,46 @@ switch ($intensidad) {
 
 
                                       <?php
+                                        // Definimos el color y el texto según la intensidad usando un switch
+                                        $color = '';
+                                        $texto = '';
+                                        switch ($row['intensidad']) {
+                                            case 'Interesado':
+                                                $color = 'green';
+                                                $texto = 'Interesado';
+                                                break;
+                                            case 'Muy interesado':
+                                                $color = 'darkgreen';
+                                                $texto = 'Muy interesado';
+                                                break;
+                                            case 'Poco interesado':
+                                                $color = 'orange';
+                                                $texto = 'Poco interesado';
+                                                break;
+                                            case 'No contesta':
+                                                $color = 'gray';
+                                                $texto = 'No contesta';
+                                                break;
+                                            case 'Mal momento':
+                                                $color = 'red';
+                                                $texto = 'Mal momento';
+                                                break;
+                                            case 'En espera':
+                                                $color = 'yellow';
+                                                $texto = 'En espera';
+                                                break;
+                                            default:
+                                                $color = 'blue'; // Color predeterminado
+                                                $texto = 'Desconocido';
+                                                break;
+                                        }
+                                        ?>
 
-                                        if ($row['intensidad'] == "Caliente") { ?>
-                                          <div style="background-color: red; height:25px; width:25px; border-radius: 50%;"></div>
-                                        <?php } elseif ($row['intensidad'] == "Tibio") {?>
-                                          <div style="background-color: yellow; height:25px; width:25px; border-radius: 50%;"></div>
-                                       <?php } elseif ($row['intensidad'] == "Frio") {?>
-                                          <div style="background-color: blue; height:25px; width:25px; border-radius: 50%;"></div>
-                                      <?php }?>
+                                        <!-- Aquí mostramos el círculo de color y el texto correspondiente -->
+                                        <div style="display: flex; align-items: center;">
+                                            <div style="background-color: <?php echo $color; ?>; height:25px; width:25px; border-radius: 50%; margin-right: 10px;"></div>
+                                            <span><?php echo $texto; ?></span>
+                                        </div>
 
                                   </div>
                                   <div class="col-md-2">
@@ -474,7 +628,106 @@ switch ($intensidad) {
       </div>
 
 
+<div class="col-3 mt-5">
+          <div class="card overflow-hidden">
+              <div class="card-body">
+                  <h5 class="card-title mb-9 fw-semibold">Ganado &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-play" aria-hidden="true"></i></h5>
 
+                  <?php
+                  // Realiza una consulta SQL para obtener los registros con estado "Ganado"
+                  $sql = "SELECT * FROM contactos WHERE estado = 'Ganado'";
+                  $result = $link->query($sql);
+
+                  // Verifica si hay resultados
+                  if ($result->num_rows > 0) {
+                      // Itera sobre los resultados y muestra cada registro
+                      while ($row = $result->fetch_assoc()) {
+                          ?>
+                          <div class="d-flex flex-column justify-content-center">
+                              <div class="row item-lead">
+                                  <div class="col-md-10"> 
+                                      <h5 class="mb-0 text-sm"><?php echo $row['nombre'] . ' ' . $row['aPaterno'] . ' ' . $row['aMaterno']; ?></h5>
+                                      <p class="text-xs mb-0 mt-2"> <i class="fa fa-phone"></i> &nbsp;<?php echo $row['telefono']; ?></p>
+                                      <p class="text-xs mb-0 mt-2"><b>Ingreso: </b><?php echo $row['fecha_ingreso']; ?></p>
+
+                                      <p class="text-xs mb-0 mt-2">(Han pasado <?php echo calcularDiasTranscurridos($row['fecha_ingreso'], $currentDate); ?> días desde el primer contacto)</p>
+
+                                       <?php
+                                      // Consulta SQL para obtener el nombre y apellido paterno del vendedor
+                                      $sqlVendedor = "SELECT nombre, aPaterno FROM usuarios WHERE id_usuario = " . $row['id_usuario'];
+                                      $resultVendedor = $link->query($sqlVendedor);
+
+                                      // Verifica si hay resultados
+                                      if ($resultVendedor->num_rows > 0) {
+                                          $vendedor = $resultVendedor->fetch_assoc();
+                                          ?>
+                                          <p class="text-xs mb-0 text-primary">Vendedor: <?php echo $vendedor['nombre'] . ' ' . $vendedor['aPaterno']; ?></p><br>
+                                          <?php
+                                      } else {
+                                          // Muestra un mensaje si no hay resultados
+                                          echo "Vendedor no encontrado.";
+                                      }
+                                      ?>
+
+
+                                      <?php
+                                        // Definimos el color y el texto según la intensidad usando un switch
+                                        $color = '';
+                                        $texto = '';
+                                        switch ($row['intensidad']) {
+                                            case 'Interesado':
+                                                $color = 'green';
+                                                $texto = 'Interesado';
+                                                break;
+                                            case 'Muy interesado':
+                                                $color = 'darkgreen';
+                                                $texto = 'Muy interesado';
+                                                break;
+                                            case 'Poco interesado':
+                                                $color = 'orange';
+                                                $texto = 'Poco interesado';
+                                                break;
+                                            case 'No contesta':
+                                                $color = 'gray';
+                                                $texto = 'No contesta';
+                                                break;
+                                            case 'Mal momento':
+                                                $color = 'red';
+                                                $texto = 'Mal momento';
+                                                break;
+                                            case 'En espera':
+                                                $color = 'yellow';
+                                                $texto = 'En espera';
+                                                break;
+                                            default:
+                                                $color = 'blue'; // Color predeterminado
+                                                $texto = 'Desconocido';
+                                                break;
+                                        }
+                                        ?>
+
+                                        <!-- Aquí mostramos el círculo de color y el texto correspondiente -->
+                                        <div style="display: flex; align-items: center;">
+                                            <div style="background-color: <?php echo $color; ?>; height:25px; width:25px; border-radius: 50%; margin-right: 10px;"></div>
+                                            <span><?php echo $texto; ?></span>
+                                        </div>
+
+                                  </div>
+                                  <div class="col-md-2">
+                                      <a href="editar-contacto.php?id_contacto=<?php echo $row['id_contacto']?>" style="color: black;"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></a>
+                                  </div>
+                              </div>
+                          </div>
+                          <?php
+                      }
+                  } else {
+                      // Muestra un mensaje si no hay resultados
+                      echo "No hay registros ingresados.";
+                  }
+                  ?>
+              </div>
+          </div>
+      </div>
                             
 
 
@@ -483,9 +736,7 @@ switch ($intensidad) {
 
 
 
-      <div class="row mt-5">
 
-utiliza en todas el formato de abajo que tiene datos estaticos, esos datos deben salir de Base de datos
 
 <?php
 require "footer.php";

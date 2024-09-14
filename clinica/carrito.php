@@ -19,7 +19,34 @@ if (!isset($_SESSION["items_carrito"])) {
     $_SESSION["items_carrito"] = array();
 }
 
+// Obtener el código de producto ingresado
+$codigo_producto = isset($_GET['codigo_producto']) ? $link->real_escape_string($_GET['codigo_producto']) : '';
 
+// Definir la cantidad de productos por página
+$productos_por_pagina = 12; 
+
+// Obtener el número de la página actual desde la URL (por defecto será 1 si no se especifica)
+$pagina_actual = isset($_GET['pagina']) ? intval($_GET['pagina']) : 1;
+$pagina_actual = ($pagina_actual > 0) ? $pagina_actual : 1;
+
+// Calcular el índice del primer producto para la consulta SQL
+$inicio = ($pagina_actual - 1) * $productos_por_pagina;
+
+// Contar el total de productos, aplicando el filtro de código si está presente
+$sqlContarProductos = "SELECT COUNT(*) AS total FROM productos WHERE tipo_producto = 'tiendita' AND stock > 1";
+if (!empty($codigo_producto)) {
+    $sqlContarProductos .= " AND codigo LIKE '%$codigo_producto%'";
+}
+$resultadoContar = $link->query($sqlContarProductos);
+$total_productos = $resultadoContar->fetch_assoc()['total'];
+
+// Obtener los productos para la página actual, aplicando el filtro de código si está presente
+$sqlProductos = "SELECT * FROM productos WHERE tipo_producto = 'tiendita' AND stock > 1";
+if (!empty($codigo_producto)) {
+    $sqlProductos .= " AND codigo LIKE '%$codigo_producto%'";
+}
+$sqlProductos .= " ORDER BY id_producto ASC LIMIT $inicio, $productos_por_pagina";
+$resultadoProductos = $link->query($sqlProductos);
 
 if (!empty($_POST["accion"])) {
     switch ($_POST["accion"]) {
@@ -76,8 +103,6 @@ if (!empty($_POST["accion"])) {
             break;
     }
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +114,27 @@ if (!empty($_POST["accion"])) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 
+
+
     <script>
+
+        $(document).ready(function() {
+        // Manejar el evento click en el botón de reinicio
+        $("#resetFilter").click(function () {
+            // Limpiar el campo de búsqueda
+            $("#codigo_producto").val('');
+            
+            // Enviar el formulario para restablecer los resultados
+            $("#searchForm").submit();
+        });
+        
+        // Agregar un evento 'input' al campo de búsqueda
+        searchInput.on('input', function() {
+            // Enviar el formulario automáticamente
+            searchForm.submit();
+        });
+        });
+
         // Definir la función addToCart en el ámbito global
         function addToCart(productId) {
             var form = $("#addToCartForm" + productId);
@@ -145,8 +190,6 @@ if (!empty($_POST["accion"])) {
             });
         }
     </script>
-
-
 </head>
 <body>
 
@@ -154,6 +197,17 @@ if (!empty($_POST["accion"])) {
     <div class="row">
         <div class="col-md-12 mt-3">
             <div><h2 class="text-center mb-4">Selecciona productos de la tiendita</h2></div>
+
+            <div class="text-center">
+            <form id="searchForm" method="get" action="">
+            <input type="hidden" name="id_paciente" value="<?php echo htmlspecialchars($id_paciente); ?>">
+            <input type="text" id="codigo_producto" name="codigo_producto" placeholder="Buscar producto">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+            <button type="button" id="resetFilter" class="btn btn-danger">Reiniciar filtro</button>
+             </form>
+
+             </div>
+
 
             <!-- Mostrar información de crédito del paciente -->
             <h4 class="mt-5 text-center">
@@ -174,36 +228,47 @@ if (!empty($_POST["accion"])) {
                 $saldo_de_paciente = $credito_proximo['saldo'];
                 ?>
             </h4><br><br>
-
             <div class="row">
                 <?php
-                $productos_array = $link->query("SELECT * FROM productos WHERE tipo_producto = 'tiendita' AND stock > 1 ORDER BY id_producto ASC");
-                if ($productos_array) {
-                    while ($k = $productos_array->fetch_assoc()) {
+                if ($resultadoProductos) {
+                    while ($k = $resultadoProductos->fetch_assoc()) {
                         ?>
                         <div class="col-md-3 mb-4">
                             <div class="card">
-                                <img src="assets/images/products/<?php echo $k["imagen"]; ?>" class="card-img-top" alt="<?php echo $k["titulo"]; ?>" style="height: 150px; object-fit: cover;">
+                                <img src="assets/images/products/<?php echo htmlspecialchars($k["imagen"]); ?>" class="card-img-top" alt="<?php echo htmlspecialchars($k["nombre"]); ?>">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?php echo $k["titulo"]; ?></h5>
-                                    <p class="card-text"><?php echo "$" . $k["precio_venta"]; ?></p>
-                                    <form method="POST" action="carrito.php" id="addToCartForm<?php echo $k["id_producto"]; ?>">
+                                    <h5 class="card-title"><?php echo htmlspecialchars($k["nombre"]); ?></h5>
+                                    <p class="card-text">Precio: $<?php echo htmlspecialchars($k["precio_venta"]); ?></p>
+                                    <p class="card-text">Stock: <?php echo htmlspecialchars($k["cantidad"]); ?></p>
+                                    <form id="addToCartForm<?php echo $k['id_producto']; ?>" method="POST" action="carrito.php">
                                         <input type="hidden" name="accion" value="agregar">
-                                        <input type="hidden" name="cod" value="<?php echo $k["id_producto"]; ?>">
-                                        <div class="mb-3">
-                                            <input type="number" name="txtcantidad" value="1" min="1" class="form-control">
-                                        </div>
-                                        <button type="button" class="btn btn-primary addToCartButton" data-product-id="<?php echo $k["id_producto"]; ?>">Agregar al carrito</button>
+                                        <input type="hidden" name="cod" value="<?php echo $k['id_producto']; ?>">
+                                        <input type="number" name="txtcantidad" min="1" max="<?php echo $k['cantidad']; ?>" value="1" class="form-control mb-2">
+                                        <button type="button" class="btn btn-primary addToCartButton" data-product-id="<?php echo $k['id_producto']; ?>">Agregar al carrito</button>
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <?php
                     }
+                } else {
+                    echo "<p>No se encontraron productos.</p>";
                 }
                 ?>
             </div>
-        </div>
+
+            <!-- Mostrar paginación -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <?php
+                    for ($i = 1; $i <= $total_paginas; $i++) {
+                        $active_class = ($i == $pagina_actual) ? ' active' : '';
+                        echo '<li class="page-item' . $active_class . '"><a class="page-link" href="?pagina=' . $i . '&codigo_producto=' . htmlspecialchars($codigo_producto) . '&id_paciente=' . htmlspecialchars($id_paciente) . '">' . $i . '</a></li>';
+                    }
+                    ?>
+                </ul>
+            </nav>
+
 
         <div class="col-md-12">
             <h2>Lista de productos a comprar.</h2>
@@ -300,6 +365,8 @@ if (!empty($_POST["accion"])) {
         </div>
     </div>
 </div>
+
+
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 

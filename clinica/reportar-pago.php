@@ -239,6 +239,9 @@ $link = bases();
                 <input type="hidden" class="form-control" id="monto" name="monto" value="<?php echo $pago['monto']; ?>" >
                 <input type="hidden" name="estatus" value="Pagado">
                 <input type="hidden" name="id_pago" value="<?php echo $id_pago; ?>">
+                 <input type="hidden" name="id_paciente" value="<?php echo $id_paciente; ?>">
+
+                
 
                 <div class="form-group mt-3">
                     <button type="submit" class="btn btn-primary">Actualizar Pago</button>

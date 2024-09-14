@@ -6,7 +6,7 @@ $link = bases();
 if (isset($_GET['id_contacto'])) {
     $id_contacto = $_GET['id_contacto'];
 
-    // Realiza una consulta SQL para obtener los detalles del contacto
+    // Consulta SQL para obtener los detalles del contacto
     $sql = "SELECT * FROM contactos WHERE id_contacto = $id_contacto";
     $result = $link->query($sql);
 
@@ -16,8 +16,7 @@ if (isset($_GET['id_contacto'])) {
         ?>
         <div class="container-fluid py-4 mt-5">
             <div class="row mt-5">
-                <a href="crm.php" class="text-secondary mt-3"><i class="fa fa-undo" aria-hidden="true"></i>
-             Volver al CRM</a>
+                <a href="crm.php" class="text-secondary mt-3"><i class="fa fa-undo" aria-hidden="true"></i> Volver al CRM</a>
 
                 <div class="col-12 mt-3">
                     <h1>Editar Contacto <?php echo $contacto['nombre']; ?></h1>
@@ -53,22 +52,26 @@ if (isset($_GET['id_contacto'])) {
                         <div class="mb-3">
                             <label for="estado" class="form-label">Estado:</label>
                             <select class="form-select" name="estado" required>
-                                <option value="Ingresado" <?php echo ($contacto['estado'] == 'Ingresado') ? 'selected' : ''; ?>>Ingresado</option>
-                                <option value="En Proceso" <?php echo ($contacto['estado'] == 'En Proceso') ? 'selected' : ''; ?>>En Proceso</option>
-                                <option value="En espera" <?php echo ($contacto['estado'] == 'En espera') ? 'selected' : ''; ?>>En espera</option>
-                                <option value="Cerrado" <?php echo ($contacto['estado'] == 'Cerrado') ? 'selected' : ''; ?>>Cerrado</option>
+                                <option value="Suscriptor" <?php echo ($contacto['estado'] == 'Suscriptor') ? 'selected' : ''; ?>>Suscriptor</option>
+                                <option value="Lead" <?php echo ($contacto['estado'] == 'Lead') ? 'selected' : ''; ?>>Lead</option>
+                                <option value="Lead calificado" <?php echo ($contacto['estado'] == 'Lead calificado') ? 'selected' : ''; ?>>Lead calificado</option>
+                                <option value="Oportunidad" <?php echo ($contacto['estado'] == 'Oportunidad') ? 'selected' : ''; ?>>Oportunidad</option>
+                                <option value="Ganado" <?php echo ($contacto['estado'] == 'Ganado') ? 'selected' : ''; ?>>Ganado</option>
                             </select>
                         </div>
 
                         <div class="mb-3">
                             <label for="intensidad" class="form-label">Intensidad:</label>
                             <select class="form-select" name="intensidad">
-                                <option value="Frio" <?php echo ($contacto['intensidad'] == 'Frio') ? 'selected' : ''; ?>>Frio</option>
-                                <option value="Tibio" <?php echo ($contacto['intensidad'] == 'Tibio') ? 'selected' : ''; ?>>Tibio</option>
-                                <option value="Caliente" <?php echo ($contacto['intensidad'] == 'Caliente') ? 'selected' : ''; ?>>Caliente</option>
+                                <option value="Interesado" <?php echo ($contacto['intensidad'] == 'Interesado') ? 'selected' : ''; ?>>Interesado</option>
+                                <option value="Muy interesado" <?php echo ($contacto['intensidad'] == 'Muy interesado') ? 'selected' : ''; ?>>Muy interesado</option>
+                                <option value="Poco interesado" <?php echo ($contacto['intensidad'] == 'Poco interesado') ? 'selected' : ''; ?>>Poco interesado</option>
+                                <option value="No contesta" <?php echo ($contacto['intensidad'] == 'No contesta') ? 'selected' : ''; ?>>No contesta</option>
+                                <option value="Mal momento" <?php echo ($contacto['intensidad'] == 'Mal momento') ? 'selected' : ''; ?>>Mal momento</option>
+                                <option value="En espera" <?php echo ($contacto['intensidad'] == 'En espera') ? 'selected' : ''; ?>>En espera</option>
                             </select>
                         </div>
-                        
+
 
                         <div class="mb-3">
                             <label for="observaciones" class="form-label">Observaciones:</label>
@@ -92,11 +95,9 @@ if (isset($_GET['id_contacto'])) {
         </div>
         <?php
     } else {
-        // Muestra un mensaje si no hay resultados
         echo "Contacto no encontrado.";
     }
 } else {
-    // Muestra un mensaje si no se proporciona un ID de contacto
     echo "ID de contacto no proporcionado.";
 }
 

@@ -98,6 +98,13 @@
                     </div>
 
                     <div class="form-group row mt-3">
+                        <label for="codigo" class="col-sm-4 col-form-label">Código:</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" name="codigo" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mt-3">
                         <label for="imagen" class="col-sm-4 col-form-label">Imagen:</label>
                         <div class="col-sm-8">
                             <input type="file" class="form-control-file" name="imagen" accept="image/*" required>
@@ -110,6 +117,7 @@
                         </div>
                     </div>
                 </form>
+
             </div>
               </div>
              

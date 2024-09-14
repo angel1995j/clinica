@@ -8,6 +8,7 @@
     $stock = $_POST['stock'];
     $titulo = $_POST['titulo'];
     $descripcion = $_POST['descripcion'];
+    $codigo = $_POST['codigo'];
     $precio_compra = $_POST['precio_compra'];
     $tipo_producto = "medicina";
     $estatus = 1;
@@ -16,15 +17,9 @@
     $ruta_temporal = $_FILES['imagen']['tmp_name'];
     $ruta_destino = '../assets/images/products/' . $imagen;
 
-    if(move_uploaded_file($ruta_temporal, $ruta_destino)) {
-        echo "Imagen subida correctamente.";
-    } else {
-        echo "Error al subir la imagen.";
-    }
-
-    $sql = "INSERT INTO productos (precio_venta, stock, titulo, descripcion, precio_compra, imagen, tipo_producto, estatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO productos (precio_venta, stock, titulo, descripcion, codigo, precio_compra, imagen, tipo_producto, estatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $link->prepare($sql);
-$stmt->bind_param("dissdssi", $precio_venta, $stock, $titulo, $descripcion, $precio_compra, $imagen, $tipo_producto, $estatus);
+$stmt->bind_param("dissddssi", $precio_venta, $stock, $titulo, $descripcion, $codigo, $precio_compra, $imagen, $tipo_producto, $estatus);
 
 
 

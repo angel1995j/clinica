@@ -60,21 +60,31 @@ $resultado_historia = $link->query($sql_historia);
             
 
                 
-                <div class="col-md-3 col-sm-4">
+                <div class="col-md-3 col-sm-3 mb-3">
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalHistoriaClinica">
                       Ver Historia clínica inicial
                     </button>
                 </div>
 
 
-                <div class="col-md-3 col-sm-4">
+                <div class="col-md-3 col-sm-3 mb-3">
                   <a href="agenda-paciente-apoyo.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Ver Agenda del paciente</a>
                 </div>
 
+                <div class="col-md-3 col-sm-3">
+                  <a href="evolucion-paciente-apoyo.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Registro de evolución</a>
+                </div>
 
+                <div class="col-md-3 col-sm-3">
+                  <a href="notas-psicologicas-apoyo.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Notas psicológicas</a> 
+                </div>
 
-                <div class="col-md-3 col-sm-4">
-                  <a href="evolucion-paciente-apoyo.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Evolución del paciente</a>
+                <div class="col-md-3 col-sm-3">
+                  <a href="notas-consejeria-apoyo.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Notas de consejería</a>
+                </div>
+
+                <div class="col-md-3 col-sm-3">
+                  <a href="documentos-egreso-apoyo.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Documentos de egreso</a>
                 </div>
 
 

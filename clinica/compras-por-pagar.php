@@ -29,6 +29,7 @@
                       <div class="container mt-5">
                           <!-- Formulario Bootstrap -->
                           <form action="inserts/compras.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="estatus" value="No Pagada">
                               <div class="form-group row">
                                   <label for="concepto" class="col-sm-4 col-form-label">Concepto:</label>
                                   <div class="col-sm-8">
@@ -42,6 +43,33 @@
                                       <input type="text" class="form-control" name="quien_compra" required>
                                   </div>
                               </div>
+
+                              <div class="form-group row mt-3">
+                                  <label for="cuenta_compra" class="col-sm-4 col-form-label">Método de pago:</label>
+                                  <div class="col-sm-8">
+                                    <select class="form-control" name="cuenta_compra" required>
+                                    <option value="Cuenta Lenin">Cuenta Lenin</option>
+                                    <option value="Cuenta Dante">Cuenta Dante</option>
+                                    <option value="Efectivo">Efectivo</option>
+                                </select>
+                                  </div>
+                              </div>
+
+                               <div class="form-group row mt-3">
+                                    <label for="tipo_compra" class="col-sm-4 col-form-label">Tipo de Compra:</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" name="tipo_compra" required>
+                                            <option value="Despensa">Despensa</option>
+                                            <option value="Gastos generales">Gastos generales</option>
+                                            <option value="Mantenimiento">Mantenimiento</option>
+                                            <option value="Tiendita">Tiendita</option>
+                                            <option value="Gastos operativos">Gastos operativos</option>
+                                            <option value="Viaticos">Viaticos</option>
+                                            <option value="Medicamento general">Medicamento general</option>
+                                            <option value="otras compras">Otras compras</option>
+                                        </select>
+                                    </div>
+                                </div>
 
                               <div class="form-group row mt-3">
                                   <label for="monto" class="col-sm-4 col-form-label">Monto:</label>
@@ -60,7 +88,7 @@
                               <div class="form-group row mt-3">
                                   <label for="comprobante" class="col-sm-4 col-form-label">Comprobante (Imagen):</label>
                                   <div class="col-sm-8">
-                                      <input type="file" class="form-control" name="comprobante" accept="image/*" required>
+                                      <input type="file" class="form-control" name="comprobante" accept="image/*" >
                                   </div>
                               </div>
 

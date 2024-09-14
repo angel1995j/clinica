@@ -470,11 +470,12 @@ $link = bases();
                                     <select id="tipo_pago" name="tipo_pago" class="form-control">
                                         <option value="Todos">Todos</option>
                                         <option value="Tratamiento">Tratamiento</option>
-                                        <option value="Donación">Donación</option>
-                                        <option value="Medicamento">Medicamento</option>
-                                        <option value="Ingreso">Ingreso</option>
-                                        <option value="Consumo en tiendita">Consumo en tiendita</option>
-                                        <option value="Otros">Otros</option>
+                                        <option value="Peticiones">Peticiones</option>
+                                        <option value="Adeudo tiendita">Tiendita</option>
+                                        <option value="medicamento">Medicamento</option>
+                                        <option value="Consultas Externas">Consultas Externas</option>
+                                        <option value="donación de ingreso">donación de ingreso</option>
+                                        <option value="Otros Gastos">Otros Gastos</option>
                                     </select>
                                 </div>
                             </div>
