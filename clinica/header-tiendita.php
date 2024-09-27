@@ -79,14 +79,14 @@ $nombre_usuario_logueado = isset($_SESSION['nombre_usuario']) ? $_SESSION['nombr
            
             
 
-             <li class="sidebar-item">
+             <!--<li class="sidebar-item">
               <a class="sidebar-link" href="ajustes.php" aria-expanded="false">
                 <span>
                   <i class="ti ti-adjustments"></i>
                 </span>
                 <span class="hide-menu">Ajustes</span>
               </a>
-            </li>
+            </li>-->
 
 
             <li class="sidebar-item">

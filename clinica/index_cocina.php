@@ -1,5 +1,3 @@
-<?php require "header-cocina.php";?> 
-
 <?php
     // Recuperar el id_usuario de la sesión
     session_start();
@@ -11,7 +9,34 @@
         // Manejar el caso en que el id_usuario no esté en la sesión
         echo '<p>Error: No se pudo obtener el id_usuario logueado.</p>';
     }
+
+
+// Conecta a la base de datos
+require('global.php');
+$link = bases();
+// Consulta el rol del usuario logueado
+$sql_rol_usuario = "SELECT rol FROM usuarios WHERE id_usuario = $id_usuario_logueado";
+$resultado_rol_usuario = $link->query($sql_rol_usuario);
+
+// Verifica si la consulta fue exitosa
+if ($resultado_rol_usuario === false) {
+    die('Error al ejecutar la consulta para obtener el rol del usuario');
+}
+
+$datos_usuario_logueado = $resultado_rol_usuario->fetch_assoc();
+
+// Dependiendo del rol del usuario logueado, carga el header correspondiente
+if ($datos_usuario_logueado['rol'] == 'Proteccion') {
+    require "header-proteccion.php";
+} elseif ($datos_usuario_logueado['rol'] == 'Cocina') {
+    require "header-cocina.php";
+} else {
+    require "header.php";
+}
+
+
 ?>
+
 
 
 <!--SECCION GENERAL -->
@@ -26,7 +51,7 @@
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoEmpleado">
             Añadir nueva solicitud
           </button>
-          <!--<a href="solicitudes-archivadas.php" class="btn boton-secundario" style="margin-left: 2%;">Ver archivadas</a>-->
+         <!-- <a href="solicitudes-archivadas.php" class="btn boton-secundario" style="margin-left: 2%;">Ver archivadas</a>-->
         </div>
 
 
@@ -68,37 +93,105 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                <div class="container mt-5">
+    <div class="container mt-5">
+        <!-- Formulario Bootstrap -->
+        <form action="inserts/solicitudes-cocina.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id_usuario" value="<?php echo $id_usuario_logueado; ?>">
 
-                <!-- Formulario Bootstrap -->
-                <form action="inserts/solicitudes-cocina.php" method="post" enctype="multipart/form-data">
-                  <input type="hidden" name="id_usuario" value="<?php echo $id_usuario_logueado; ?>">
+            <!-- Información general de la solicitud -->
+            <div class="form-group row mt-3">
+                <label for="descripcion" class="col-sm-4 col-form-label">Descripción de la solicitud:</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" name="descripcion_solicitud" rows="2"></textarea>
+                </div>
+            </div>
 
-                  <div class="form-group row mt-3">
-                      <label for="descripcion" class="col-sm-4 col-form-label">Descripción de solicitud:</label>
-                      <div class="col-sm-8">
-                          <textarea class="form-control" name="descripcion" rows="7"></textarea>
-                      </div>
+            <div class="form-group row mt-3">
+                <label for="fecha" class="col-sm-4 col-form-label">Fecha:</label>
+                <div class="col-sm-8">
+                    <input type="date" class="form-control" name="fecha" required>
+                </div>
+            </div>
+
+            <!-- Detalles de la solicitud (lista de productos) -->
+            <div id="items-container">
+                <div class="form-group row mt-3">
+                    <label class="col-sm-4 col-form-label">Descripción del ítem:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" name="descripcion_item[]" required>
+                    </div>
+                </div>
+                <div class="form-group row mt-3">
+                    <label class="col-sm-4 col-form-label">Cantidad:</label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control" name="cantidad[]" step="0.01" required>
+                    </div>
+                </div>
+                <div class="form-group row mt-3">
+                  <label class="col-sm-4 col-form-label">Unidad de Medida:</label>
+                  <div class="col-sm-8">
+                      <select class="form-select" name="unidad_medida[]">
+                          <option value="pieza">Pieza</option>
+                          <option value="kilogramo">Kilogramo</option>
+                          <option value="gramo">Gramo</option>
+                          <option value="litro">Litro</option>
+                          <option value="mililitro">Mililitro</option>
+                          <option value="caja">Caja</option>
+                          <option value="bolsa">Bolsa</option>
+                          <option value="docena">Docena</option>
+                      </select>
                   </div>
-
-                  <div class="form-group row mt-3">
-                      <label for="fecha" class="col-sm-4 col-form-label">Fecha:</label>
-                      <div class="col-sm-8">
-                          <input type="date" class="form-control" name="fecha" required>
-                      </div>
-                  </div>
-
-
-
-                  <div class="form-group row mt-3">
-                      <div class="col-sm-12">
-                          <button type="submit" class="btn btn-primary">Agregar</button>
-                      </div>
-                  </div>
-              </form>
+              </div>
 
             </div>
-              </div>
+
+            <button type="button" class="btn btn-success mt-3" id="add-item">Agregar otro artículo</button>
+
+            <div class="form-group row mt-3">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-primary">Agregar Solicitud</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <script>
+                document.getElementById('add-item').addEventListener('click', function() {
+                    let itemsContainer = document.getElementById('items-container');
+                    let newItemHtml = `
+                        <div class="form-group row mt-3" style="border-top: 1px solid black; padding-top:5%;">
+                            <label class="col-sm-4 col-form-label">Descripción del ítem:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="descripcion_item[]" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-3">
+                            <label class="col-sm-4 col-form-label">Cantidad:</label>
+                            <div class="col-sm-8">
+                                <input type="number" class="form-control" name="cantidad[]" step="0.01" required>
+                            </div>
+                        </div>
+                        <div class="form-group row mt-3">
+                            <label class="col-sm-4 col-form-label">Unidad de Medida:</label>
+                            <div class="col-sm-8">
+                               <select class="form-select" name="unidad_medida[]">
+                                <option value="pieza">Pieza</option>
+                                <option value="kilogramo">Kilogramo</option>
+                                <option value="gramo">Gramo</option>
+                                <option value="litro">Litro</option>
+                                <option value="mililitro">Mililitro</option>
+                                <option value="caja">Caja</option>
+                                <option value="bolsa">Bolsa</option>
+                                <option value="docena">Docena</option>
+                               </select>
+                            </div>
+                        </div>
+                    `;
+                    itemsContainer.insertAdjacentHTML('beforeend', newItemHtml);
+                });
+            </script>
+
              
             </div>
           </div>
@@ -136,7 +229,7 @@
         <div class="col-12 mt-5">
           <div class="card mb-4 px-3">
             <div class="card-header pb-0">
-              <h6>Todas las solicitudes</h6>
+              <h6>Todos los empleados</h6>
             </div>
 
 
@@ -154,7 +247,9 @@
                   <thead>
                     <tr>
                      <th class="text-uppercase text-xxs font-weight-bolder opacity-7">Descripción</th>
-                      <th class="text-uppercase text-xxs font-weight-bolder opacity-7 ps-2 text-center">Fecha</th>
+                      <th class="text-uppercase text-xxs font-weight-bolder opacity-7 ps-2">Fecha</th>
+
+                      <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7">Accciones</th>
 
                       <th class="text-center text-uppercase text-xxs font-weight-bolder opacity-7"></th>
                       <th class="text-secondary opacity-7"></th>
@@ -236,7 +331,7 @@
                 pagina = 1
             }
 
-            let url = "loads/solicitudes-cocina.php"
+            let url = "loads/solicitudes.php"
             let formaData = new FormData()
             formaData.append('campo', input)
             formaData.append('registros', num_registros)

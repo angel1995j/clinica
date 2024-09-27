@@ -1,159 +1,100 @@
 <?php
-require "header-apoyo.php";
+// Iniciar sesión para acceder a $_SESSION
+session_start();
 
- $id_paciente  = $_GET['id_paciente'];
+// Recupera el ID del usuario desde GET
+$id_usuario_actual = isset($_GET['id_usuario']) ? intval($_GET['id_usuario']) : 0;
 
-
- // Recupera el ID del paciente desde GET
-$id_paciente = isset($_GET['id_paciente']) ? intval($_GET['id_paciente']) : 0;
-
-
-if (!$id_paciente) {
-    die('ID del paciente no proporcionado');
+if ($id_usuario_actual === 0) {
+    die('ID de usuario no proporcionado o inválido');
 }
 
-// Conecta a la base de datos y obtén los datos del paciente
+// Conecta a la base de datos
 require('global.php');
 $link = bases();
-$sql = "SELECT * FROM pacientes WHERE id_paciente = $id_paciente";
 
-$resultado = $link->query($sql);
+// Verifica si $_SESSION['id_usuario'] está definida
+if (!isset($_SESSION['id_usuario'])) {
+    die('ID del usuario logueado no disponible');
+}
 
-$paciente = $resultado->fetch_assoc();
+$id_usuario_logueado = $_SESSION['id_usuario'];
 
-$sql_historia = "SELECT * FROM historia_clinica WHERE id_paciente = $id_paciente";
-$resultado_historia = $link->query($sql_historia);
+// Consulta el rol del usuario logueado
+$sql_rol_usuario = "SELECT rol FROM usuarios WHERE id_usuario = $id_usuario_logueado";
+$resultado_rol_usuario = $link->query($sql_rol_usuario);
+
+// Verifica si la consulta fue exitosa
+if ($resultado_rol_usuario === false) {
+    die('Error al ejecutar la consulta para obtener el rol del usuario');
+}
+
+$datos_usuario_logueado = $resultado_rol_usuario->fetch_assoc();
+
+// Dependiendo del rol del usuario logueado, carga el header correspondiente
+if ($datos_usuario_logueado['rol'] == 'Proteccion') {
+    require "header-proteccion.php";
+} elseif ($datos_usuario_logueado['rol'] == 'Salud') {
+    require "header-salud.php";
+} else {
+    require "header.php";
+}
+
+// Consulta SQL para obtener el nombre y aPaterno del usuario actual
+$sql_usuario = "SELECT nombre, aPaterno FROM usuarios WHERE id_usuario = $id_usuario_actual";
+$resultado_usuario = $link->query($sql_usuario);
+
+// Verifica si la consulta fue exitosa y si se encontró el usuario
+if ($resultado_usuario === false || $resultado_usuario->num_rows === 0) {
+    die('Usuario no encontrado o error en la consulta');
+}
+
+$usuario = $resultado_usuario->fetch_assoc();
+$nombre_usuario = $usuario['nombre'];
+$aPaterno_usuario = $usuario['aPaterno'];
+
+// Consulta SQL para obtener los pacientes relacionados con la agenda del usuario actual
+$sql_agenda = "SELECT agenda.id_agenda, agenda.fecha, agenda.observaciones, pacientes.nombre, pacientes.aPaterno, pacientes.aMaterno 
+               FROM agenda 
+               INNER JOIN pacientes ON agenda.id_paciente = pacientes.id_paciente
+               WHERE agenda.id_usuario = $id_usuario_actual 
+               ORDER BY agenda.fecha DESC";
+
+$resultado_agenda = $link->query($sql_agenda);
+
+// Verifica si la consulta de la agenda fue exitosa
+if ($resultado_agenda === false) {
+    die('Error al ejecutar la consulta de la agenda');
+}
 
 ?>
 
-
-
-      <!--SECCION GENERAL -->
-
-    <!-- End Navbar -->
-
-    <div class="container-fluid py-4 mt-5">
-        
-
-        
-
-
-
-          <div class="card mb-4 px-3 mt-5">
-            
-            
-            <!--- INICIA CONTENIDO DE TABLA -->
-
-            <div class="card-body px-0 pt-0 pb-4 pt-3">
-            <a href="pacientes-apoyo.php" class="text-secondary mt-3"><i class="fa fa-undo" aria-hidden="true"></i>
-             Volver a todos los pacientes</a>
-              
-
-            <div class="container">
-            <h2 class="mt-5 text-center"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-            Paciente:  <?php echo $paciente['nombre']. " " . $paciente['aPaterno'];?></h2>
-
-
-            
-
-            <div class="row mt-5">
-            
-
-                
-                <div class="col-md-3 col-sm-3 mb-3">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalHistoriaClinica">
-                      Ver Historia clínica inicial
-                    </button>
-                </div>
-
-
-                <div class="col-md-3 col-sm-3 mb-3">
-                  <a href="agenda-paciente-apoyo.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Ver Agenda del paciente</a>
-                </div>
-
-                <div class="col-md-3 col-sm-3">
-                  <a href="evolucion-paciente-apoyo.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Registro de evolución</a>
-                </div>
-
-                <div class="col-md-3 col-sm-3">
-                  <a href="notas-psicologicas-apoyo.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Notas psicológicas</a> 
-                </div>
-
-                <div class="col-md-3 col-sm-3">
-                  <a href="notas-consejeria-apoyo.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Notas de consejería</a>
-                </div>
-
-                <div class="col-md-3 col-sm-3">
-                  <a href="documentos-egreso-apoyo.php?id_paciente=<?php echo $id_paciente;?>" class="btn btn-primary">Documentos de egreso</a>
-                </div>
-
-
-
-            </div>
-              
-
-            </div>
-
-
-
-
-            </div>    
-
-
-
-
-            <!-- Modal para mostrar la historia clínica -->
-          <div class="modal fade" id="modalHistoriaClinica" tabindex="-1" role="dialog" aria-labelledby="modalHistoriaClinicaLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="modalHistoriaClinicaLabel">Historia Clínica del Paciente</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <?php if ($resultado_historia->num_rows > 0) : ?>
-                    <div class="row">
-                      <?php while ($fila_historia = $resultado_historia->fetch_assoc()) : ?>
-                        <div class="col-md-12">
-                          <div class="card mb-3">
-                            <div class="card-body">
-                              <p class="card-text"><b>Fecha Consulta:</b> <?php echo $fila_historia['fecha_consulta']; ?></p>
-                              <p class="card-text"><b>Alergias:</b> <?php echo $fila_historia['alergias']; ?></p>
-                              <p class="card-text"><b>Operaciones Previas:</b> <?php echo $fila_historia['operaciones_previas']; ?></p>
-                              <p class="card-text"><b>Tratamiento:</b> <?php echo $fila_historia['tratamiento']; ?></p>
-                            
-                              <p class="card-text"><b>Resultados Bioquímica:</b> <?php echo $fila_historia['resultados_bioquimica']; ?></p>
-                              <p class="card-text"><b>Hospitalizaciones Previas:</b> <?php echo $fila_historia['hospitalizaciones_previas']; ?></p>
-                              <p class="card-text"><b>Padecimientos Actuales:</b> <?php echo $fila_historia['padecimientos_actuales']; ?></p>
-                              <p class="card-text"><b>Historia Familiar:</b> <?php echo $fila_historia['historia_familiar_enfermedades']; ?></p>
-                            </div>
-                          </div>
-                        </div>
-                      <?php endwhile; ?>
+<!-- SECCION DE LISTADO -->
+<div class="container-fluid py-4 mt-5">
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="container-fluid py-4">
+                <!-- Mostrar el nombre del usuario -->
+                <h2>Agenda de <?php echo $nombre_usuario . ' ' . $aPaterno_usuario; ?></h2>
+                <div class="card mb-4 px-3 mt-5">
+                    <!-- INICIA CONTENIDO DE TABLA -->
+                    <div class="card-body px-0 pt-0 pb-4 pt-3">
+                        <ul class="list-group mt-2">
+                            <?php while ($fila_agenda = $resultado_agenda->fetch_assoc()) : ?>
+                                <li class="list-group-item mt-3">
+                                    <strong>Fecha de la cita:</strong> <?php echo $fila_agenda['fecha']; ?> <br>
+                                    <strong>Observaciones:</strong> <?php echo $fila_agenda['observaciones']; ?> <br>
+                                    <strong>Paciente:</strong> <?php echo $fila_agenda['nombre'] . " " . $fila_agenda['aPaterno'] . " " . $fila_agenda['aMaterno']; ?>
+                                </li>
+                            <?php endwhile; ?>
+                        </ul>
                     </div>
-
-                  <?php else : ?>
-                    <p>No hay registros de historia clínica para este paciente.</p>
-                  <?php endif; ?>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-              </div>
             </div>
-          </div>      
-          
- 
+        </div>
+    </div>
+</div>
 
-
-
-
-
-
-
-          </div>
-       
-
-<?php require "footer.php"; ?>
+<?php
+require "footer.php";
+?>

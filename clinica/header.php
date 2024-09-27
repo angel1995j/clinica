@@ -30,7 +30,7 @@ $nombre_usuario_logueado = isset($_SESSION['nombre_usuario']) ? $_SESSION['nombr
   <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
   <link rel="stylesheet" href="assets/css/styles.min.css" />
   <link rel="stylesheet" href="assets/css/custom.css" />
-   <script src="https://kit.fontawesome.com/1517bc3b2d.js" crossorigin="anonymous"></script>
+   <!--<script src="https://kit.fontawesome.com/1517bc3b2d.js" crossorigin="anonymous"></script>-->
        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </head>
 

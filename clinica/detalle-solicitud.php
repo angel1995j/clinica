@@ -1,6 +1,31 @@
 <?php
-require "header.php"; 
+// Inicia sesión si no lo has hecho ya
+session_start();
 
+require('global.php');
+$link = bases();
+
+// Asume que el id del usuario logueado está almacenado en $_SESSION['id_usuario']
+$id_usuario_logueado = $_SESSION['id_usuario'];
+
+// Consulta el rol del usuario logueado
+$sql_rol_usuario = "SELECT rol FROM usuarios WHERE id_usuario = $id_usuario_logueado";
+$resultado_rol_usuario = $link->query($sql_rol_usuario);
+$datos_usuario_logueado = $resultado_rol_usuario->fetch_assoc();
+
+// Dependiendo del rol del usuario logueado, carga el header correspondiente
+if ($datos_usuario_logueado['rol'] == 'SuperAdministrador') {
+    require "header.php";
+} elseif ($datos_usuario_logueado['rol'] == 'Cocina') {
+    require "header-cocina.php";
+} elseif ($datos_usuario_logueado['rol'] == 'Proteccion') {
+    require "header-proteccion.php";    
+} else {
+    // O carga un header genérico o por defecto
+    require "header-default.php";
+}
+
+// Continuar con el resto de tu código
 $id_solicitud = $_GET['id_solicitud'];
 
 if (!$id_solicitud) {
@@ -8,8 +33,6 @@ if (!$id_solicitud) {
 }
 
 // Conecta a la base de datos y obtén los datos de la solicitud
-require('global.php');
-$link = bases();
 $sql_solicitud = "SELECT * FROM solicitudes WHERE id_solicitud = $id_solicitud";
 $resultado_solicitud = $link->query($sql_solicitud);
 $solicitud = $resultado_solicitud->fetch_assoc();
@@ -30,8 +53,7 @@ $resultado_detalle = $link->query($sql_detalle);
     <div class="card mb-4 px-3 mt-5">
         <!-- INICIA CONTENIDO DE TABLA -->
         <div class="card-body px-0 pt-0 pb-4 pt-3">
-            <a href="solicitudes.php" class="text-secondary mt-3">
-                <i class="fa fa-undo" aria-hidden="true"></i> Volver a todas las solicitudes</a>
+           
 
             <div class="container">
                 <h2 class="text-center mb-4">Detalle de Solicitud</h2>

@@ -12,7 +12,7 @@ $sql_actualizar = "UPDATE solicitudes SET archivado = '$archivado' WHERE id_soli
 if ($link->query($sql_actualizar) === TRUE) {
     //echo "Pago actualizado correctamente.";
     // Redirige a la URL deseada
-    header("Location: ../solicitudes.php");  
+    header("Location: ../index_cocina.php");  
     exit(); // Asegura que el script se detenga después de la redirección
 } else {
     echo "Error al actualizar el empleado: " . $link->error;

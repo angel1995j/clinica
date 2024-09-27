@@ -1,4 +1,30 @@
-<?php require "header.php";?> 
+<?php
+
+session_start();
+
+require('global.php');
+$link = bases();
+
+// Asume que el id del usuario logueado está almacenado en $_SESSION['id_usuario']
+$id_usuario_logueado = $_SESSION['id_usuario'];
+
+// Consulta el rol del usuario logueado
+$sql_rol_usuario = "SELECT rol FROM usuarios WHERE id_usuario = $id_usuario_logueado";
+$resultado_rol_usuario = $link->query($sql_rol_usuario);
+$datos_usuario_logueado = $resultado_rol_usuario->fetch_assoc();
+
+// Dependiendo del rol del usuario logueado, carga el header correspondiente
+if ($datos_usuario_logueado['rol'] == 'SuperAdministrador') {
+    require "header.php";
+} elseif ($datos_usuario_logueado['rol'] == 'rrhh') {
+    require "header-rrhh.php"; 
+} else {
+    // O carga un header genérico o por defecto
+    require "header-default.php";
+}
+
+
+?> 
 
 <!--SECCION GENERAL -->
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 14-09-2024 a las 17:22:24
+-- Tiempo de generación: 27-09-2024 a las 17:14:43
 -- Versión del servidor: 10.6.18-MariaDB-cll-lve-log
 -- Versión de PHP: 8.1.29
 
@@ -40,7 +40,8 @@ CREATE TABLE `agenda` (
 --
 
 INSERT INTO `agenda` (`id_agenda`, `fecha`, `observaciones`, `id_paciente`, `id_usuario`) VALUES
-(1, '2024-08-21 12:50:00', 'xxxx', 7, 7);
+(1, '2024-08-21 12:50:00', 'xxxx', 7, 7),
+(2, '2024-08-21 12:50:00', 'xxxx', 7, 7);
 
 -- --------------------------------------------------------
 
@@ -369,7 +370,15 @@ INSERT INTO `detalle_solicitudes` (`id_detalle_solicitud`, `id_solicitud`, `desc
 (3, 3, 'papas', 1.00, 'docena'),
 (4, 4, 'jitomates', 12.00, 'pieza'),
 (5, 4, 'papas', 2.00, 'kilogramo'),
-(6, 4, 'arrox', 2.00, 'bolsa');
+(6, 4, 'arrox', 2.00, 'bolsa'),
+(7, 5, 'jitomates', 2.00, 'pieza'),
+(8, 5, 'aceite', 2.00, 'litro'),
+(9, 5, 'jitomates', 2.00, 'kilogramo'),
+(10, 6, 'jitomates', 2.00, 'gramo'),
+(11, 6, 'azucar', 1.00, 'bolsa'),
+(12, 6, 'papas', 3.00, 'pieza'),
+(13, 1, 'jitomates', 2.00, 'pieza'),
+(14, 1, 'aceie', 2.00, 'litro');
 
 -- --------------------------------------------------------
 
@@ -421,16 +430,6 @@ CREATE TABLE `empleados` (
   `finiquito` text NOT NULL,
   `archivado` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Volcado de datos para la tabla `empleados`
---
-
-INSERT INTO `empleados` (`id_empleado`, `nombre`, `aPaterno`, `aMaterno`, `numero_telefono`, `fecha_ingreso`, `fecha_salida`, `puesto`, `salario_bruto`, `salario_neto`, `otros_conceptos`, `monto_otros_conceptos`, `contactos`, `datos_familiares`, `domicilio`, `fecha_antidoping`, `referencias_laborales`, `motivo_salida`, `finiquito`, `archivado`) VALUES
-(1, 'Víctor ', 'Picho ', 'Ruiz ', '44 36 11 26 62', '2024-03-18', '0000-00-00', 'ventas ', NULL, 4000.00, '0', 0.00, '', '', '', NULL, '', '', '', 'no'),
-(4, 'JUAN', 'Ramirez', 'test', '54564564564', '2024-07-19', '0000-00-00', 'psicologia', NULL, 15000.00, '1250', 1200.00, 'juan papa\r\nhermano luis', 'familia \r\nfamilia tambien', 'centro', '2024-07-19', 'jose amigo.\r\nfrida excompañera', '', '', 'si'),
-(5, '', '', '', NULL, '0000-00-00', NULL, '', NULL, 0.00, '', NULL, '', '', '', NULL, '', '', '', ''),
-(6, 'Benjamin Alejandro ', 'Gonzalez ', 'Pérez', '443 380 9272', '2019-07-20', '0000-00-00', 'cocina', NULL, 12000.00, '', 0.00, '', '', '', '2024-08-01', '', '', '', 'no');
 
 -- --------------------------------------------------------
 
@@ -740,14 +739,6 @@ CREATE TABLE `pagos_empleado` (
   `id_empleado` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
---
--- Volcado de datos para la tabla `pagos_empleado`
---
-
-INSERT INTO `pagos_empleado` (`id_pagos_empleado`, `monto`, `motivo`, `tipo_operacion`, `fecha`, `estatus`, `id_empleado`) VALUES
-(1, 500, 'Por buena onda', 'Bono', '2024-08-17', 'pagado', 4),
-(2, 100, 'bono', 'Bono', '2024-08-20', 'pagado', 6);
-
 -- --------------------------------------------------------
 
 --
@@ -772,88 +763,6 @@ CREATE TABLE `pago_paciente` (
   `id_paciente` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Volcado de datos para la tabla `pago_paciente`
---
-
-INSERT INTO `pago_paciente` (`id_pago`, `monto`, `descuento`, `total`, `comprobante`, `numero_pago`, `fecha_agregado`, `fecha_pagado`, `periodicidad`, `observaciones`, `nota`, `forma_pago`, `estatus`, `archivado`, `id_paciente`, `id_usuario`) VALUES
-(1, 23333, 0, 0, '', 1, '2024-07-25', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 2, 0),
-(2, 23333, 0, 0, '', 2, '2024-08-25', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 2, 0),
-(3, 5000, 0, 5000, '', 0, '2024-07-10', '0000-00-00', '', 'donación de ingreso', '', 'Efectivo', 'Pagado', 'si', 2, 9),
-(4, 5000, 0, 0, '', 0, '2024-07-10', '2024-06-25', '', 'traslado ', '', 'Transferencia', 'No Pagado', 'si', 2, 9),
-(5, 23333, 0, 0, '', 1, '2024-09-25', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 2, 0),
-(69, 16666, 0, 16666, '', 1, '2024-01-31', '2024-01-31', '', 'Tratamiento', '', 'Saldo', 'Pagado', 'no', 3, 1),
-(70, 16666, 0, 16666, '', 2, '2024-03-02', '2024-03-02', '', 'Tratamiento', '', 'Saldo', 'Pagado', 'no', 3, 1),
-(71, 16666, 0, 16666, '', 3, '2024-04-02', '2024-04-02', '', 'Tratamiento', '', 'Saldo', 'Pagado', 'no', 3, 1),
-(9, 26667, 0, 27000, '', 1, '2024-06-15', '2024-06-15', '', 'Tratamiento', '', 'Efectivo', 'Pagado', 'si', 4, 9),
-(10, 26667, 0, 0, '', 2, '2024-07-15', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 4, 0),
-(11, 26667, 0, 0, '', 3, '2024-08-15', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 4, 0),
-(12, 26666, 0, 26666, '', 0, '2024-07-11', '2024-06-15', '', 'tratamiento', 'primer pago ', 'Efectivo', 'No Pagado', 'si', 4, 9),
-(13, 26666, 0, 26666, '', 1, '2024-06-15', '2024-06-15', '', 'Tratamiento', 'primer pago ', 'Saldo', 'Pagado', 'no', 4, 9),
-(14, 28500, 0, 28500, '', 1, '2024-07-11', '2024-07-11', '', 'Tratamiento', 'primer pago de tratamiento ', 'Efectivo', 'Pagado', 'no', 5, 9),
-(15, 28500, 0, 0, '', 2, '2024-08-11', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 5, 0),
-(16, 1200, 0, 1200, 'WhatsApp Image 2024-07-19 at 4.09.32 PM.jpeg', 0, '2024-07-19', '2024-07-11', '', 'tiendita inicio ', '', 'Efectivo', 'Pagado', 'no', 5, 9),
-(17, 19950, 0, 0, '', 0, '2024-07-19', '2024-09-11', '', 'tratamiento ', '', 'Efectivo', 'No Pagado', 'si', 5, 9),
-(18, 19950, 0, 0, '', 1, '2024-09-11', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 5, 0),
-(19, 25650, 0, 0, '', 1, '2024-07-12', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 7, 0),
-(20, 25650, 0, 0, '', 2, '2024-08-12', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 7, 0),
-(21, 25650, 0, 0, '', 3, '2024-09-12', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 7, 0),
-(22, 10000, 0, 0, '', 0, '2024-07-19', '2024-09-15', '', 'cuarto pago ', '', 'Efectivo', 'No Pagado', 'no', 7, 9),
-(23, 23334, 0, 0, '', 1, '2024-08-16', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 8, 0),
-(24, 23334, 0, 0, '', 2, '2024-09-16', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 8, 0),
-(25, 23334, 0, 0, '', 3, '2024-10-16', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 8, 0),
-(26, 5000, 0, 5000, '', 0, '2024-07-23', '2024-07-16', '', 'donación primer pago ', '', 'Efectivo', 'Pagado', 'no', 8, 9),
-(27, 19000, 0, 0, '', 1, '2024-08-18', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 9, 0),
-(28, 19000, 0, 0, '', 2, '2024-09-18', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 9, 0),
-(29, 19000, 0, 0, '', 3, '2024-10-18', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 9, 0),
-(30, 19000, 0, 0, '', 1, '2024-08-18', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'si', 9, 0),
-(31, 19000, 0, 0, '', 2, '2024-09-18', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'si', 9, 0),
-(32, 19000, 0, 0, '', 3, '2024-10-18', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'si', 9, 0),
-(33, 18000, 0, 18000, '', 0, '2024-07-23', '2024-07-18', '', 'donación de ingreso primer pago ', '', 'Efectivo', 'Pagado', 'no', 9, 9),
-(34, 25650, 0, 0, '', 1, '2024-08-11', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 10, 0),
-(35, 25650, 0, 0, '', 2, '2024-09-11', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 10, 0),
-(36, 25650, 0, 0, '', 3, '2024-10-11', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 10, 0),
-(37, 20000, 0, 0, '', 1, '2024-08-17', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 11, 0),
-(38, 20000, 0, 0, '', 2, '2024-09-17', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 11, 0),
-(39, 20000, 0, 0, '', 3, '2024-10-17', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 11, 0),
-(40, 23334, 0, 0, '', 1, '2024-08-13', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 12, 0),
-(41, 23334, 0, 0, '', 2, '2024-09-13', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 12, 0),
-(42, 23334, 0, 0, '', 3, '2024-10-13', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 12, 0),
-(43, 30000, 0, 0, '', 1, '2024-07-24', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 13, 0),
-(44, 30000, 0, 30022, '', 1, '2023-10-15', '2023-10-13', '', 'Tratamiento', 'tratamiento', 'Transferencia Cuenta Dante', 'Pagado', 'no', 14, 1),
-(45, 30000, 0, 30000, '', 2, '2023-11-15', '2024-08-05', '', 'Tratamiento', '11  transferencias', 'Saldo', 'Pagado', 'no', 14, 1),
-(46, 30000, 0, 30000, '', 3, '2023-12-15', '2024-08-05', '', 'Tratamiento', 'tratamiento', 'Saldo', 'Pagado', 'no', 14, 1),
-(47, 30000, 0, 0, '', 1, '2023-12-22', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 14, 0),
-(48, 30000, 0, 0, '', 2, '2024-01-22', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 14, 0),
-(49, 30000, 0, 0, '', 3, '2024-02-22', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 14, 0),
-(50, 20, 0, 20, '', 0, '2024-08-05', '2024-08-05', '', 'Adeudo tiendita', '', '', 'No Pagado', 'no', 8, 1),
-(51, 40, 0, 40, '', 0, '2024-08-05', '2024-08-05', '', 'Adeudo tiendita', '', 'Saldo', 'Pagado', 'no', 14, 1),
-(52, 80, 0, 80, '', 0, '2024-08-05', '2024-08-05', '', 'Adeudo tiendita', '', 'Saldo', 'Pagado', 'no', 14, 1),
-(53, 16666, 0, 16666, '', 1, '2023-12-01', '2024-08-10', '', 'Tratamiento', '', 'Saldo', 'Pagado', 'no', 15, 1),
-(54, 16666, 0, 16666, '', 2, '2024-01-01', '2024-08-10', '', 'Tratamiento', '', 'Saldo', 'Pagado', 'no', 15, 1),
-(55, 16666, 0, 16666, '', 3, '2024-02-01', '2024-02-01', '', 'Tratamiento', '', 'Saldo', 'Pagado', 'no', 15, 1),
-(56, 16666, 0, 16666, '', 4, '2024-03-01', '2024-03-01', '', 'Tratamiento', '', 'Saldo', 'Pagado', 'no', 15, 1),
-(57, 16666, 0, 0, '', 5, '2024-04-01', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 15, 0),
-(58, 16666, 0, 0, '', 6, '2024-05-01', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 15, 0),
-(59, 16667, 0, 0, '', 1, '2024-06-20', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 15, 0),
-(60, 16667, 0, 0, '', 2, '2024-07-20', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 15, 0),
-(61, 16667, 0, 0, '', 3, '2024-08-20', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 15, 0),
-(62, 100, 0, 100, '', 0, '2024-08-10', '2024-08-10', '', 'Adeudo tiendita', '', 'Saldo', 'Pagado', 'no', 15, 1),
-(63, 16666, 0, 16666, '', 1, '2024-08-13', '2024-08-22', '', 'Tratamiento', 'id paciente nuevo', 'Saldo', 'Pagado', 'no', 16, 1),
-(64, 16666, 0, 0, '', 2, '2024-09-13', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 16, 0),
-(65, 16666, 0, 0, '', 3, '2024-10-13', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 16, 0),
-(66, 16666, 0, 0, '', 4, '2024-11-13', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 16, 0),
-(67, 16666, 0, 0, '', 5, '2024-12-13', '0000-00-00', '', 'Tratamiento', '', '', 'No Pagado', 'no', 16, 0),
-(68, 160, 0, 160, '', 0, '2024-08-13', '2024-08-13', '', 'Adeudo tiendita', '', '', 'No Pagado', 'no', 16, 1),
-(72, 17000, 0, 17000, '', 1, '2024-05-15', '2024-05-15', '', 'Tratamiento', '', 'Saldo', 'Pagado', 'no', 3, 1),
-(73, 17000, 0, 17000, '', 2, '2024-06-15', '2024-06-15', '', 'Tratamiento', '', 'Saldo', 'Pagado', 'no', 3, 1),
-(74, 16000, 0, 16000, '', 1, '2024-07-15', '2024-08-16', '', 'Tratamiento', '', 'Saldo', 'Pagado', 'no', 3, 1),
-(75, 80, 0, 80, '', 0, '2024-08-16', '2024-08-16', '', 'Adeudo tiendita', '', 'Saldo', 'Pagado', 'no', 3, 1),
-(79, 200, 0, 200, '', 0, '2024-09-10', '2024-09-10', '', 'consultas externas', 'consulta externa', 'Efectivo', 'Pagado', 'no', 16, 1),
-(77, 1200, 0, 1200, '', 0, '2024-09-07', '2024-09-07', '', 'medicamento', 'Seroquel', '', 'No Pagado', 'no', 16, 1),
-(78, 1500, 0, 1500, '', 0, '2024-09-07', '2024-09-07', '', 'medicamento', 'Aspirina', '', 'No Pagado', 'no', 16, 1),
-(80, 1200, 0, 1200, '', 0, '2024-09-11', '2024-09-11', '', 'medicamento', 'Seroquel', '', 'No Pagado', 'no', 16, 1);
 
 -- --------------------------------------------------------
 
@@ -899,7 +808,72 @@ INSERT INTO `productos` (`id_producto`, `precio_venta`, `stock`, `titulo`, `desc
 (2, 0, 7, 'Seroquel', 'Seroquel', '55', 1200, 'image_1024.png', 'medicina', 1),
 (3, 18, 2, 'coca cola sin azucar', '\r\ncoca sin azucar', '7501055320639', 16, 'mgm_700x700.png', 'tiendita', 1),
 (4, 0, 1, 'Aspirina', 'Aspirina', '7501055320639', 1500, '48849873207326.jpg', 'medicina', 1),
-(6, 50, 10, 'Sujeta documentos', 'sujeta', '7502212170074', 50, '100018380.jpeg', 'tiendita', 1);
+(6, 50, 10, 'Sujeta documentos', 'sujeta', '7502212170074', 50, '100018380.jpeg', 'tiendita', 0),
+(7, 1, 1, 'SOPA MARUCHAN  HABANERO', 'HABANERO', '1001', 12, 'MARUCHAN.PNG', 'tiendita', 1),
+(8, 1, 1, 'cheetos bolitas', 'bolitas 46gr.', '7500478015047', 1, 'WhatsApp Image 2024-09-26 at 10.39.14 AM.jpeg', 'tiendita', 1),
+(9, 1, 1, 'cheetos extra flamin hot', 'flamin 58gr', '7501011143753', 1, 'WhatsApp Image 2024-09-26 at 10.39.14 AM (1).jpeg', 'tiendita', 1),
+(10, 1, 1, 'cheetos poffs', 'poffs 44gr', '7500478014606', 1, 'WhatsApp Image 2024-09-26 at 10.39.14 AM (2).jpeg', 'tiendita', 1),
+(11, 1, 1, 'doritos incognita', 'incon 61 gr', '7501011123878', 1, 'WhatsApp Image 2024-09-26 at 10.39.14 AM (3).jpeg', 'tiendita', 1),
+(12, 1, 1, 'doritos dinamita', 'dinam 70 gr', '7500478018512', 1, 'WhatsApp Image 2024-09-26 at 10.39.13 AM.jpeg', 'tiendita', 1),
+(13, 1, 1, 'FRITOS LIMON Y SAL', 'SAL 70 GR', '7501011110335', 1, 'WhatsApp Image 2024-09-26 at 10.39.13 AM (1).jpeg', 'tiendita', 1),
+(14, 1, 1, 'FRITOS CHORIZO Y CHIPOTLE', 'CHIPOTLE 70 GR', '7501011112254', 1, 'WhatsApp Image 2024-09-26 at 10.39.13 AM (2).jpeg', 'tiendita', 1),
+(15, 1, 1, 'RUFFLES MEGA CRUNCH SALSA ROJA', 'ROJA 42 GR', '7500478037704', 1, 'WhatsApp Image 2024-09-26 at 10.39.13 AM (3).jpeg', 'tiendita', 1),
+(16, 1, 1, 'RUFFLES ORIGINAL ', 'ORIG 51 GR', '7501011102095', 1, 'WhatsApp Image 2024-09-26 at 10.39.13 AM (4).jpeg', 'tiendita', 1),
+(17, 1, 1, 'SABRITAS CHICHARRON ', 'CHICH 30 GR', '7501011151079', 1, 'WhatsApp Image 2024-09-26 at 11.10.46 AM.jpeg', 'tiendita', 1),
+(18, 1, 1, 'RUFFLES QUESO', 'QUESO 51 GR', '7501011104099', 1, 'WhatsApp Image 2024-09-26 at 11.10.45 AM.jpeg', 'tiendita', 1),
+(19, 1, 1, 'RECETA CRUJIENTE SABRITAS', 'CRUJIENTE 57 GR', '7500478038671', 1, 'WhatsApp Image 2024-09-26 at 11.10.46 AM (1).jpeg', 'tiendita', 1),
+(20, 1, 1, 'PAKE TAXO MEZCLADITO', 'MEZCLADITO 70 GR', '7501011148963', 1, 'WhatsApp Image 2024-09-26 at 11.10.46 AM (2).jpeg', 'tiendita', 1),
+(21, 1, 1, 'RUFFLES QUESO BOLZAZA', 'BOLZAZA 92 GR', '7500478008032', 1, 'WhatsApp Image 2024-09-26 at 11.10.45 AM (1).jpeg', 'tiendita', 1),
+(22, 1, 1, 'DORITOS NACHO', 'NACHO 61 GR', '7501011123588', 1, 'WhatsApp Image 2024-09-26 at 11.10.45 AM (2).jpeg', 'tiendita', 1),
+(23, 1, 1, 'MANCHA T', 'MANCHT 50 GR', '7500478002849', 1, 'WhatsApp Image 2024-09-26 at 11.10.45 AM (3).jpeg', 'tiendita', 1),
+(24, 1, 1, 'PAKE TAXO EXTRA FLAMIN HOT', 'FLAMIN HOT 70 GR', '7501011144460', 1, 'WhatsApp Image 2024-09-26 at 11.10.45 AM (4).jpeg', 'tiendita', 1),
+(25, 1, 1, ' CHOCOLATE MILCH ', 'MILCH 40 GR', '7501011150416', 1, 'WhatsApp Image 2024-09-26 at 11.10.46 AM (3).jpeg', 'tiendita', 1),
+(26, 1, 1, 'DORITOS 3 DS', '3DS 50 GR', '7501011163706', 1, 'WhatsApp Image 2024-09-26 at 11.10.44 AM.jpeg', 'tiendita', 1),
+(27, 1, 1, 'DORITOS POP MIX', 'MIX 80 GR', '7500478037902', 1, 'WhatsApp Image 2024-09-26 at 11.10.44 AM (1).jpeg', 'tiendita', 1),
+(28, 1, 1, 'RECETA CRUJIENTE FLAMIN HOT', 'FLAMIN HOT 57 GR', '7500478038664', 1, 'WhatsApp Image 2024-09-26 at 11.10.44 AM (2).jpeg', 'tiendita', 1),
+(29, 1, 1, 'TOSTITOS MAS SALSA VERDE', 'SALSA VERDE 62 GR', '7501011127012', 1, 'WhatsApp Image 2024-09-26 at 11.10.44 AM (3).jpeg', 'tiendita', 1),
+(30, 1, 1, 'SABRITAS LIMON ', 'LIMON 46 GR', '7501011101678', 1, 'WhatsApp Image 2024-09-26 at 11.45.34 AM.jpeg', 'tiendita', 1),
+(31, 1, 1, ' CACAHUATES XFERAS SWITCH', 'SWITCH 60 GR', '7500478039050', 1, 'WhatsApp Image 2024-09-26 at 11.45.38 AM.jpeg', 'tiendita', 1),
+(32, 1, 1, 'RUFFLES MEGA CRUNCH FLAMIN HOT', 'FLAMIN HOT 42GR', '7500478037698', 1, 'WhatsApp Image 2024-09-26 at 11.45.37 AM.jpeg', 'tiendita', 1),
+(33, 1, 1, 'SABRITAS ORIGINAL', 'ORIGINAL 46 GR', '7501011101456', 1, 'WhatsApp Image 2024-09-26 at 11.45.36 AM.jpeg', 'tiendita', 1),
+(34, 1, 1, 'CHURRUMAIS CON LIMONCITO', 'CHURRUMAIS 100GR', '7500478040483', 1, 'WhatsApp Image 2024-09-26 at 11.45.36 AM (1).jpeg', 'tiendita', 1),
+(35, 1, 1, 'PAKE TAXO BOTANERO ', 'BOTANERO 70 GR', '7501011112438', 1, 'WhatsApp Image 2024-09-26 at 11.45.38 AM (1).jpeg', 'tiendita', 1),
+(36, 1, 1, 'SABRITAS SWITCH DORITOS', 'SWITCH 51 GR', '7500478041060', 1, 'WhatsApp Image 2024-09-26 at 11.45.35 AM.jpeg', 'tiendita', 1),
+(37, 1, 1, 'SABRITAS ADOBADAS', 'ADOBADAS 48 GR', '7501011101463', 1, 'WhatsApp Image 2024-09-26 at 11.45.37 AM (1).jpeg', 'tiendita', 1),
+(38, 1, 1, 'CHEETOS MIX ', 'MIX 90 GR', '7500478037896', 1, 'WhatsApp Image 2024-09-26 at 11.45.38 AM (2).jpeg', 'tiendita', 1),
+(39, 1, 1, 'CHEETOS MIX ', 'MIX 90 GR', '7500478037896', 1, 'WhatsApp Image 2024-09-26 at 11.45.38 AM (2).jpeg', 'tiendita', 0),
+(40, 1, 1, 'SABRITAS ORIGINAL BOLZAZA', 'BOLZAZA 78 GR', '7500478007622', 1, 'WhatsApp Image 2024-09-26 at 11.45.36 AM (2).jpeg', 'tiendita', 1),
+(41, 1, 1, 'RECETA CRUJIENTE SAL', 'SAL 57 GR', '7500478038657', 1, 'WhatsApp Image 2024-09-26 at 11.45.37 AM (2).jpeg', 'tiendita', 1),
+(42, 1, 1, 'CHEETOS TORCIDITOS BOLZAZA', 'BOLZAZA 120 GR', '7500478033904', 1, 'WhatsApp Image 2024-09-26 at 11.45.39 AM.jpeg', 'tiendita', 1),
+(43, 1, 1, 'DORITOS DINAMITA FLAMIN HOT', 'HOT 70 GR', '7500478026036', 1, 'WhatsApp Image 2024-09-26 at 11.45.35 AM (1).jpeg', 'tiendita', 1),
+(44, 1, 1, 'SABRITAS EXTRA FLAMIN HOT', 'FLAMIN HOT 48 GR', '7501011143739', 1, 'WhatsApp Image 2024-09-26 at 11.45.38 AM (3).jpeg', 'tiendita', 1),
+(45, 1, 1, 'DORITOS NACHO BOLZAZA', 'BOLZAZA 105 GR', '7500478008025', 1, 'WhatsApp Image 2024-09-26 at 11.45.37 AM (3).jpeg', 'tiendita', 1),
+(46, 1, 1, 'CHEETOS FLAMIN HOT BOLZAZA', 'BOLZAZA 120 GR', '7500478006175', 1, 'WhatsApp Image 2024-09-26 at 11.45.35 AM (3).jpeg', 'tiendita', 1),
+(47, 1, 1, 'SABRITAS CREMA Y ESPECIAS', 'ESPECIAS 48 GR', '7501011118119', 1, 'WhatsApp Image 2024-09-26 at 11.45.38 AM (4).jpeg', 'tiendita', 1),
+(48, 1, 1, 'DELICIAS MANTEQUILLA', 'MANTEQUILLA 153GR', '7500478038886', 1, 'WhatsApp Image 2024-09-27 at 12.10.32 PM.jpeg', 'tiendita', 1),
+(49, 1, 1, 'DELICIAS CHOCOLATE ', 'CHOCOLATE 153GF', '7500478039449', 1, 'WhatsApp Image 2024-09-27 at 12.10.31 PM.jpeg', 'tiendita', 1),
+(50, 1, 1, 'BARRAS DE COCO', 'COCO', '7501000669509', 1, 'WhatsApp Image 2024-09-27 at 12.10.28 PM.jpeg', 'tiendita', 1),
+(51, 1, 1, 'CREMAX FRESA', 'FRESA 113GR', '7500478022908', 1, 'WhatsApp Image 2024-09-27 at 12.10.29 PM.jpeg', 'tiendita', 1),
+(52, 1, 1, 'FLOR DE NARANJO', 'NARANJO 100GR', '7501000624683', 1, 'WhatsApp Image 2024-09-27 at 12.10.28 PM.jpeg', 'tiendita', 1),
+(53, 1, 1, 'CREMAX CHOCOLATE|', 'CHOCOLATE 213 GR|', '7501000612130', 1, 'WhatsApp Image 2024-09-27 at 12.10.25 PM.jpeg', 'tiendita', 1),
+(54, 1, 1, 'RICANELAS', 'RICANELAS 113GR', '7500478038794', 1, 'WhatsApp Image 2024-09-27 at 12.10.30 PM.jpeg', 'tiendita', 1),
+(55, 1, 1, 'EMPERADOR CHOCOLATE', 'CHOCOLATE 109 GR', '7500478022496', 1, 'WhatsApp Image 2024-09-27 at 12.10.26 PM.jpeg', 'tiendita', 1),
+(56, 1, 1, 'FLORENTINAS CHOCOTELLA', 'CHOCOTELLA 83 GR', '7500478037445', 1, 'WhatsApp Image 2024-09-27 at 12.49.55 PM (1).jpeg', 'tiendita', 1),
+(57, 1, 1, 'CHOKIS CLASICA', 'CHOKIS 76 GR', '7500478014569', 1, 'WhatsApp Image 2024-09-27 at 12.10.32 PM (1).jpeg', 'tiendita', 1),
+(58, 1, 1, 'emperador piruetas', 'piruetas 115 gr', '7500478022502', 1, 'WhatsApp Image 2024-09-27 at 12.10.27 PM.jpeg', 'tiendita', 1),
+(59, 27, 1, 'emperador nocturno', 'nocturno', '7500478021574', 1, 'WhatsApp Image 2024-09-27 at 12.10.28 PM (1).jpeg', 'tiendita', 1),
+(60, 27, 1, 'emperador nuez', 'nuez', '7500478022540', 0, 'WhatsApp Image 2024-09-27 at 12.10.27 PM (1).jpeg', 'tiendita', 1),
+(61, 1, 1, 'QUAKER FRUTOS ROJOS', 'FRUTOS ROJOS', '7501761802375', 27, 'WhatsApp Image 2024-09-27 at 12.10.26 PM (1).jpeg', 'tiendita', 1),
+(62, 1, 1, 'MARIAS AZUCARADAS', 'AZUCARADAS', '7500478035922', 27, 'WhatsApp Image 2024-09-27 at 12.09.02 PM.jpeg', 'tiendita', 1),
+(63, 27, 1, 'MARIAS ', 'MARIAS  185 GR', '7500478039135', 1, 'WhatsApp Image 2024-09-27 at 12.10.22 PM.jpeg', 'tiendita', 1),
+(64, 27, 1, 'delias naranja ', 'naranja 153gr', '7500478039456', 1, 'WhatsApp Image 2024-09-27 at 12.10.31 PM (1).jpeg', 'tiendita', 1),
+(65, 27, 1, 'emperador senzo chocotella|', 'chocotella 93 gr', '7500478035069', 1, 'WhatsApp Image 2024-09-27 at 12.10.26 PM (2).jpeg', 'tiendita', 1),
+(66, 27, 1, 'cremax chocotella', 'chocotella105 g\r\n', '7500478040353', 1, 'WhatsApp Image 2024-09-27 at 12.10.30 PM (1).jpeg', 'tiendita', 1),
+(67, 30, 1, 'FRUTS', 'FRUTS 130 GR', '7500478015931', 1, 'WhatsApp Image 2024-09-27 at 12.10.31 PM (2).jpeg', 'tiendita', 1),
+(68, 1, 1, 'maravillas', 'maravillas 116 g', '7501000641482', 1, 'WhatsApp Image 2024-09-27 at 12.10.29 PM (1).jpeg', 'tiendita', 1),
+(69, 27, 1, 'emperador vainilla', 'vainilla 109 g', '7500478022519', 1, 'WhatsApp Image 2024-09-27 at 12.10.28 PM (2).jpeg', 'tiendita', 1),
+(70, 27, 1, 'cremax  chocolate', 'chocolate 113 g', '7500478022885', 1, 'WhatsApp Image 2024-09-27 at 12.10.29 PM (2).jpeg', 'tiendita', 1),
+(71, 27, 1, 'QUAKER CHOCOLATE', 'CHOCOLATE  60G', '7501761802566', 1, 'WhatsApp Image 2024-09-27 at 12.10.26 PM (3).jpeg', 'tiendita', 1);
 
 -- --------------------------------------------------------
 
@@ -914,15 +888,6 @@ CREATE TABLE `solicitudes` (
   `archivado` text NOT NULL,
   `id_usuario` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Volcado de datos para la tabla `solicitudes`
---
-
-INSERT INTO `solicitudes` (`id_solicitud`, `descripcion`, `fecha`, `archivado`, `id_usuario`) VALUES
-(1, 'jitomate', '2024-08-23', 'no', 1),
-(3, 'despensa de la semana ', '2024-09-07', 'no', 1),
-(4, 'xdddddssss', '2024-09-11', 'no', 1);
 
 -- --------------------------------------------------------
 
@@ -988,17 +953,25 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre_usuario`, `contrasena`, `nombre`, `aPaterno`, `aMaterno`, `telefono`, `fecha_ingreso`, `rol`, `archivado`) VALUES
-(1, 'administrador', '$2y$10$DYdKi1ONNgRrrOw.EM.IYen3B7R94xJLu5SB40WvqJgmZuHtmkxGe', 'Administrador', 'Administrador', 'Administrador', '4433627876', '2024-06-26', 'SuperAdministrador', 'no'),
+(1, 'administrador', '$2y$10$RzF6BfZrKPrqPosHi.F7W.a.LnlOHEwe48uFV88EbrkfzV3/HNYpy', 'Administrador', 'Administrador', 'Administrador', '4433627876', '2024-06-26', 'SuperAdministrador', 'no'),
 (2, 'Briseyda', '$2y$10$D0Fg5jopE1/sguopF2glfe936dpUHvbidO0xsv.xbBu227YKwDy2.', 'Briseyda', 'Briseyda', 'Briseyda', '54564564564', '2024-06-26', 'Recepcion', 'no'),
-(3, 'Benjamin', '$2y$10$j31I27vRr0HEzW7qjQvV6.29tdvALI27nyvknHh/rCAkqIUVVAasu', 'Benjamin', 'Benjamin', 'Benjamin', '54564564564', '2024-06-26', 'Cocina', 'no'),
+(13, 'BENJAMIN', '$2y$10$yYEnwZOowY2NNlpHBUzR9OPEtp8L3fa8v9gm4ZnUlxDfgqn3k7u.q', 'BENJAMIN', 'BENJAMIN', 'BENJAMIN', '', '2024-09-23', 'Proteccion', 'no'),
 (4, 'Aron', '$2y$10$EN3Qtw197Xzqh9OHVC7dBOyKp/S68aE2HC5vFFDDZWt7tUuu6.mVu', 'Aron', 'Aron', 'Aron', '54564564564', '2024-06-26', 'Padrino', 'no'),
 (5, 'Susana', '$2y$10$QA1EFEtOqZqaJ.rqdvl7sOOtmt5YjfOJxNFeI2.eU/nLBqaVbxxUG', 'Susana', 'Susana', 'Susana', '54564564564', '2024-06-26', 'Psicologo', 'no'),
 (6, 'Karla', '$2y$10$5QAZ2Xfkk2ipkNHJrbw0Zen2X2EOgkN/cUWjeJtR8Moq0/SSgRSXS', 'Karla', 'Karla', 'Karla', '54564564564', '2024-06-26', 'Psicologo', 'no'),
 (7, 'Marina', '$2y$10$qLNZzUQo9y9DrD6VZx2kz.whpHFvMbol.U/lIOjWY7wbPz9y304pu', 'Marina', 'Marina', 'Marina', '54564564564', '2024-06-26', 'Psicologo', 'no'),
 (8, 'Isac', '$2y$10$7/y6p.K1d4KFTkJ7u2anYukHByt6ioO.sAbzXarmmYWKfE1yCeoQ.', 'Isac', 'Isac', 'Isac', '54564564564', '2024-06-26', 'Psicologo', 'no'),
 (9, 'Lenin', '$2y$10$87DARpVAOncu50ewchBCZexT6kFdUpCNdv486bzR7Ibw6lH.WPJ/a', 'Lenin', 'Lenin', 'Lenin', '54564564564', '2024-06-26', 'SuperAdministrador', 'no'),
-(10, 'Daniel', '$2y$10$bK42ooK8jGkdGA20arBRdOY.hAtN9LbSIIzYXtyYUQwCNM4efFkAu', 'Daniel', 'Daniel', 'Daniel', '54564564564', '2024-06-26', 'SuperAdministrador', 'no'),
-(11, 'Victor', '$2y$10$Yp/kRiHIrukRdRm8jtwqLu5f0FZghhH5TLf4lnmU4BAEgDhXAQ26e', 'Victor', 'Victor', 'Victor', '54564564564', '2024-06-26', 'Vendedor', 'no');
+(21, 'Daniel', '$2y$10$tsOGciqd86.6aZtLotlcr.uHfDaMyr9ioZi2CPGXfe9oZFgIuudd6', 'Daniel', 'Daniel', 'Daniel', '', '2024-09-26', 'SuperAdministrador', 'no'),
+(11, 'Victor', '$2y$10$Yp/kRiHIrukRdRm8jtwqLu5f0FZghhH5TLf4lnmU4BAEgDhXAQ26e', 'Victor', 'Victor', 'Victor', '54564564564', '2024-06-26', 'Vendedor', 'no'),
+(12, 'MARCO', '$2y$10$/1hYPm59E0Vbdxm.iW9wM.H6RbWmfWkYgFJIJomQdEL22TczyKY62', 'MARCO', 'MARCO', 'MARCO', '', '2024-09-23', 'Cocina', 'no'),
+(14, 'RICARDO', '$2y$10$xbJDcQERHNkirVhgQZpNOe/5PEE9k2KsYkCP4lt8GNyNjzQf6ZTcW', 'RICARDO', 'RICARDO', 'RICARDO', '', '2024-09-23', 'Salud', 'no'),
+(15, 'LUIS', '$2y$10$c0Euhh0.oMN.q3aGliQ/GuvUZBBO5jTRwPOeUTLp4lN5MnZLI6Srq', 'LUIS', 'LUIS', 'LUIS', '', '2024-09-23', 'Padrino', 'no'),
+(16, 'ISMAEL', '$2y$10$mf3ZXcIC4WB1myAgoqH8WeSzdrz86taZGMwynJrfoDxPAMyG5xLg6', 'ISMAEL', 'ISMAEL', 'ISMAEL', '', '2024-09-23', 'Psicologo', 'no'),
+(17, 'LEONEL', '$2y$10$z76meLPh4wNj.KjRKfng8O2RUABWApHkgoAKfLEqmydk6FjflCt0C', 'LEONEL', 'LEONEL', 'LEONEL', '', '2024-09-24', 'Padrino', 'no'),
+(18, 'Isai', '$2y$10$5wj3x67p4SAnBOEwdY2IqOOp4VCYRTjlmXb7ma0xtpmjFu0qPrJcm', 'Isac123', 'Isai', 'Isai', '', '2024-09-23', 'Psicologo', 'no'),
+(19, 'KASSANDRA', '$2y$10$oMN0NWsZ7KipeFE9WJrE8.aAivTm7p6kHuJvNqbMQXQuhLOUUsv5q', 'KASSANDRA', 'KASSANDRA', 'KASSANDRA', '', '2024-09-23', 'rrhh', 'no'),
+(20, 'Tienda', '$2y$10$R0G.isj.tWZwFdUs8SlJn.VNamJ.IZt7G6F/71PAcvpHsSK5EBQJu', 'Tienda', 'Tienda', 'Tienda', '', '2024-09-25', 'Tiendita', 'no');
 
 --
 -- Índices para tablas volcadas
@@ -1173,7 +1146,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `agenda`
 --
 ALTER TABLE `agenda`
-  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_agenda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `comisiones`
@@ -1215,7 +1188,7 @@ ALTER TABLE `detalles_orden`
 -- AUTO_INCREMENT de la tabla `detalle_solicitudes`
 --
 ALTER TABLE `detalle_solicitudes`
-  MODIFY `id_detalle_solicitud` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_detalle_solicitud` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `docs_empleado`
@@ -1227,7 +1200,7 @@ ALTER TABLE `docs_empleado`
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_empleado` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `evolucion`
@@ -1281,13 +1254,13 @@ ALTER TABLE `pacientes`
 -- AUTO_INCREMENT de la tabla `pagos_empleado`
 --
 ALTER TABLE `pagos_empleado`
-  MODIFY `id_pagos_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pagos_empleado` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `pago_paciente`
 --
 ALTER TABLE `pago_paciente`
-  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id_pago` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `peticion_paciente`
@@ -1299,13 +1272,13 @@ ALTER TABLE `peticion_paciente`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT de la tabla `solicitudes`
 --
 ALTER TABLE `solicitudes`
-  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_solicitud` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `traslado_paciente`
@@ -1317,7 +1290,7 @@ ALTER TABLE `traslado_paciente`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

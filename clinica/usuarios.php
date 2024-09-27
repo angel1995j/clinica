@@ -113,6 +113,9 @@
                                 <select class="form-select" name="rol">
                                     <option value="SuperAdministrador">SuperAdministrador</option>
                                     <option value="Administracion">Administración</option>
+                                    <option value="rrhh">Recursos Humanos</option>
+                                    <option value="Salud">Jefe de Salud</option>
+                                    <option value="Proteccion">Jefe de Protección</option>
                                     <option value="Recepcion">Recepción</option>
                                     <option value="Psicologo">Psicólogo</option>
                                     <option value="Medico">Médico</option>

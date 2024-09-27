@@ -51,6 +51,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 case 'Vendedor':
                     header("Location: index_vendedor.php");
                     break;
+
+                case 'Proteccion':
+                    header("Location: padrinos.php");
+                    break;
+
+                case 'rrhh':
+                    header("Location: empleados.php");
+                    break;    
+
+                case 'Salud':
+                    header("Location: apoyos.php");
+                    break;    
+                        
                 default:
                     // Si el rol no coincide con ninguno de los anteriores, puedes manejarlo según tus necesidades
                     echo "Rol desconocido";

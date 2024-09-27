@@ -26,9 +26,9 @@
         <div class="col-12 mb-4 mt-3" style="text-align:right;">
           <!--<a href="carrito.php" class="btn btn-primary">Nuevo consumo</a>-->
           <!-- <a href="consumos.php" class="btn boton-secundario">Ver consumos</a>-->
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoEmpleado">
+         <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoEmpleado">
             Añadir nueva solicitud
-          </button>
+          </button>-->
 
 
           <div class="modal fade" id="nuevoEmpleado" tabindex="-1" aria-labelledby="nuevoProductoLabel" aria-hidden="true">
